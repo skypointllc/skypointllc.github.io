@@ -1,5 +1,18 @@
-/* Small, clean defaults */
-body { scroll-behavior: smooth; }
+:root {
+  --bg-main: #f6f7f9;
+  --bg-section: #ffffff;
+  --accent-dark: #111111;
+}
+body {
+  background-color: var(--bg-main);
+  color: var(--accent-dark);
+  scroll-behavior: smooth;
+}
+section {
+  background-color: var(--bg-section);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
 
 .hero {
   background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0));
