@@ -226,6 +226,116 @@
       </div>
     </section>
 
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="py-5 bg-light">
+      <div class="container">
+        <div
+          class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4"
+        >
+          <div>
+            <h2 class="fw-bold mb-1">Portfolio</h2>
+            <p class="text-secondary mb-0">
+              Real estate, inspections, and thermal examples.
+            </p>
+          </div>
+          <div class="text-secondary small">
+            Tip: start with 8–12 strong images
+          </div>
+        </div>
+
+        <!-- Filter buttons -->
+        <div class="d-flex gap-2 flex-wrap mb-3">
+          <button
+            class="btn btn-sm btn-dark filter-btn"
+            type="button"
+            data-filter="all"
+          >
+            All
+          </button>
+          <button
+            class="btn btn-sm btn-outline-dark filter-btn"
+            type="button"
+            data-filter="real-estate"
+          >
+            Real Estate
+          </button>
+          <button
+            class="btn btn-sm btn-outline-dark filter-btn"
+            type="button"
+            data-filter="inspections"
+          >
+            Inspections
+          </button>
+          <button
+            class="btn btn-sm btn-outline-dark filter-btn"
+            type="button"
+            data-filter="thermal"
+          >
+            Thermal
+          </button>
+        </div>
+
+        <div class="row g-3">
+          <!-- Real Estate -->
+          <div
+            class="col-6 col-lg-3 portfolio-item"
+            data-category="real-estate"
+          >
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <img
+                src="assets/img/bedroom2.png"
+                class="w-100 h-100 object-fit-cover portfolio-img"
+                alt="Real estate 1"
+              />
+            </div>
+          </div>
+
+          <div
+            class="col-6 col-lg-3 portfolio-item"
+            data-category="real-estate"
+          >
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <img
+                src="assets/img/kitchen.png"
+                class="w-100 h-100 object-fit-cover portfolio-img"
+                alt="Real estate 2"
+              />
+            </div>
+          </div>
+
+          <!-- Inspections -->
+          <div
+            class="col-6 col-lg-3 portfolio-item"
+            data-category="inspections"
+          >
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <img
+                src="assets/img/roofred.png"
+                class="w-100 h-100 object-fit-cover portfolio-img"
+                alt="Inspection 1"
+              />
+            </div>
+          </div>
+
+          <!-- Thermal -->
+          <div class="col-6 col-lg-3 portfolio-item" data-category="thermal">
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <img
+                src="assets/img/thermalroof.png"
+                class="w-100 h-100 object-fit-cover portfolio-img"
+                alt="Thermal 1"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox (click image to expand, click overlay to close) -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <img src="" alt="Expanded portfolio image" />
+    </div>
+
     <!-- ABOUT -->
     <section id="about" class="py-5">
       <div class="container">
