@@ -565,5 +565,48 @@
         });
       });
     </script>
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = lightbox ? lightbox.querySelector("img") : null;
+
+      function openLightbox(src, alt = "") {
+        if (!lightbox || !lightboxImg) return;
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || "Expanded portfolio image";
+        lightbox.style.display = "flex";
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        if (!lightbox || !lightboxImg) return;
+        lightbox.style.display = "none";
+        lightboxImg.src = "";
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      // Open on portfolio image click (works even if you add more images later)
+      document.addEventListener("click", (e) => {
+        const img = e.target.closest(".portfolio-img");
+        if (!img) return;
+
+        // If image is inside a link, stop navigation to the image file
+        const link = img.closest("a");
+        if (link) e.preventDefault();
+
+        openLightbox(img.src, img.alt);
+      });
+
+      // Close when clicking overlay OR the image (your "click again to close")
+      if (lightbox) {
+        lightbox.addEventListener("click", () => closeLightbox());
+      }
+
+      // ESC to close
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeLightbox();
+      });
+    </script>
   </body>
 </html>
