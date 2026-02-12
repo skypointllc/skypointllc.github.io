@@ -303,6 +303,97 @@
             </div>
           </div>
 
+          <div
+            class="col-6 col-lg-3 portfolio-item"
+            data-category="real-estate"
+          >
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <img
+                src="assets/img/livingroom.png"
+                class="w-100 h-100 object-fit-cover portfolio-img"
+                alt="Real estate 1"
+              />
+            </div>
+          </div>
+
+          <div
+            class="col-6 col-lg-3 portfolio-item"
+            data-category="real-estate"
+          >
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <img
+                src="assets/img/bath.png"
+                class="w-100 h-100 object-fit-cover portfolio-img"
+                alt="Real estate 1"
+              />
+            </div>
+          </div>
+
+          <div
+            class="col-6 col-lg-3 portfolio-item"
+            data-category="real-estate"
+          >
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <img
+                src="assets/img/bedroom.png"
+                class="w-100 h-100 object-fit-cover portfolio-img"
+                alt="Real estate 1"
+              />
+            </div>
+          </div>
+
+          <div
+            class="col-6 col-lg-3 portfolio-item"
+            data-category="real-estate"
+          >
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <img
+                src="assets/img/ground2story.png"
+                class="w-100 h-100 object-fit-cover portfolio-img"
+                alt="Real estate 1"
+              />
+            </div>
+          </div>
+
+          <div
+            class="col-6 col-lg-3 portfolio-item"
+            data-category="real-estate"
+          >
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <img
+                src="assets/img/canal homes.png"
+                class="w-100 h-100 object-fit-cover portfolio-img"
+                alt="Real estate 1"
+              />
+            </div>
+          </div>
+
+          <div
+            class="col-6 col-lg-3 portfolio-item"
+            data-category="real-estate"
+          >
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <img
+                src="assets/img/miapool.png"
+                class="w-100 h-100 object-fit-cover portfolio-img"
+                alt="Real estate 1"
+              />
+            </div>
+          </div>
+
+          <div
+            class="col-6 col-lg-3 portfolio-item"
+            data-category="real-estate"
+          >
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <img
+                src="assets/img/miastaircase.png"
+                class="w-100 h-100 object-fit-cover portfolio-img"
+                alt="Real estate 1"
+              />
+            </div>
+          </div>
+
           <!-- Inspections -->
           <div
             class="col-6 col-lg-3 portfolio-item"
@@ -311,6 +402,32 @@
             <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
               <img
                 src="assets/img/roofred.png"
+                class="w-100 h-100 object-fit-cover portfolio-img"
+                alt="Inspection 1"
+              />
+            </div>
+          </div>
+
+          <div
+            class="col-6 col-lg-3 portfolio-item"
+            data-category="inspections"
+          >
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <img
+                src="assets/img/roof1.JPG"
+                class="w-100 h-100 object-fit-cover portfolio-img"
+                alt="Inspection 1"
+              />
+            </div>
+          </div>
+
+          <div
+            class="col-6 col-lg-3 portfolio-item"
+            data-category="inspections"
+          >
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <img
+                src="assets/img/roof2.JPG"
                 class="w-100 h-100 object-fit-cover portfolio-img"
                 alt="Inspection 1"
               />
@@ -333,7 +450,7 @@
 
     <!-- Lightbox (click image to expand, click overlay to close) -->
     <div class="lightbox" id="lightbox" aria-hidden="true">
-      <img src="" alt="Expanded portfolio image" />
+      <img id="lightboxImg" src="" alt="Expanded portfolio image" />
     </div>
 
     <!-- ABOUT -->
@@ -533,10 +650,14 @@
 
     <!-- Bootstrap JS (CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
+      // Auto year in footer
       document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-    <script>
+
+      // =========================
+      // Portfolio Filter Buttons
+      // =========================
       const filterButtons = document.querySelectorAll(".filter-btn");
       const portfolioItems = document.querySelectorAll(".portfolio-item");
 
@@ -549,6 +670,7 @@
             btn.classList.remove("btn-dark");
             btn.classList.add("btn-outline-dark");
           });
+
           button.classList.remove("btn-outline-dark");
           button.classList.add("btn-dark");
 
@@ -564,46 +686,42 @@
           });
         });
       });
-    </script>
-    <script>
+
+      // =========================
+      // Lightbox
+      // =========================
       const lightbox = document.getElementById("lightbox");
-      const lightboxImg = lightbox ? lightbox.querySelector("img") : null;
+      const lightboxImg = document.getElementById("lightboxImg");
 
       function openLightbox(src, alt = "") {
         if (!lightbox || !lightboxImg) return;
+
         lightboxImg.src = src;
         lightboxImg.alt = alt || "Expanded portfolio image";
         lightbox.style.display = "flex";
-        lightbox.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
       }
 
       function closeLightbox() {
         if (!lightbox || !lightboxImg) return;
+
         lightbox.style.display = "none";
         lightboxImg.src = "";
-        lightbox.setAttribute("aria-hidden", "true");
         document.body.style.overflow = "";
       }
 
-      // Open on portfolio image click (works even if you add more images later)
       document.addEventListener("click", (e) => {
         const img = e.target.closest(".portfolio-img");
         if (!img) return;
 
-        // If image is inside a link, stop navigation to the image file
         const link = img.closest("a");
         if (link) e.preventDefault();
 
-        openLightbox(img.src, img.alt);
+        openLightbox(img.getAttribute("src"), img.alt);
       });
 
-      // Close when clicking overlay OR the image (your "click again to close")
-      if (lightbox) {
-        lightbox.addEventListener("click", () => closeLightbox());
-      }
+      lightbox.addEventListener("click", closeLightbox);
 
-      // ESC to close
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeLightbox();
       });

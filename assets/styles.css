@@ -54,3 +54,20 @@ section {
   border-radius: 16px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
+
+.lightbox img {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+
+.lightbox.show img {
+  transform: scale(1);
+  opacity: 1;
+}
+/* FORCE lightbox image visible (override any earlier animation CSS) */
+.lightbox img {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
