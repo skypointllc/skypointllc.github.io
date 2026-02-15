@@ -100,12 +100,20 @@
           </div>
 
           <div class="col-lg-6">
-            <!-- Replace this placeholder with a real hero image later -->
-            <img
-              src="assets/img/heroshot2story.png"
-              class="img-fluid rounded-4 shadow-sm"
-              alt="SkyPoint hero property photo"
-            />
+            <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
+              <video
+                class="w-100 h-100 object-fit-cover"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                preload="metadata"
+              >
+                <source src="assets/video/ArborParc.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
       </div>
@@ -480,6 +488,19 @@
           >
             <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
               <img
+                src="assets/img/miastaircase.png"
+                class="w-100 h-100 object-fit-cover portfolio-img"
+                alt="Real estate 1"
+              />
+            </div>
+          </div>
+
+          <div
+            class="col-6 col-lg-3 portfolio-item"
+            data-category="real-estate"
+          >
+            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+              <img
                 src="assets/img/miapool.png"
                 class="w-100 h-100 object-fit-cover portfolio-img"
                 alt="Real estate 1"
@@ -525,26 +546,16 @@
               />
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div
-            class="col-6 col-lg-3 portfolio-item"
-            data-category="real-estate"
-          >
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
-              <img
-                src="assets/img/droneshotred.png"
-                class="w-100 h-100 object-fit-cover portfolio-img"
-                alt="Real estate 1"
-              />
-            </div>
-          </div>
-
-    
     <!-- Lightbox (click image to expand, click overlay to close) -->
     <div class="lightbox" id="lightbox" aria-hidden="true">
       <img id="lightboxImg" src="" alt="Expanded portfolio image" />
     </div>
 
+    <!-- ABOUT -->
     <!-- ABOUT -->
     <section id="about" class="py-5">
       <div class="container">
