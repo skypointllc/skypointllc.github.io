@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SkyPoint LLC | Photography & Drone Services</title>
+    <title>SkyPoint LLC | Drone Inspections</title>
     <meta
       name="description"
-      content="Real estate photography, drone roof/tower inspections, portraits, events, and weddings."
+      content="Drone inspections for roofs, solar, and towers in South Florida. FAA Part 107 compliant, fast turnaround."
     />
 
-    <!-- Bootstrap CSS (CDN) -->
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
-    <!-- Optional: Bootstrap Icons -->
+    <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
-    <!-- Your custom CSS -->
+    <!-- Your CSS -->
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
 
   <body>
-    <!-- NAVBAR -->
+    <!-- NAV -->
     <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
       <div class="container">
         <a class="navbar-brand fw-bold" href="index.html">SkyPoint LLC</a>
@@ -36,6 +36,9 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#nav"
+          aria-controls="nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,19 +46,16 @@
         <div class="collapse navbar-collapse" id="nav">
           <ul class="navbar-nav ms-auto gap-lg-2">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Real Estate</a>
+              <a class="nav-link" href="index.html#services">Real Estate</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#services">Inspection Services</a>
+              <a class="nav-link active" href="inspections.html">Inspections</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#portfolio">Inspection Portfolio</a>
+              <a class="nav-link" href="#contact">Request</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-dark ms-lg-2" href="#contact">Request Quote</a>
+              <a class="btn btn-dark ms-lg-2" href="#contact">Get a Quote</a>
             </li>
           </ul>
         </div>
@@ -66,44 +66,49 @@
     <header class="py-5 hero">
       <div class="container py-4">
         <div class="row align-items-center g-4">
-          <div class="col-lg-6">
+          <div class="col-lg-7">
             <p class="text-uppercase small fw-semibold text-secondary mb-2">
-              Real Estate Media • Aerial & Thermal Inspections
+              Roof • Solar • Telecom • General Site Documentation
             </p>
             <h1 class="display-5 fw-bold mb-3">
-              Professional Property Imaging & Aerial Inspection Services
+              Drone Inspections & Documentation in South Florida
             </h1>
             <p class="lead text-secondary mb-4">
-              MLS-ready real estate photography and advanced drone inspections
-              for roofs, towers, and solar installations — fast, precise, and
-              professional.
+              FAA Part 107 compliant flights, detailed photo/video deliverables,
+              and fast turnaround for field documentation and inspection
+              support.
             </p>
+
             <div class="d-flex gap-2 flex-wrap">
-              <a class="btn btn-dark btn-lg" href="#portfolio"
-                ><i class="bi bi-images me-2"></i>View Work</a
-              >
-              <a class="btn btn-outline-dark btn-lg" href="#services"
-                ><i class="bi bi-grid me-2"></i>Services</a
-              >
+              <a class="btn btn-dark btn-lg" href="#services">
+                <i class="bi bi-clipboard-check me-2"></i>Inspection Services
+              </a>
+              <a class="btn btn-outline-dark btn-lg" href="#contact">
+                <i class="bi bi-chat-left-text me-2"></i>Request a Quote
+              </a>
             </div>
 
             <div class="mt-4 d-flex gap-4 flex-wrap text-secondary small">
-              <div><i class="bi bi-check2-circle me-2"></i>MLS-ready</div>
               <div><i class="bi bi-check2-circle me-2"></i>FAA Part 107</div>
               <div>
-                <i class="bi bi-check2-circle me-2"></i>Next-day delivery (when
-                possible)
+                <i class="bi bi-check2-circle me-2"></i>Insured (optional)
+              </div>
+              <div>
+                <i class="bi bi-check2-circle me-2"></i>Organized deliverables
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6">
-            <!-- Replace this placeholder with a real hero image later -->
-            <img
-              src="assets/img/heroshot2story.png"
-              class="img-fluid rounded-4 shadow-sm"
-              alt="SkyPoint hero property photo"
-            />
+          <div class="col-lg-5">
+            <div class="p-4 bg-light rounded-4 border">
+              <div class="fw-semibold mb-2">Typical deliverables</div>
+              <ul class="text-secondary small mb-0">
+                <li>High-resolution RGB photos (close-ups + overviews)</li>
+                <li>Video clips (steady, inspection-style passes)</li>
+                <li>Optional: annotated findings (circles/arrows)</li>
+                <li>Delivery via share link with organized folders</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -116,434 +121,199 @@
           class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4"
         >
           <div>
-            <h2 class="fw-bold mb-1">Services</h2>
+            <h2 class="fw-bold mb-1">Inspection Services</h2>
             <p class="text-secondary mb-0">
-              Specialized property media, aerial inspection, thermal imaging,
-              and mapping services.
+              Built for documentation, condition checks, and visual reporting.
             </p>
           </div>
           <a class="btn btn-outline-dark" href="#contact">
-            <i class="bi bi-chat-left-text me-2"></i>Request pricing
+            <i class="bi bi-lightning-charge me-2"></i>Fast quote
           </a>
         </div>
 
         <div class="row g-4">
-          <!-- Real Estate Media -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border-0 shadow-sm rounded-4">
               <div class="card-body p-4">
-                <div class="icon-circle mb-3">
-                  <i class="bi bi-house-door"></i>
-                </div>
-                <h5 class="fw-bold">Real Estate Media</h5>
+                <div class="icon-circle mb-3"><i class="bi bi-house"></i></div>
+                <h5 class="fw-bold">Roof Inspections</h5>
                 <p class="text-secondary mb-3">
-                  MLS-ready photo, aerial, and video packages designed to market
-                  properties effectively.
+                  Missing shingles, flashing, penetrations, gutters, storm
+                  damage documentation.
                 </p>
                 <ul class="text-secondary small ps-3 mb-0">
-                  <li>Interior &amp; exterior photography</li>
-                  <li>Aerial photo &amp; video</li>
-                  <li>360° virtual tours</li>
-                  <li>2D floor plans</li>
-                  <li>Twilight edits &amp; reels</li>
+                  <li>Detail + overview coverage</li>
+                  <li>Consistent angles per roof plane</li>
+                  <li>Optional annotated issues</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- Aerial Inspection & Asset Documentation -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border-0 shadow-sm rounded-4">
               <div class="card-body p-4">
-                <div class="icon-circle mb-3">
-                  <i class="bi bi-broadcast-pin"></i>
-                </div>
-                <h5 class="fw-bold">
-                  Aerial Inspection &amp; Asset Documentation
-                </h5>
+                <div class="icon-circle mb-3"><i class="bi bi-sun"></i></div>
+                <h5 class="fw-bold">Solar Inspections</h5>
                 <p class="text-secondary mb-3">
-                  High-resolution aerial documentation for structures, projects,
-                  and condition reporting.
+                  Panel condition documentation, wiring overview, layout
+                  coverage.
                 </p>
                 <ul class="text-secondary small ps-3 mb-0">
-                  <li>Roof condition documentation</li>
-                  <li>Tower &amp; commercial structure inspections</li>
-                  <li>Solar panel visual inspection</li>
-                  <li>Storm damage documentation</li>
-                  <li>Construction progress monitoring</li>
-                  <li>HVAC rooftop inspections</li>
+                  <li>Array overviews + close-ups</li>
+                  <li>Row-by-row passes</li>
+                  <li>Optional thermal (if applicable)</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- Thermal & Diagnostic Imaging -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border-0 shadow-sm rounded-4">
               <div class="card-body p-4">
                 <div class="icon-circle mb-3">
-                  <i class="bi bi-thermometer-half"></i>
+                  <i class="bi bi-broadcast"></i>
                 </div>
-                <h5 class="fw-bold">Thermal &amp; Diagnostic Imaging</h5>
+                <h5 class="fw-bold">Telecom / Towers</h5>
                 <p class="text-secondary mb-3">
-                  Infrared imaging to identify heat anomalies, moisture
-                  indicators, and performance issues.
+                  Antenna mounts, dish alignment visuals, cabling runs, general
+                  condition reporting.
                 </p>
                 <ul class="text-secondary small ps-3 mb-0">
-                  <li>Roof moisture indicators</li>
-                  <li>Solar hotspot detection</li>
-                  <li>Energy loss / heat leak checks</li>
-                  <li>Flat roof membrane scanning</li>
-                  <li>Irrigation anomaly detection</li>
-                  <li>Vegetation heat stress screening</li>
+                  <li>Structured shot list</li>
+                  <li>Multiple elevations</li>
+                  <li>Safety-first standoff distances</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- Mapping & Spatial Data -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border-0 shadow-sm rounded-4">
               <div class="card-body p-4">
                 <div class="icon-circle mb-3">
-                  <i class="bi bi-grid-3x3"></i>
+                  <i class="bi bi-geo-alt"></i>
                 </div>
-                <h5 class="fw-bold">Mapping &amp; Spatial Data</h5>
+                <h5 class="fw-bold">Site Documentation</h5>
                 <p class="text-secondary mb-3">
-                  High-resolution mapping and 3D models for documentation,
-                  visualization, and measurement.
+                  Progress photos, construction documentation, and
+                  marketing-safe overviews.
                 </p>
                 <ul class="text-secondary small ps-3 mb-0">
-                  <li>2D orthomosaic maps</li>
-                  <li>3D property models</li>
-                  <li>Roof measurement overlays</li>
-                  <li>Site overview mapping</li>
-                  <li>Construction site mapping</li>
+                  <li>Progress timelines</li>
+                  <li>Before/after sets</li>
+                  <li>Consistent framing</li>
                 </ul>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="mt-4 text-secondary small">
+          Note: I provide inspection documentation; engineering determinations
+          are handled by licensed professionals.
         </div>
       </div>
     </section>
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="py-5 bg-light">
+    <!-- SLIDESHOW -->
+    <section class="py-5 bg-light">
       <div class="container">
+        <h2 class="fw-bold mb-4 text-center">Inspection Examples</h2>
+
         <div
-          class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4"
+          id="inspectionCarousel"
+          class="carousel slide carousel-fade"
+          data-bs-ride="carousel"
+          data-bs-interval="3500"
         >
-          <div>
-            <h2 class="fw-bold mb-1">Portfolio</h2>
-            <p class="text-secondary mb-0">
-              Real estate, inspections, and thermal examples.
-            </p>
-          </div>
-          <div class="text-secondary small">
-            Tip: start with 8–12 strong images
-          </div>
-        </div>
-
-        <!-- Filter buttons -->
-        <div class="d-flex gap-2 flex-wrap mb-3">
-          <button
-            class="btn btn-sm btn-dark filter-btn"
-            type="button"
-            data-filter="all"
-          >
-            All
-          </button>
-          <button
-            class="btn btn-sm btn-outline-dark filter-btn"
-            type="button"
-            data-filter="real-estate"
-          >
-            Real Estate
-          </button>
-          <button
-            class="btn btn-sm btn-outline-dark filter-btn"
-            type="button"
-            data-filter="inspections"
-          >
-            Inspections
-          </button>
-          <button
-            class="btn btn-sm btn-outline-dark filter-btn"
-            type="button"
-            data-filter="thermal"
-          >
-            Thermal
-          </button>
-        </div>
-
-        <div class="row g-3">
-          <!-- Real Estate -->
-          <div
-            class="col-6 col-lg-3 portfolio-item"
-            data-category="real-estate"
-          >
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
-              <img
-                src="assets/img/bedroom2.png"
-                class="w-100 h-100 object-fit-cover portfolio-img"
-                alt="Real estate 1"
-              />
-            </div>
+          <!-- Indicators -->
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#inspectionCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#inspectionCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#inspectionCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#inspectionCarousel"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
+            ></button>
           </div>
 
-          <div
-            class="col-6 col-lg-3 portfolio-item"
-            data-category="real-estate"
-          >
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
-              <img
-                src="assets/img/kitchen.png"
-                class="w-100 h-100 object-fit-cover portfolio-img"
-                alt="Real estate 2"
-              />
-            </div>
-          </div>
-
-          <div
-            class="col-6 col-lg-3 portfolio-item"
-            data-category="real-estate"
-          >
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
-              <img
-                src="assets/img/livingroom.png"
-                class="w-100 h-100 object-fit-cover portfolio-img"
-                alt="Real estate 1"
-              />
-            </div>
-          </div>
-
-          <div
-            class="col-6 col-lg-3 portfolio-item"
-            data-category="real-estate"
-          >
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
-              <img
-                src="assets/img/bath.png"
-                class="w-100 h-100 object-fit-cover portfolio-img"
-                alt="Real estate 1"
-              />
-            </div>
-          </div>
-
-          <div
-            class="col-6 col-lg-3 portfolio-item"
-            data-category="real-estate"
-          >
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
-              <img
-                src="assets/img/bedroom.png"
-                class="w-100 h-100 object-fit-cover portfolio-img"
-                alt="Real estate 1"
-              />
-            </div>
-          </div>
-
-          <div
-            class="col-6 col-lg-3 portfolio-item"
-            data-category="real-estate"
-          >
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
-              <img
-                src="assets/img/ground2story.png"
-                class="w-100 h-100 object-fit-cover portfolio-img"
-                alt="Real estate 1"
-              />
-            </div>
-          </div>
-
-          <div
-            class="col-6 col-lg-3 portfolio-item"
-            data-category="real-estate"
-          >
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
-              <img
-                src="assets/img/canal homes.png"
-                class="w-100 h-100 object-fit-cover portfolio-img"
-                alt="Real estate 1"
-              />
-            </div>
-          </div>
-
-          <div
-            class="col-6 col-lg-3 portfolio-item"
-            data-category="real-estate"
-          >
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
-              <img
-                src="assets/img/miapool.png"
-                class="w-100 h-100 object-fit-cover portfolio-img"
-                alt="Real estate 1"
-              />
-            </div>
-          </div>
-
-          <div
-            class="col-6 col-lg-3 portfolio-item"
-            data-category="real-estate"
-          >
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
-              <img
-                src="assets/img/miastaircase.png"
-                class="w-100 h-100 object-fit-cover portfolio-img"
-                alt="Real estate 1"
-              />
-            </div>
-          </div>
-
-          <!-- Inspections -->
-          <div
-            class="col-6 col-lg-3 portfolio-item"
-            data-category="inspections"
-          >
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+          <div class="carousel-inner rounded-4 shadow-sm">
+            <div class="carousel-item active">
               <img
                 src="assets/img/roofred.png"
-                class="w-100 h-100 object-fit-cover portfolio-img"
-                alt="Inspection 1"
+                class="d-block w-100 object-fit-cover inspection-img"
+                alt="Roof inspection example"
+                style="cursor: pointer"
               />
             </div>
-          </div>
 
-          <div
-            class="col-6 col-lg-3 portfolio-item"
-            data-category="inspections"
-          >
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+            <div class="carousel-item">
               <img
-                src="assets/img/roof1.JPG"
-                class="w-100 h-100 object-fit-cover portfolio-img"
-                alt="Inspection 1"
+                src="assets/img/solarbanelbadcells.png"
+                class="d-block w-100 object-fit-cover inspection-img"
+                alt="Solar inspection example"
+                style="cursor: pointer"
               />
             </div>
-          </div>
 
-          <div
-            class="col-6 col-lg-3 portfolio-item"
-            data-category="inspections"
-          >
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
-              <img
-                src="assets/img/roof2.JPG"
-                class="w-100 h-100 object-fit-cover portfolio-img"
-                alt="Inspection 1"
-              />
-            </div>
-          </div>
-
-          <!-- Thermal -->
-          <div class="col-6 col-lg-3 portfolio-item" data-category="thermal">
-            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-sm">
+            <div class="carousel-item">
               <img
                 src="assets/img/thermalroof.png"
-                class="w-100 h-100 object-fit-cover portfolio-img"
-                alt="Thermal 1"
+                class="d-block w-100 object-fit-cover inspection-img"
+                alt="Thermal roof inspection"
+                style="cursor: pointer"
+              />
+            </div>
+
+            <div class="carousel-item">
+              <img
+                src="assets/img/tower.png"
+                class="d-block w-100 object-fit-cover inspection-img"
+                alt="Telecom inspection"
+                style="cursor: pointer"
               />
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Lightbox (click image to expand, click overlay to close) -->
-    <div class="lightbox" id="lightbox" aria-hidden="true">
-      <img id="lightboxImg" src="" alt="Expanded portfolio image" />
-    </div>
-
-    <!-- ABOUT -->
-    <section id="about" class="py-5">
-      <div class="container">
-        <div class="row g-4 align-items-center">
-          <div class="col-lg-6">
-            <h2 class="fw-bold mb-2">About SkyPoint</h2>
-            <p class="text-secondary">
-              SkyPoint LLC specializes in professional property media and aerial
-              inspection services throughout Palm Beach County and surrounding
-              areas. From MLS-ready real estate photography to high-resolution
-              roof, solar, and structural documentation, every project is
-              approached with precision, clarity, and efficiency.
-            </p>
-
-            <p class="text-secondary">
-              Combining FAA Part 107 certified drone operations with advanced
-              imaging tools, SkyPoint delivers organized, client-ready visuals
-              for agents, property owners, contractors, and commercial clients
-              who require reliable documentation and professional presentation.
-            </p>
-
-            <div class="row g-3 mt-2">
-              <div class="col-sm-6">
-                <div class="p-3 border rounded-4 h-100">
-                  <div class="fw-semibold">
-                    <i class="bi bi-camera2 me-2"></i>Media-Focused
-                  </div>
-                  <div class="text-secondary small">
-                    Clean composition, straight verticals, balanced lighting,
-                    and fast MLS delivery.
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6">
-                <div class="p-3 border rounded-4 h-100">
-                  <div class="fw-semibold">
-                    <i class="bi bi-shield-check me-2"></i>Inspection-Ready
-                  </div>
-                  <div class="text-secondary small">
-                    Organized aerial documentation, thermal imaging, and clear
-                    reporting visuals.
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6">
-                <div class="p-3 border rounded-4 h-100">
-                  <div class="fw-semibold">
-                    <i class="bi bi-geo-alt me-2"></i>Local & Reliable
-                  </div>
-                  <div class="text-secondary small">
-                    Serving residential and commercial properties across South
-                    Florida.
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6">
-                <div class="p-3 border rounded-4 h-100">
-                  <div class="fw-semibold">
-                    <i class="bi bi-lightning-charge me-2"></i>Efficient
-                    Turnaround
-                  </div>
-                  <div class="text-secondary small">
-                    Clear timelines, organized folders, and professional
-                    delivery links.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="p-4 bg-light rounded-4 border">
-              <h5 class="fw-bold mb-3">Core Capabilities</h5>
-              <ul class="text-secondary mb-4">
-                <li>Real estate photo, video, and aerial media</li>
-                <li>Roof, tower, and commercial inspections</li>
-                <li>Thermal & diagnostic imaging</li>
-                <li>High-resolution orthomosaic mapping</li>
-                <li>2D floor plans & spatial documentation</li>
-              </ul>
-
-              <h6 class="fw-semibold mb-2">Service Area</h6>
-              <p class="text-secondary mb-0">
-                Palm Beach County and surrounding South Florida communities.
-              </p>
-            </div>
-          </div>
+          <!-- Controls -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#inspectionCarousel"
+            data-bs-slide="prev"
+            aria-label="Previous"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#inspectionCarousel"
+            data-bs-slide="next"
+            aria-label="Next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
         </div>
       </div>
     </section>
@@ -553,70 +323,60 @@
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-6">
-            <h2 class="fw-bold mb-2">Contact</h2>
+            <h2 class="fw-bold mb-2">Request an Inspection Quote</h2>
             <p class="text-secondary">
-              Tell me what you need and your timeline. I’ll reply with pricing
-              and availability.
+              Tell me the site location, type of inspection, and timeline. I’ll
+              reply with availability and pricing.
             </p>
 
             <div class="d-grid gap-2">
-              <!-- Replace with your real info -->
               <a
                 class="btn btn-dark btn-lg"
-                href="mailto:youremail@example.com"
+                href="mailto:william.bateau@outlook.com"
               >
-                <i class="bi bi-envelope me-2"></i>Email: youremail@example.com
+                <i class="bi bi-envelope me-2"></i>Email:
+                william.bateau@outlook.com
               </a>
-              <a class="btn btn-outline-dark btn-lg" href="tel:+1XXXXXXXXXX">
-                <i class="bi bi-telephone me-2"></i>Call/Text: (XXX) XXX-XXXX
+              <a class="btn btn-outline-dark btn-lg" href="tel:+15617073082">
+                <i class="bi bi-telephone me-2"></i>Call/Text: (561) 707-3082
               </a>
             </div>
 
             <div class="text-secondary small mt-3">
-              Optional: add Instagram / Google Business / booking link here.
+              If you prefer, email a scope + address and I can quote quickly.
             </div>
           </div>
 
           <div class="col-lg-6">
             <div class="card border-0 shadow-sm rounded-4">
               <div class="card-body p-4">
-                <h5 class="fw-bold mb-3">Quick Quote Form (static)</h5>
+                <h5 class="fw-bold mb-3">Inspection Request (Quick)</h5>
 
-                <!-- This form won’t send anywhere yet (GitHub Pages is static).
-                   Later you can connect Formspree, Google Forms, or a simple backend. -->
-                <form>
+                <!-- Temporary: opens email app -->
+                <form action="mailto:william.bateau@outlook.com" method="GET">
+                  <input
+                    type="hidden"
+                    name="subject"
+                    value="Inspection Quote Request"
+                  />
+
                   <div class="mb-3">
-                    <label class="form-label">Name</label>
-                    <input class="form-control" placeholder="Your name" />
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input class="form-control" placeholder="you@example.com" />
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label">Service</label>
-                    <select class="form-select">
-                      <option>Real Estate Photography</option>
-                      <option>Roof/Tower Inspection</option>
-                      <option>Portraits</option>
-                      <option>Events/Weddings</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label">Message</label>
-                    <textarea
+                    <label class="form-label">Request</label>
+                    <input
+                      name="body"
                       class="form-control"
-                      rows="4"
-                      placeholder="What do you need, where, and when?"
-                    ></textarea>
+                      placeholder="Name, phone, address, inspection type, timeline"
+                      required
+                    />
                   </div>
-                  <button type="button" class="btn btn-dark w-100" disabled>
-                    Submit (connect later)
+
+                  <button type="submit" class="btn btn-dark w-100">
+                    Send Request
                   </button>
-                  <div class="text-secondary small mt-2">
-                    This is disabled for now since GitHub Pages can’t process
-                    forms by itself.
+
+                  <div class="text-secondary small mt-3">
+                    (This opens your email app. We can wire a real form handler
+                    next.)
                   </div>
                 </form>
               </div>
@@ -634,63 +394,25 @@
         <div class="text-secondary small">
           © <span id="year"></span> SkyPoint LLC. All rights reserved.
         </div>
-        <div class="d-flex gap-3">
-          <!-- Replace # with your links -->
-          <a class="text-secondary" href="#" aria-label="Instagram"
-            ><i class="bi bi-instagram"></i
-          ></a>
-          <a class="text-secondary" href="#" aria-label="YouTube"
-            ><i class="bi bi-youtube"></i
-          ></a>
-          <a class="text-secondary" href="#" aria-label="Facebook"
-            ><i class="bi bi-facebook"></i
-          ></a>
-        </div>
+        <a class="text-secondary small" href="index.html">Back to Home</a>
       </div>
     </footer>
 
-    <!-- Bootstrap JS (CDN) -->
+    <!-- LIGHTBOX OVERLAY -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <img id="lightboxImg" src="" alt="Expanded inspection image" />
+    </div>
+
+    <!-- Bootstrap JS (bundle) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Page JS -->
     <script>
-      // Auto year in footer
-      document.getElementById("year").textContent = new Date().getFullYear();
+      // Footer year
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // =========================
-      // Portfolio Filter Buttons
-      // =========================
-      const filterButtons = document.querySelectorAll(".filter-btn");
-      const portfolioItems = document.querySelectorAll(".portfolio-item");
-
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const filter = button.dataset.filter;
-
-          // Button active state
-          filterButtons.forEach((btn) => {
-            btn.classList.remove("btn-dark");
-            btn.classList.add("btn-outline-dark");
-          });
-
-          button.classList.remove("btn-outline-dark");
-          button.classList.add("btn-dark");
-
-          // Show / hide items
-          portfolioItems.forEach((item) => {
-            const category = item.dataset.category;
-
-            if (filter === "all" || category === filter) {
-              item.style.display = "";
-            } else {
-              item.style.display = "none";
-            }
-          });
-        });
-      });
-
-      // =========================
       // Lightbox
-      // =========================
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightboxImg");
 
@@ -698,8 +420,9 @@
         if (!lightbox || !lightboxImg) return;
 
         lightboxImg.src = src;
-        lightboxImg.alt = alt || "Expanded portfolio image";
+        lightboxImg.alt = alt || "Expanded inspection image";
         lightbox.style.display = "flex";
+        lightbox.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
       }
 
@@ -707,21 +430,18 @@
         if (!lightbox || !lightboxImg) return;
 
         lightbox.style.display = "none";
+        lightbox.setAttribute("aria-hidden", "true");
         lightboxImg.src = "";
         document.body.style.overflow = "";
       }
 
       document.addEventListener("click", (e) => {
-        const img = e.target.closest(".portfolio-img");
+        const img = e.target.closest(".inspection-img");
         if (!img) return;
-
-        const link = img.closest("a");
-        if (link) e.preventDefault();
-
-        openLightbox(img.getAttribute("src"), img.alt);
+        openLightbox(img.currentSrc || img.getAttribute("src"), img.alt);
       });
 
-      lightbox.addEventListener("click", closeLightbox);
+      if (lightbox) lightbox.addEventListener("click", closeLightbox);
 
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeLightbox();
