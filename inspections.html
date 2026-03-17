@@ -19,6 +19,11 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/video.js@8/dist/video-js.min.css"
+    />
+
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
 
@@ -70,6 +75,8 @@
             <p class="lead text-secondary mb-4">
               FAA Part 107 compliant flights delivering structured photo, video
               documentation, and optional real-time live walkthroughs.
+              FAA Part 107 compliant flights delivering structured photo, video
+              documentation, and optional real-time live walkthroughs.
             </p>
 
             <div class="d-flex gap-2 flex-wrap">
@@ -83,6 +90,12 @@
 
             <div class="mt-4 d-flex gap-4 flex-wrap text-secondary small">
               <div><i class="bi bi-check2-circle me-2"></i>FAA Part 107</div>
+              <div>
+                <i class="bi bi-check2-circle me-2"></i>Organized Deliverables
+              </div>
+              <div>
+                <i class="bi bi-check2-circle me-2"></i>Live Remote Access
+              </div>
               <div>
                 <i class="bi bi-check2-circle me-2"></i>Organized Deliverables
               </div>
@@ -115,6 +128,8 @@
         <p class="text-secondary mb-4">
           Structured documentation, condition checks, and live remote walkthrough
           capability.
+          Structured documentation, condition checks, and live remote walkthrough
+          capability.
         </p>
 
         <div class="row g-4">
@@ -125,6 +140,8 @@
                 <i class="bi bi-house fs-3 mb-3"></i>
                 <h5 class="fw-bold">Roof Inspections</h5>
                 <p class="text-secondary small">
+                  Missing shingles, flashing, penetrations, gutters, storm damage
+                  documentation.
                   Missing shingles, flashing, penetrations, gutters, storm damage
                   documentation.
                 </p>
@@ -167,6 +184,8 @@
                 <p class="text-secondary small">
                   Progress timelines, photo + video documentation, before/after
                   sets.
+                  Progress timelines, photo + video documentation, before/after
+                  sets.
                 </p>
               </div>
             </div>
@@ -188,6 +207,8 @@
         </div>
 
         <div class="mt-4 text-secondary small">
+          Live feed availability depends on cellular signal strength and site
+          conditions.
           Live feed availability depends on cellular signal strength and site
           conditions.
         </div>
@@ -337,6 +358,40 @@
       </div>
     </section>
 
+    <!-- 360 CONSTRUCTION VIEW -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <h2 class="fw-bold mb-2 text-center">360 Construction Site View</h2>
+            <p class="text-secondary text-center mb-4">
+              Drag inside the video to look around the site and review progress
+              from multiple angles.
+            </p>
+
+            <div class="rounded-4 overflow-hidden shadow-sm border bg-dark">
+              <video
+                id="cilas360"
+                class="video-js vjs-default-skin vjs-big-play-centered w-100"
+                controls
+                preload="auto"
+                playsinline
+                muted
+              >
+                <source src="assets/video/cilas360.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            <div class="small text-secondary mt-3 text-center">
+              Interactive 360 capture from an active construction site
+              documentation flight.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <section id="contact" class="py-5 bg-light">
       <div class="container">
@@ -415,6 +470,16 @@
         </div>
         <a class="text-secondary small" href="index.html">Back to Home</a>
       </div>
+    <!-- FOOTER -->
+    <footer class="py-4 border-top">
+      <div
+        class="container d-flex flex-wrap justify-content-between align-items-center gap-2"
+      >
+        <div class="text-secondary small">
+          © <span id="year"></span> SkyPoint LLC. All rights reserved.
+        </div>
+        <a class="text-secondary small" href="index.html">Back to Home</a>
+      </div>
     </footer>
 
     <!-- LIGHTBOX OVERLAY -->
@@ -424,6 +489,12 @@
 
     <!-- Bootstrap JS (bundle) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Video.js -->
+    <script src="https://unpkg.com/video.js@8/dist/video.min.js"></script>
+
+    <!-- 360 plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/videojs-vr@1.10.1/dist/videojs-vr.min.js"></script>
 
     <!-- Page JS -->
     <script>
@@ -464,6 +535,16 @@
 
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeLightbox();
+      });
+
+      // 360 video player
+      const player = videojs("cilas360");
+      player.ready(function () {
+        player.vr({
+          projection: "360",
+          debug: false,
+          forceCardboard: false,
+        });
       });
     </script>
   </body>
