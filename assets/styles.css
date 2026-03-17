@@ -3,11 +3,13 @@
   --bg-section: #ffffff;
   --accent-dark: #111111;
 }
+
 body {
   background-color: var(--bg-main);
   color: var(--accent-dark);
   scroll-behavior: smooth;
 }
+
 section {
   background-color: var(--bg-section);
   padding-top: 4rem;
@@ -27,54 +29,6 @@ section {
   justify-content: center;
   background: rgba(0, 0, 0, 0.06);
   font-size: 1.2rem;
-}
-
-/* Lightbox (shared: portfolio + inspections) */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.9);
-  display: none; /* JS turns this to flex */
-  align-items: center;
-  justify-content: center;
-  z-index: 2000; /* above Bootstrap */
-  padding: 24px;
-  cursor: zoom-out;
-}
-
-.lightbox img {
-  max-width: 92vw;
-  max-height: 92vh;
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-  display: block;
-}
-
-/* Optional: hover zoom for portfolio tiles only */
-.portfolio-img {
-  cursor: pointer;
-  transition: transform 0.25s ease;
-}
-.portfolio-img:hover {
-  transform: scale(1.03);
-}
-
-/* Optional: make carousel images consistent */
-.carousel-item img {
-  height: 500px;
-  object-fit: cover;
-}
-
-/* FORCE lightbox image visible (override any earlier animation CSS) */
-.lightbox img {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-.carousel-item img {
-  height: 500px;
-  object-fit: cover;
 }
 
 /* =========================
@@ -104,4 +58,43 @@ PORTFOLIO GRID
 
 .portfolio-card:hover img {
   transform: scale(1.02);
+}
+
+/* =========================
+LIGHTBOX
+========================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 24px;
+  cursor: zoom-out;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 92vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
+CAROUSEL
+========================= */
+
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
 }
