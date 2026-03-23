@@ -19,11 +19,6 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/video.js@8/dist/video-js.min.css"
-    />
-
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
 
@@ -73,10 +68,9 @@
               Drone Inspections, Video Documentation & Live Feed
             </h1>
             <p class="lead text-secondary mb-4">
-              FAA Part 107 compliant flights delivering structured photo, video
-              documentation, and optional real-time live walkthroughs.
-              FAA Part 107 compliant flights delivering structured photo, video
-              documentation, and optional real-time live walkthroughs.
+              FAA Part 107 compliant flights delivering structured photo, video documentation, and
+              optional real-time live walkthroughs. FAA Part 107 compliant flights delivering
+              structured photo, video documentation, and optional real-time live walkthroughs.
             </p>
 
             <div class="d-flex gap-2 flex-wrap">
@@ -90,18 +84,10 @@
 
             <div class="mt-4 d-flex gap-4 flex-wrap text-secondary small">
               <div><i class="bi bi-check2-circle me-2"></i>FAA Part 107</div>
-              <div>
-                <i class="bi bi-check2-circle me-2"></i>Organized Deliverables
-              </div>
-              <div>
-                <i class="bi bi-check2-circle me-2"></i>Live Remote Access
-              </div>
-              <div>
-                <i class="bi bi-check2-circle me-2"></i>Organized Deliverables
-              </div>
-              <div>
-                <i class="bi bi-check2-circle me-2"></i>Live Remote Access
-              </div>
+              <div><i class="bi bi-check2-circle me-2"></i>Organized Deliverables</div>
+              <div><i class="bi bi-check2-circle me-2"></i>Live Remote Access</div>
+              <div><i class="bi bi-check2-circle me-2"></i>Organized Deliverables</div>
+              <div><i class="bi bi-check2-circle me-2"></i>Live Remote Access</div>
             </div>
           </div>
 
@@ -126,10 +112,8 @@
       <div class="container">
         <h2 class="fw-bold mb-1">Inspection Services</h2>
         <p class="text-secondary mb-4">
-          Structured documentation, condition checks, and live remote walkthrough
-          capability.
-          Structured documentation, condition checks, and live remote walkthrough
-          capability.
+          Structured documentation, condition checks, and live remote walkthrough capability.
+          Structured documentation, condition checks, and live remote walkthrough capability.
         </p>
 
         <div class="row g-4">
@@ -140,10 +124,8 @@
                 <i class="bi bi-house fs-3 mb-3"></i>
                 <h5 class="fw-bold">Roof Inspections</h5>
                 <p class="text-secondary small">
-                  Missing shingles, flashing, penetrations, gutters, storm damage
-                  documentation.
-                  Missing shingles, flashing, penetrations, gutters, storm damage
-                  documentation.
+                  Missing shingles, flashing, penetrations, gutters, storm damage documentation.
+                  Missing shingles, flashing, penetrations, gutters, storm damage documentation.
                 </p>
               </div>
             </div>
@@ -182,10 +164,8 @@
                 <i class="bi bi-geo-alt fs-3 mb-3"></i>
                 <h5 class="fw-bold">Site Documentation</h5>
                 <p class="text-secondary small">
-                  Progress timelines, photo + video documentation, before/after
-                  sets.
-                  Progress timelines, photo + video documentation, before/after
-                  sets.
+                  Progress timelines, photo + video documentation, before/after sets. Progress
+                  timelines, photo + video documentation, before/after sets.
                 </p>
               </div>
             </div>
@@ -198,8 +178,22 @@
                 <i class="bi bi-camera-video fs-3 mb-3"></i>
                 <h5 class="fw-bold">Live Video Feed</h5>
                 <p class="text-secondary small">
-                  Real-time remote walkthroughs with recorded backup delivery.
-                  Ideal for project managers, insurers, and remote stakeholders.
+                  Real-time remote walkthroughs with recorded backup delivery. Ideal for project
+                  managers, insurers, and remote stakeholders.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Time-Lapse -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm rounded-4">
+              <div class="card-body p-4">
+                <i class="bi bi-camera-reels fs-3 mb-3"></i>
+                <h5 class="fw-bold">Time-Lapse Documentation</h5>
+                <p class="text-secondary small">
+                  Scheduled progress capture for construction, renovations, and long-term projects
+                  with edited recap delivery options.
                 </p>
               </div>
             </div>
@@ -207,10 +201,8 @@
         </div>
 
         <div class="mt-4 text-secondary small">
-          Live feed availability depends on cellular signal strength and site
-          conditions.
-          Live feed availability depends on cellular signal strength and site
-          conditions.
+          Live feed availability depends on cellular signal strength and site conditions. Live feed
+          availability depends on cellular signal strength and site conditions.
         </div>
       </div>
     </section>
@@ -245,13 +237,17 @@
                 <td>Site Documentation</td>
                 <td class="fw-semibold">$200</td>
               </tr>
+              <tr>
+                <td>Time-Lapse Documentation</td>
+                <td class="fw-semibold">$450</td>
+              </tr>
             </tbody>
           </table>
         </div>
 
         <div class="mt-4 small text-secondary">
-          <strong>Add-ons:</strong> Thermal imaging (+$75–$125), live video feed
-          (+$125), rush turnaround (+$50), extended coverage (quoted).
+          <strong>Add-ons:</strong> Thermal imaging (+$75–$125), live video feed (+$125), rush
+          turnaround (+$50), extended coverage (quoted).
         </div>
       </div>
     </section>
@@ -358,34 +354,45 @@
       </div>
     </section>
 
-    <!-- 360 CONSTRUCTION VIEW -->
-    <section class="py-5">
+    <!-- SITE VIDEO -->
+    <section id="site-video" class="py-5 bg-light">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <h2 class="fw-bold mb-2 text-center">360 Construction Site View</h2>
-            <p class="text-secondary text-center mb-4">
-              Drag inside the video to look around the site and review progress
-              from multiple angles.
+        <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4">
+          <div>
+            <h2 class="fw-bold mb-1">Site Video</h2>
+            <p class="text-secondary mb-0">
+              Ground and aerial video documentation for construction and inspection work.
             </p>
+          </div>
+        </div>
 
-            <div class="rounded-4 overflow-hidden shadow-sm border bg-dark">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8">
+            <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
               <video
-                id="cilas360"
-                class="video-js vjs-default-skin vjs-big-play-centered w-100"
-                controls
-                preload="auto"
-                playsinline
+                class="w-100 h-100 object-fit-cover"
+                autoplay
                 muted
+                loop
+                playsinline
+                controls
+                preload="metadata"
               >
-                <source src="assets/video/cilas360.mp4" type="video/mp4" />
+                <source src="assets/video/cilas.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
+          </div>
 
-            <div class="small text-secondary mt-3 text-center">
-              Interactive 360 capture from an active construction site
-              documentation flight.
+          <div class="col-lg-4">
+            <div class="p-4 bg-white rounded-4 border h-100">
+              <h5 class="fw-bold mb-3">What this shows</h5>
+              <ul class="text-secondary mb-0">
+                <li>Current site conditions</li>
+                <li>Progress documentation</li>
+                <li>Ground and aerial perspectives</li>
+                <li>Clear visual updates for clients and teams</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -399,17 +406,13 @@
           <div class="col-lg-6">
             <h2 class="fw-bold mb-2">Request an Inspection Quote</h2>
             <p class="text-secondary">
-              Tell me the site location, type of inspection, and timeline. I’ll
-              reply with availability and pricing.
+              Tell me the site location, type of inspection, and timeline. I’ll reply with
+              availability and pricing.
             </p>
 
             <div class="d-grid gap-2">
-              <a
-                class="btn btn-dark btn-lg"
-                href="mailto:william.bateau@outlook.com"
-              >
-                <i class="bi bi-envelope me-2"></i>Email:
-                william.bateau@outlook.com
+              <a class="btn btn-dark btn-lg" href="mailto:william.bateau@outlook.com">
+                <i class="bi bi-envelope me-2"></i>Email: william.bateau@outlook.com
               </a>
               <a class="btn btn-outline-dark btn-lg" href="tel:+15617073082">
                 <i class="bi bi-telephone me-2"></i>Call/Text: (561) 707-3082
@@ -428,11 +431,7 @@
 
                 <!-- Temporary: opens email app -->
                 <form action="mailto:william.bateau@outlook.com" method="GET">
-                  <input
-                    type="hidden"
-                    name="subject"
-                    value="Inspection Quote Request"
-                  />
+                  <input type="hidden" name="subject" value="Inspection Quote Request" />
 
                   <div class="mb-3">
                     <label class="form-label">Request</label>
@@ -444,13 +443,10 @@
                     />
                   </div>
 
-                  <button type="submit" class="btn btn-dark w-100">
-                    Send Request
-                  </button>
+                  <button type="submit" class="btn btn-dark w-100">Send Request</button>
 
                   <div class="text-secondary small mt-3">
-                    (This opens your email app. We can wire a real form handler
-                    next.)
+                    (This opens your email app. We can wire a real form handler next.)
                   </div>
                 </form>
               </div>
@@ -462,19 +458,7 @@
 
     <!-- FOOTER -->
     <footer class="py-4 border-top">
-      <div
-        class="container d-flex flex-wrap justify-content-between align-items-center gap-2"
-      >
-        <div class="text-secondary small">
-          © <span id="year"></span> SkyPoint LLC. All rights reserved.
-        </div>
-        <a class="text-secondary small" href="index.html">Back to Home</a>
-      </div>
-    <!-- FOOTER -->
-    <footer class="py-4 border-top">
-      <div
-        class="container d-flex flex-wrap justify-content-between align-items-center gap-2"
-      >
+      <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
         <div class="text-secondary small">
           © <span id="year"></span> SkyPoint LLC. All rights reserved.
         </div>
@@ -490,61 +474,45 @@
     <!-- Bootstrap JS (bundle) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Video.js -->
-    <script src="https://unpkg.com/video.js@8/dist/video.min.js"></script>
-
-    <!-- 360 plugin -->
-    <script src="https://cdn.jsdelivr.net/npm/videojs-vr@1.10.1/dist/videojs-vr.min.js"></script>
-
     <!-- Page JS -->
     <script>
       // Footer year
-      const yearEl = document.getElementById("year");
+      const yearEl = document.getElementById('year');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
       // Lightbox
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightboxImg");
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
 
-      function openLightbox(src, alt = "") {
+      function openLightbox(src, alt = '') {
         if (!lightbox || !lightboxImg) return;
 
         lightboxImg.src = src;
-        lightboxImg.alt = alt || "Expanded inspection image";
-        lightbox.style.display = "flex";
-        lightbox.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
+        lightboxImg.alt = alt || 'Expanded inspection image';
+        lightbox.style.display = 'flex';
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
       }
 
       function closeLightbox() {
         if (!lightbox || !lightboxImg) return;
 
-        lightbox.style.display = "none";
-        lightbox.setAttribute("aria-hidden", "true");
-        lightboxImg.src = "";
-        document.body.style.overflow = "";
+        lightbox.style.display = 'none';
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImg.src = '';
+        document.body.style.overflow = '';
       }
 
-      document.addEventListener("click", (e) => {
-        const img = e.target.closest(".inspection-img");
+      document.addEventListener('click', (e) => {
+        const img = e.target.closest('.inspection-img');
         if (!img) return;
-        openLightbox(img.currentSrc || img.getAttribute("src"), img.alt);
+        openLightbox(img.currentSrc || img.getAttribute('src'), img.alt);
       });
 
-      if (lightbox) lightbox.addEventListener("click", closeLightbox);
+      if (lightbox) lightbox.addEventListener('click', closeLightbox);
 
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeLightbox();
-      });
-
-      // 360 video player
-      const player = videojs("cilas360");
-      player.ready(function () {
-        player.vr({
-          projection: "360",
-          debug: false,
-          forceCardboard: false,
-        });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
       });
     </script>
   </body>
