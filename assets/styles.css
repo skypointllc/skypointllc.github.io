@@ -188,3 +188,32 @@ HERO VIDEO
     transform: translateX(-50%) translateY(8px);
   }
 }
+
+/* =========================
+NAVBAR
+========================= */
+.navbar {
+  background: transparent !important;
+  border-bottom: none !important;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+}
+
+.navbar .btn-dark {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-color: #fff;
+}
+
+.navbar {
+  background: transparent !important;
+  border-bottom: none !important;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
