@@ -61,6 +61,7 @@
         overflow: hidden;
         padding-top: 3rem;
         padding-bottom: 3rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.35);
       }
 
       /* Blurred zoomed video behind pricing */
@@ -73,7 +74,7 @@
         transform: translate(-50%, -50%) scale(1.4);
         object-fit: cover;
         z-index: 0;
-        filter: blur(18px) brightness(0.4);
+        filter: blur(18px) brightness(0.55);
         pointer-events: none;
       }
 
@@ -81,7 +82,7 @@
       .pricing-overlay {
         position: absolute;
         inset: 0;
-        background: rgba(8, 10, 15, 0.72);
+        background: rgba(8, 10, 15, 0.52);
         z-index: 1;
       }
 
@@ -253,6 +254,22 @@
         max-width: 500px;
         margin-bottom: 1.75rem;
       }
+
+      /* ── FOOTER ── */
+      footer {
+        background: #111;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+      }
+      footer .text-secondary {
+        color: rgba(255, 255, 255, 0.4) !important;
+      }
+      footer a.text-secondary {
+        color: rgba(255, 255, 255, 0.4) !important;
+        transition: color 0.2s ease;
+      }
+      footer a.text-secondary:hover {
+        color: #fff !important;
+      }
     </style>
   </head>
 
@@ -289,7 +306,7 @@
       </div>
     </nav>
 
-    <!-- HERO VIDEO — original, untouched -->
+    <!-- HERO VIDEO -->
     <header class="hero-video-section">
       <video autoplay muted loop playsinline class="hero-video">
         <source src="assets/video/Hero_Video_Full.mp4" type="video/mp4" />
@@ -309,17 +326,12 @@
       <a href="#pricing" class="hero-scroll"><i class="bi bi-chevron-down"></i></a>
     </header>
 
-    <!-- PRICING SECTION — separate blurred video behind it -->
+    <!-- PRICING SECTION -->
     <section id="pricing">
-      <!-- Blurred zoomed background video -->
       <video autoplay muted loop playsinline class="pricing-bg-video">
         <source src="assets/video/Hero_Video_Full.mp4" type="video/mp4" />
       </video>
-
-      <!-- Dark overlay -->
       <div class="pricing-overlay"></div>
-
-      <!-- Content -->
       <div class="pricing-content">
         <div class="container">
           <div class="text-center mb-3">
@@ -352,7 +364,6 @@
                 </div>
               </div>
             </div>
-
             <div class="col-md-6 col-lg-3">
               <div class="pricing-card">
                 <div class="card-body">
@@ -373,7 +384,6 @@
                 </div>
               </div>
             </div>
-
             <div class="col-md-6 col-lg-3">
               <div class="pricing-card">
                 <div class="card-body">
@@ -392,7 +402,6 @@
                 </div>
               </div>
             </div>
-
             <div class="col-md-6 col-lg-3">
               <div class="pricing-card">
                 <div class="card-body">
@@ -426,7 +435,6 @@
                 </div>
               </div>
             </div>
-
             <div class="col-md-4">
               <div class="pricing-card featured">
                 <div class="card-body">
@@ -438,7 +446,6 @@
                 </div>
               </div>
             </div>
-
             <div class="col-md-4">
               <div class="pricing-card">
                 <div class="card-body">
@@ -502,26 +509,88 @@
       </div>
     </div>
 
-    <!-- ABOUT -->
+    <!-- ABOUT / OWNER -->
     <section id="about" class="py-5 bg-light">
       <div class="container">
-        <div class="row g-4 align-items-center">
-          <div class="col-lg-6">
-            <h2 class="fw-bold mb-2">About SkyPoint</h2>
+        <div class="row g-4 align-items-start">
+          <!-- Photo Card -->
+          <div class="col-lg-3 col-md-4">
+            <div
+              class="text-center p-4 rounded-4"
+              style="background: #1a1a1a; border: 0.5px solid rgba(255, 255, 255, 0.1)"
+            >
+              <img
+                src="assets/img/mypic.jpg"
+                alt="Will Bateau — Owner, SkyPoint LLC"
+                class="rounded-3 mb-3"
+                style="width: 100%; max-width: 180px; height: 210px; object-fit: cover"
+              />
+              <p class="fw-semibold mb-0" style="color: #fff">Will Bateau</p>
+              <p class="small mb-3" style="color: rgba(255, 255, 255, 0.5)">
+                Owner &amp; Lead Photographer
+              </p>
+              <div class="d-flex flex-wrap gap-2 justify-content-center mb-3">
+                <span
+                  class="badge rounded-pill"
+                  style="
+                    background: rgba(255, 255, 255, 0.08);
+                    border: 0.5px solid rgba(255, 255, 255, 0.15);
+                    color: rgba(255, 255, 255, 0.7);
+                    font-weight: 400;
+                  "
+                  >FAA Part 107</span
+                >
+                <span
+                  class="badge rounded-pill"
+                  style="
+                    background: rgba(255, 255, 255, 0.08);
+                    border: 0.5px solid rgba(255, 255, 255, 0.15);
+                    color: rgba(255, 255, 255, 0.7);
+                    font-weight: 400;
+                  "
+                  >Palm Beach Co.</span
+                >
+              </div>
+              <div
+                class="d-flex align-items-center justify-content-center gap-2 rounded-3 py-2 px-3"
+                style="
+                  background: rgba(185, 151, 90, 0.15);
+                  border: 0.5px solid rgba(185, 151, 90, 0.45);
+                  color: #c9aa6a;
+                  font-size: 0.82rem;
+                  font-weight: 500;
+                "
+              >
+                <i class="bi bi-shield-shaded"></i>
+                Veteran-Owned Business
+              </div>
+            </div>
+          </div>
+
+          <!-- Bio + About Content -->
+          <div class="col-lg-9 col-md-8">
+            <p
+              class="text-uppercase text-secondary small fw-semibold mb-1"
+              style="letter-spacing: 0.12em"
+            >
+              About SkyPoint
+            </p>
+            <h2 class="fw-bold mb-3">Local Expertise.<br />Professional Results.</h2>
             <p class="text-secondary">
-              SkyPoint LLC specializes in professional real estate photography and listing media
-              throughout Palm Beach County and surrounding South Florida communities. Every property
-              is captured with attention to lighting, composition, and detail to help listings stand
-              out in a competitive market.
+              I started SkyPoint LLC to bring a higher standard of visual media to real estate
+              agents across Palm Beach County. Every shoot is handled personally — from scheduling
+              to final delivery — so you always know what to expect and can list with confidence.
             </p>
             <p class="text-secondary">
               From clean MLS-ready interior photography to high-impact aerial imagery and short-form
               social media reels, SkyPoint delivers polished, organized media that helps agents
               market confidently and attract serious buyers.
             </p>
-            <div class="row g-3 mt-2">
+
+            <!-- Feature Boxes -->
+            <div class="row g-3 mt-1 mb-3">
               <div class="col-sm-6">
-                <div class="p-3 border rounded-4 h-100">
+                <div class="p-3 border rounded-4 h-100" style="background: #f8f9fa">
                   <div class="fw-semibold"><i class="bi bi-camera2 me-2"></i>MLS-Ready Quality</div>
                   <div class="text-secondary small">
                     Straight verticals, natural color balance, and clean edits optimized for MLS and
@@ -530,7 +599,7 @@
                 </div>
               </div>
               <div class="col-sm-6">
-                <div class="p-3 border rounded-4 h-100">
+                <div class="p-3 border rounded-4 h-100" style="background: #f8f9fa">
                   <div class="fw-semibold">
                     <i class="bi bi-airplane me-2"></i>Licensed Drone Operator
                   </div>
@@ -540,7 +609,7 @@
                 </div>
               </div>
               <div class="col-sm-6">
-                <div class="p-3 border rounded-4 h-100">
+                <div class="p-3 border rounded-4 h-100" style="background: #f8f9fa">
                   <div class="fw-semibold"><i class="bi bi-clock me-2"></i>Fast Turnaround</div>
                   <div class="text-secondary small">
                     Organized delivery links with typical next-day turnaround for most listings.
@@ -548,7 +617,7 @@
                 </div>
               </div>
               <div class="col-sm-6">
-                <div class="p-3 border rounded-4 h-100">
+                <div class="p-3 border rounded-4 h-100" style="background: #f8f9fa">
                   <div class="fw-semibold">
                     <i class="bi bi-geo-alt me-2"></i>Local &amp; Reliable
                   </div>
@@ -558,20 +627,27 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-6">
+
+            <!-- Why Agents + Service Area -->
             <div class="p-4 bg-white rounded-4 border">
-              <h5 class="fw-bold mb-3">Why Agents Work With SkyPoint</h5>
-              <ul class="text-secondary mb-4">
-                <li>Consistent image quality across every listing</li>
-                <li>Clear communication and reliable scheduling</li>
-                <li>Modern media that performs on social platforms</li>
-                <li>Professional presentation that reflects your brand</li>
-              </ul>
-              <h6 class="fw-semibold mb-2">Service Area</h6>
-              <p class="text-secondary mb-0">
-                Palm Beach County and select South Florida communities.
-              </p>
+              <div class="row g-3">
+                <div class="col-md-7">
+                  <h5 class="fw-bold mb-3">Why Agents Work With SkyPoint</h5>
+                  <ul class="text-secondary mb-0">
+                    <li>Consistent image quality across every listing</li>
+                    <li>Clear communication and reliable scheduling</li>
+                    <li>Modern media that performs on social platforms</li>
+                    <li>Professional presentation that reflects your brand</li>
+                  </ul>
+                </div>
+                <div class="col-md-5 border-start">
+                  <h6 class="fw-semibold mb-2 ps-3">Service Area</h6>
+                  <p class="text-secondary mb-0 ps-3">
+                    Palm Beach County and select South Florida communities. Travel fees may apply
+                    outside Palm Beach County.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -579,82 +655,156 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="py-5">
+    <section id="contact" class="py-5" style="background: #1a1a1a">
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-6">
-            <h2 class="fw-bold mb-2">Contact</h2>
-            <p class="text-secondary">
+            <p
+              class="text-uppercase fw-semibold small mb-1"
+              style="letter-spacing: 0.12em; color: rgba(255, 255, 255, 0.5)"
+            >
+              Get In Touch
+            </p>
+            <h2 class="fw-bold mb-2" style="color: #fff">Contact</h2>
+            <p style="color: rgba(255, 255, 255, 0.6)">
               Tell me about the property, the services you need, and your timeline. I'll reply with
               availability and a custom quote.
             </p>
             <div class="d-grid gap-2">
-              <a class="btn btn-dark btn-lg" href="mailto:william.bateau@outlook.com"
-                ><i class="bi bi-envelope me-2"></i>Email: william.bateau@outlook.com</a
+              <a
+                class="btn btn-lg"
+                href="mailto:william.bateau@outlook.com"
+                style="
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.2);
+                  color: #fff;
+                "
               >
-              <a class="btn btn-outline-dark btn-lg" href="tel:+15617073082"
-                ><i class="bi bi-telephone me-2"></i>Call/Text: (561) 707-3082</a
+                <i class="bi bi-envelope me-2"></i>william.bateau@outlook.com
+              </a>
+              <a
+                class="btn btn-lg"
+                href="tel:+15617073082"
+                style="
+                  background: transparent;
+                  border: 1px solid rgba(255, 255, 255, 0.15);
+                  color: rgba(255, 255, 255, 0.75);
+                "
               >
+                <i class="bi bi-telephone me-2"></i>(561) 707-3082
+              </a>
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="card border-0 shadow-sm rounded-4">
-              <div class="card-body p-4">
-                <h5 class="fw-bold mb-3">Quick Quote Form</h5>
-                <form action="https://formspree.io/f/mnjbdlgn" method="POST">
+            <div
+              class="rounded-4 p-4"
+              style="
+                background: rgba(255, 255, 255, 0.05);
+                border: 0.5px solid rgba(255, 255, 255, 0.1);
+              "
+            >
+              <h5 class="fw-bold mb-3" style="color: #fff">Quick Quote Form</h5>
+              <form action="https://formspree.io/f/mnjbdlgn" method="POST">
+                <input type="hidden" name="_next" value="https://skypointimages.com/thanks.html" />
+                <div class="mb-3">
+                  <label class="form-label small" for="name" style="color: rgba(255, 255, 255, 0.6)"
+                    >Name</label
+                  >
                   <input
-                    type="hidden"
-                    name="_next"
-                    value="https://skypointimages.com/thanks.html"
+                    id="name"
+                    name="name"
+                    class="form-control"
+                    placeholder="Your name"
+                    style="
+                      background: rgba(255, 255, 255, 0.07);
+                      border: 0.5px solid rgba(255, 255, 255, 0.15);
+                      color: #fff;
+                    "
+                    required
                   />
-                  <div class="mb-3">
-                    <label class="form-label" for="name">Name</label>
-                    <input
-                      id="name"
-                      name="name"
-                      class="form-control"
-                      placeholder="Your name"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label" for="email">Email</label>
-                    <input
-                      id="email"
-                      type="email"
-                      name="email"
-                      class="form-control"
-                      placeholder="you@example.com"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label" for="service">Service</label>
-                    <select id="service" name="service" class="form-select" required>
-                      <option value="" selected disabled>Select a service</option>
-                      <option>Real Estate Photography</option>
-                      <option>Drone Photos</option>
-                      <option>Vertical Video Reel</option>
-                      <option>360° Virtual Tour</option>
-                      <option>Floor Plan</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label" for="message">Message</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      class="form-control"
-                      rows="4"
-                      placeholder="Property address (or area), size, and your timeline."
-                      required
-                    ></textarea>
-                  </div>
-                  <input type="text" name="_gotcha" style="display: none" />
-                  <button type="submit" class="btn btn-dark w-100">Submit</button>
-                </form>
-              </div>
+                </div>
+                <div class="mb-3">
+                  <label
+                    class="form-label small"
+                    for="email"
+                    style="color: rgba(255, 255, 255, 0.6)"
+                    >Email</label
+                  >
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="you@example.com"
+                    style="
+                      background: rgba(255, 255, 255, 0.07);
+                      border: 0.5px solid rgba(255, 255, 255, 0.15);
+                      color: #fff;
+                    "
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label
+                    class="form-label small"
+                    for="service"
+                    style="color: rgba(255, 255, 255, 0.6)"
+                    >Service</label
+                  >
+                  <select
+                    id="service"
+                    name="service"
+                    class="form-select"
+                    style="
+                      background: rgba(255, 255, 255, 0.07);
+                      border: 0.5px solid rgba(255, 255, 255, 0.15);
+                      color: #fff;
+                    "
+                    required
+                  >
+                    <option value="" selected disabled>Select a service</option>
+                    <option>Real Estate Photography</option>
+                    <option>Drone Photos</option>
+                    <option>Vertical Video Reel</option>
+                    <option>360° Virtual Tour</option>
+                    <option>Floor Plan</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label
+                    class="form-label small"
+                    for="message"
+                    style="color: rgba(255, 255, 255, 0.6)"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Property address (or area), size, and your timeline."
+                    style="
+                      background: rgba(255, 255, 255, 0.07);
+                      border: 0.5px solid rgba(255, 255, 255, 0.15);
+                      color: #fff;
+                    "
+                    required
+                  ></textarea>
+                </div>
+                <input type="text" name="_gotcha" style="display: none" />
+                <button
+                  type="submit"
+                  class="btn w-100"
+                  style="
+                    background: rgba(255, 255, 255, 0.15);
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    color: #fff;
+                  "
+                >
+                  Submit
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -665,7 +815,7 @@
     <footer class="py-4 border-top">
       <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
         <div class="text-secondary small">
-          © <span id="year"></span> SkyPoint LLC. All rights reserved.
+          &copy; <span id="year"></span> SkyPoint LLC. All rights reserved.
         </div>
         <div class="d-flex gap-3">
           <a class="text-secondary" href="#" aria-label="Instagram"
