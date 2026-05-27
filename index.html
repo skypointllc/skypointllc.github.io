@@ -8,29 +8,261 @@
       name="description"
       content="Professional real estate photography, aerial media, and social listing content for agents and property marketing in South Florida."
     />
-
-    <!-- Bootstrap CSS (CDN) -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
-    <!-- Optional: Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-
-    <!-- Your custom CSS -->
     <link rel="stylesheet" href="assets/styles.css" />
+    <style>
+      /* ── NAVBAR ── */
+      .navbar {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        background: transparent !important;
+        transition:
+          background 0.35s ease,
+          box-shadow 0.35s ease;
+      }
+      .navbar.scrolled {
+        background: #111111 !important;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+      }
+      .navbar .nav-link,
+      .navbar .navbar-brand {
+        color: #fff !important;
+      }
+      .navbar .btn-dark {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+      .navbar.scrolled .btn-dark {
+        background: #fff;
+        color: #111;
+        border-color: #fff;
+      }
+      .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+      .navbar-toggler-icon {
+        filter: invert(1);
+      }
+
+      /* ── PRICING SECTION ── */
+      #pricing {
+        position: relative;
+        overflow: hidden;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      /* Blurred zoomed video behind pricing */
+      .pricing-bg-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 140%;
+        min-height: 140%;
+        transform: translate(-50%, -50%) scale(1.4);
+        object-fit: cover;
+        z-index: 0;
+        filter: blur(18px) brightness(0.4);
+        pointer-events: none;
+      }
+
+      /* Dark overlay on top of blurred video */
+      .pricing-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(8, 10, 15, 0.72);
+        z-index: 1;
+      }
+
+      /* All pricing content above the video */
+      .pricing-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .pricing-section-title {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: 600;
+      }
+      #pricing h2 {
+        color: #fff;
+      }
+
+      /* ── PRICING CARDS ── */
+      .pricing-card {
+        background: rgba(255, 255, 255, 0.07);
+        border: none;
+        border-top: 3px solid rgba(255, 255, 255, 0.2);
+        border-radius: 1rem;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+        height: 100%;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+      }
+      .pricing-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 36px rgba(0, 0, 0, 0.4);
+        border-top-color: rgba(255, 255, 255, 0.5);
+      }
+      .pricing-card.featured {
+        background: rgba(255, 255, 255, 0.13);
+        border-top: 3px solid #fff;
+      }
+      .pricing-card .card-body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .pricing-card .icon-circle {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+      }
+      .pricing-card h5,
+      .pricing-card h6 {
+        color: #fff;
+      }
+      .pricing-card .text-secondary {
+        color: rgba(255, 255, 255, 0.55) !important;
+      }
+      .pricing-card ul li {
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .pricing-price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #a8c4e0;
+      }
+      .pricing-price .text-secondary {
+        color: rgba(255, 255, 255, 0.4) !important;
+      }
+      .pricing-card .small {
+        color: rgba(255, 255, 255, 0.45) !important;
+      }
+
+      /* ── BUTTONS ── */
+      .btn-sp {
+        background-color: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: #fff;
+      }
+      .btn-sp:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.6);
+        color: #fff;
+      }
+      .btn-sp-outline {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .btn-sp-outline:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+
+      /* ── IMAGE BANNER ── */
+      .image-banner {
+        position: relative;
+        width: 100%;
+        height: 550px;
+        overflow: hidden;
+      }
+      .banner-track {
+        display: flex;
+        align-items: stretch;
+        height: 100%;
+        gap: 12px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+      .banner-track img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+      .banner-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(30, 30, 30, 0.68);
+        z-index: 1;
+      }
+      .banner-edge-fade {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background: linear-gradient(
+          to right,
+          rgba(20, 20, 20, 0.9) 0%,
+          transparent 18%,
+          transparent 82%,
+          rgba(20, 20, 20, 0.9) 100%
+        );
+      }
+      .banner-content {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 2rem;
+        color: #fff;
+      }
+      .banner-eyebrow {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        opacity: 0.6;
+        margin-bottom: 1rem;
+      }
+      .banner-headline {
+        font-size: clamp(1.8rem, 4.5vw, 3rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+      }
+      .banner-sub {
+        font-size: 1.15rem;
+        opacity: 0.7;
+        max-width: 500px;
+        margin-bottom: 1.75rem;
+      }
+    </style>
   </head>
 
   <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <nav class="navbar navbar-expand-lg" id="mainNav">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">SkyPoint LLC</a>
-
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/skypointlogowhite2.png" alt="SkyPoint Media" />
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -42,27 +274,13 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="nav">
           <ul class="navbar-nav ms-auto gap-lg-2">
-            <li class="nav-item">
-              <a class="nav-link" href="#services">Real Estate Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#reel">Reel</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="inspections.html">Inspections</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="inspections.html">Inspections</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             <li class="nav-item">
               <a class="btn btn-dark ms-lg-2" href="#contact">Get a Quote</a>
             </li>
@@ -71,331 +289,218 @@
       </div>
     </nav>
 
-    <!-- HERO -->
-    <header class="py-5 hero">
-      <div class="container py-4">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-6">
-            <p class="text-uppercase small fw-semibold text-secondary mb-2">
-              Real Estate Photography • Aerial Media • Listing Reels
-            </p>
-
-            <h1 class="display-5 fw-bold mb-3">
-              Professional Real Estate Media That Helps Listings Stand Out
-            </h1>
-
-            <p class="lead text-secondary mb-4">
-              Clean, MLS-ready photography, high-impact aerials, and modern social media reels
-              designed to attract buyers and elevate your listing presentation.
-            </p>
-
-            <div class="d-flex gap-2 flex-wrap">
-              <a class="btn btn-dark btn-lg" href="#contact">
-                <i class="bi bi-chat-left-text me-2"></i>Get a Quote
-              </a>
-
-              <a class="btn btn-outline-dark btn-lg" href="#services">
-                <i class="bi bi-grid me-2"></i>Services
-              </a>
-            </div>
-
-            <div class="mt-4 d-flex gap-4 flex-wrap text-secondary small">
-              <div><i class="bi bi-check2-circle me-2"></i>MLS-ready</div>
-              <div><i class="bi bi-check2-circle me-2"></i>FAA Part 107</div>
-              <div><i class="bi bi-check2-circle me-2"></i>Next-day delivery (when possible)</div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
-              <video
-                class="w-100 h-100 object-fit-cover"
-                autoplay
-                muted
-                loop
-                playsinline
-                controls
-                preload="metadata"
-              >
-                <source src="assets/video/ArborParc.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
+    <!-- HERO VIDEO — original, untouched -->
+    <header class="hero-video-section">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="assets/video/Hero_Video_Full.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Real Estate Photography • Aerial Media • South Florida</p>
+        <h1 class="hero-headline">Elevate Every Listing</h1>
+        <p class="hero-sub">
+          Professional real estate photography and aerial media for South Florida agents.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-light btn-lg" href="#contact">Get a Quote</a>
+          <a class="btn btn-outline-light btn-lg" href="#pricing">See Pricing</a>
         </div>
       </div>
+      <a href="#pricing" class="hero-scroll"><i class="bi bi-chevron-down"></i></a>
     </header>
 
-    <!-- SERVICES (REAL ESTATE ONLY) -->
-    <section id="services" class="py-5">
-      <div class="container">
-        <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4">
-          <div>
-            <h2 class="fw-bold mb-1">Real Estate Services</h2>
-            <p class="text-secondary mb-0">
-              MLS-ready photography and marketing media built to help listings stand out.
+    <!-- PRICING SECTION — separate blurred video behind it -->
+    <section id="pricing">
+      <!-- Blurred zoomed background video -->
+      <video autoplay muted loop playsinline class="pricing-bg-video">
+        <source src="assets/video/Hero_Video_Full.mp4" type="video/mp4" />
+      </video>
+
+      <!-- Dark overlay -->
+      <div class="pricing-overlay"></div>
+
+      <!-- Content -->
+      <div class="pricing-content">
+        <div class="container">
+          <div class="text-center mb-3">
+            <p class="pricing-section-title mb-1">Transparent Pricing</p>
+            <h2 class="fw-bold mb-1">Simple. No Hidden Fees.</h2>
+            <p class="mb-0" style="color: rgba(255, 255, 255, 0.55); font-size: 0.95rem">
+              Competitive rates for South Florida agents. Custom quotes available for larger
+              properties.
             </p>
           </div>
-        </div>
 
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-3">
-            <div class="card h-100 border-0 shadow-sm rounded-4">
-              <div class="card-body p-4">
-                <div class="icon-circle mb-3"><i class="bi bi-camera"></i></div>
-                <h5 class="fw-bold">Photography</h5>
-                <p class="text-secondary mb-3">
-                  Clean composition, straight verticals, natural color, MLS-ready delivery.
-                </p>
-                <ul class="text-secondary small ps-3 mb-0">
-                  <li>Interior + exterior</li>
-                  <li>HDR / natural blend</li>
-                  <li>Detail shots as needed</li>
-                  <li>Next-day delivery (typical)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="card h-100 border-0 shadow-sm rounded-4">
-              <div class="card-body p-4">
-                <div class="icon-circle mb-3">
-                  <i class="bi bi-airplane-engines"></i>
+          <!-- INDIVIDUAL SERVICES -->
+          <p class="pricing-section-title mb-2 mt-3">Individual Services</p>
+          <div class="row g-3 mb-3">
+            <div class="col-md-6 col-lg-3">
+              <div class="pricing-card">
+                <div class="card-body">
+                  <div class="icon-circle mb-3"><i class="bi bi-camera"></i></div>
+                  <h5 class="fw-bold mb-1">Photography</h5>
+                  <p class="text-secondary small mb-3">
+                    Clean, MLS-ready images for every listing.
+                  </p>
+                  <div class="pricing-price mb-3">Starting at $160</div>
+                  <ul class="text-secondary small ps-3 mb-0 text-start">
+                    <li>Interior + exterior coverage</li>
+                    <li>Professional HDR editing</li>
+                    <li>MLS-ready delivery</li>
+                    <li>Next-day turnaround (typical)</li>
+                  </ul>
                 </div>
-                <h5 class="fw-bold">Drone Photos</h5>
-                <p class="text-secondary mb-3">
-                  High-impact aerials that show location, lot lines, and curb appeal.
-                </p>
-                <ul class="text-secondary small ps-3 mb-0">
-                  <li>Front elevation + neighborhood</li>
-                  <li>Backyard / pool / waterfront</li>
-                  <li>Height variety for context</li>
-                  <li>FAA Part 107 compliant</li>
-                </ul>
               </div>
             </div>
-          </div>
 
-          <div class="col-md-6 col-lg-3">
-            <div class="card h-100 border-0 shadow-sm rounded-4">
-              <div class="card-body p-4">
-                <div class="icon-circle mb-3"><i class="bi bi-phone"></i></div>
-                <h5 class="fw-bold">Vertical Video Reels</h5>
-                <p class="text-secondary mb-3">
-                  Short, modern listing reels optimized for Instagram, TikTok, and YouTube Shorts.
-                </p>
-                <ul class="text-secondary small ps-3 mb-0">
-                  <li>15–45 seconds</li>
-                  <li>Clean transitions + pacing</li>
-                  <li>Agent-friendly branding safe</li>
-                  <li>Delivered ready-to-post</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="card h-100 border-0 shadow-sm rounded-4">
-              <div class="card-body p-4">
-                <div class="icon-circle mb-3">
-                  <i class="bi bi-badge-3d"></i>
+            <div class="col-md-6 col-lg-3">
+              <div class="pricing-card">
+                <div class="card-body">
+                  <div class="icon-circle mb-3"><i class="bi bi-airplane-engines"></i></div>
+                  <h5 class="fw-bold mb-1">Drone Media</h5>
+                  <p class="text-secondary small mb-3">
+                    Aerials that show lot, location, and curb appeal.
+                  </p>
+                  <div class="pricing-price mb-3">
+                    $75 <span class="fs-6 fw-normal text-secondary">add-on</span>
+                  </div>
+                  <ul class="text-secondary small ps-3 mb-0 text-start">
+                    <li>8–12 aerial photos</li>
+                    <li>Front elevation + neighborhood</li>
+                    <li>Backyard / pool / waterfront</li>
+                    <li>FAA Part 107 certified</li>
+                  </ul>
                 </div>
-                <h5 class="fw-bold">360° + Floor Plan</h5>
-                <p class="text-secondary mb-3">
-                  Add-on media that increases time-on-listing and buyer confidence.
-                </p>
-                <ul class="text-secondary small ps-3 mb-0">
-                  <li>360° virtual tour</li>
-                  <li>2D floor plan (basic)</li>
-                  <li>Ideal for out-of-town buyers</li>
-                  <li>Great for higher-end homes</li>
-                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="pricing-card">
+                <div class="card-body">
+                  <div class="icon-circle mb-3"><i class="bi bi-phone"></i></div>
+                  <h5 class="fw-bold mb-1">Video & Reels</h5>
+                  <p class="text-secondary small mb-3">
+                    Short-form vertical video for social media.
+                  </p>
+                  <div class="pricing-price mb-3">Starting at $200</div>
+                  <ul class="text-secondary small ps-3 mb-0 text-start">
+                    <li>15–45 second reels</li>
+                    <li>Instagram / TikTok ready</li>
+                    <li>Smooth transitions + pacing</li>
+                    <li>Ready-to-post delivery</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="pricing-card">
+                <div class="card-body">
+                  <div class="icon-circle mb-3"><i class="bi bi-badge-3d"></i></div>
+                  <h5 class="fw-bold mb-1">360° Tour + Floor Plan</h5>
+                  <p class="text-secondary small mb-3">
+                    Immersive add-ons that boost buyer confidence.
+                  </p>
+                  <div class="pricing-price mb-3">From $125</div>
+                  <ul class="text-secondary small ps-3 mb-0 text-start">
+                    <li>360° virtual tour: $200</li>
+                    <li>2D floor plan: $125</li>
+                    <li>Great for out-of-town buyers</li>
+                    <li>Ideal for larger homes</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="mt-4 text-secondary small">
-          Need something custom (twilight, community amenities, commercial)? Just ask.
-        </div>
-      </div>
-    </section>
+          <!-- PACKAGES -->
+          <p class="pricing-section-title mb-2">Popular Packages</p>
+          <div class="row g-3 mb-3">
+            <div class="col-md-4">
+              <div class="pricing-card">
+                <div class="card-body">
+                  <h5 class="fw-bold mb-1">Core Listing</h5>
+                  <p class="text-secondary small mb-2">Photography + Drone</p>
+                  <div class="pricing-price mb-1">Base + $75</div>
+                  <div class="small">Most popular for single-family homes</div>
+                </div>
+              </div>
+            </div>
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="py-5">
-      <div class="container">
-        <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4">
-          <div>
-            <h2 class="fw-bold mb-1">Portfolio</h2>
-            <p class="text-secondary mb-0">
-              A sample of interior, exterior, and aerial real estate media.
+            <div class="col-md-4">
+              <div class="pricing-card featured">
+                <div class="card-body">
+                  <div class="pricing-section-title mb-1">Most Popular</div>
+                  <h5 class="fw-bold mb-1">Marketing Package</h5>
+                  <p class="text-secondary small mb-2">Photography + Drone + Reel</p>
+                  <div class="pricing-price mb-1">Base + $250</div>
+                  <div class="small">Best for agents focused on social exposure</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="pricing-card">
+                <div class="card-body">
+                  <h5 class="fw-bold mb-1">Premium Listing</h5>
+                  <p class="text-secondary small mb-2">Photos + Drone + Reel + Floor Plan</p>
+                  <div class="pricing-price mb-1">Base + $325</div>
+                  <div class="small">Larger homes and high-end listings</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center pb-2">
+            <p class="mb-3" style="color: rgba(255, 255, 255, 0.45); font-size: 0.88rem">
+              Pricing varies by property size. Travel fees may apply outside Palm Beach County.
             </p>
-          </div>
-          <a class="btn btn-outline-dark" href="#contact">
-            <i class="bi bi-chat-left-text me-2"></i>Book a Shoot
-          </a>
-        </div>
-
-        <div class="portfolio-feature mb-4">
-          <img
-            src="assets/img/kitchen1.jpg"
-            alt=""
-            class="img-fluid w-100 rounded-4 shadow-sm portfolio-expand"
-          />
-        </div>
-
-        <div class="row g-3">
-          <div class="col-sm-6 col-lg-4">
-            <div class="portfolio-card">
-              <img
-                src="assets/img/kitchen2.jpg"
-                alt=""
-                class="img-fluid w-100 rounded-4 portfolio-expand"
-              />
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="portfolio-card">
-              <img
-                src="assets/img/livingroom2.jpg"
-                alt=""
-                class="img-fluid w-100 rounded-4 portfolio-expand"
-              />
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="portfolio-card">
-              <img
-                src="assets/img/livingroom1.jpg"
-                alt=""
-                class="img-fluid w-100 rounded-4 portfolio-expand"
-              />
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="portfolio-card">
-              <img
-                src="assets/img/bedroom1.jpg"
-                alt=""
-                class="img-fluid w-100 rounded-4 portfolio-expand"
-              />
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="portfolio-card">
-              <img
-                src="assets/img/bedroom3.jpg"
-                alt=""
-                class="img-fluid w-100 rounded-4 portfolio-expand"
-              />
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="portfolio-card">
-              <img
-                src="assets/img/bathroom1.jpg"
-                alt=""
-                class="img-fluid w-100 rounded-4 portfolio-expand"
-              />
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="portfolio-card">
-              <img
-                src="assets/img/pool1.jpg"
-                alt=""
-                class="img-fluid w-100 rounded-4 portfolio-expand"
-              />
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="portfolio-card">
-              <img
-                src="assets/img/patio2.jpg"
-                alt=""
-                class="img-fluid w-100 rounded-4 portfolio-expand"
-              />
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="portfolio-card">
-              <img
-                src="assets/img/patio1.jpg"
-                alt=""
-                class="img-fluid w-100 rounded-4 portfolio-expand"
-              />
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="portfolio-card">
-              <img
-                src="assets/img/heroshot.jpg"
-                alt=""
-                class="img-fluid w-100 rounded-4 portfolio-expand"
-              />
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="portfolio-card">
-              <img
-                src="assets/img/twilighthouse.png"
-                alt=""
-                class="img-fluid w-100 rounded-4 portfolio-expand"
-              />
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-4">
-            <div class="portfolio-card">
-              <img
-                src="assets/img/drone_redarrow2.png"
-                alt=""
-                class="img-fluid w-100 rounded-4 portfolio-expand"
-              />
-            </div>
+            <a href="client-pricing.html" class="btn btn-sp-outline me-2">View Full Pricing</a>
+            <a href="#contact" class="btn btn-sp">Get a Custom Quote</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="reel" class="py-5 bg-light">
-      <div class="container">
-        <div class="text-center mb-4">
-          <h2 class="fw-bold mb-1">Listing Video Reel</h2>
-          <p class="text-secondary mb-0">
-            Short-form vertical video designed for social media marketing.
-          </p>
-        </div>
-
-        <div class="d-flex justify-content-center">
-          <div style="max-width: 400px; width: 100%">
-            <div class="ratio" style="aspect-ratio: 9/16">
-              <video
-                class="w-100 h-100 rounded-4 shadow-sm object-fit-cover"
-                autoplay
-                muted
-                loop
-                playsinline
-                controls
-              >
-                <source src="assets/video/reel.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
-        </div>
+    <!-- IMAGE BANNER -->
+    <div class="image-banner">
+      <div class="banner-track" id="bannerTrack">
+        <img src="assets/img/kitchen1.jpg" alt="" />
+        <img src="assets/img/livingroom1.jpg" alt="" />
+        <img src="assets/img/bedroom1.jpg" alt="" />
+        <img src="assets/img/pool1.jpg" alt="" />
+        <img src="assets/img/heroshot.jpg" alt="" />
+        <img src="assets/img/twilighthouse.png" alt="" />
+        <img src="assets/img/kitchen2.jpg" alt="" />
+        <img src="assets/img/livingroom2.jpg" alt="" />
+        <img src="assets/img/bedroom3.jpg" alt="" />
+        <img src="assets/img/bathroom1.jpg" alt="" />
+        <img src="assets/img/patio1.jpg" alt="" />
+        <img src="assets/img/patio2.jpg" alt="" />
+        <img src="assets/img/drone_redarrow2.png" alt="" />
+        <img src="assets/img/kitchen1.jpg" alt="" />
+        <img src="assets/img/livingroom1.jpg" alt="" />
+        <img src="assets/img/bedroom1.jpg" alt="" />
+        <img src="assets/img/pool1.jpg" alt="" />
+        <img src="assets/img/heroshot.jpg" alt="" />
+        <img src="assets/img/twilighthouse.png" alt="" />
+        <img src="assets/img/kitchen2.jpg" alt="" />
+        <img src="assets/img/livingroom2.jpg" alt="" />
+        <img src="assets/img/bedroom3.jpg" alt="" />
+        <img src="assets/img/bathroom1.jpg" alt="" />
+        <img src="assets/img/patio1.jpg" alt="" />
+        <img src="assets/img/patio2.jpg" alt="" />
+        <img src="assets/img/drone_redarrow2.png" alt="" />
       </div>
-    </section>
+      <div class="banner-overlay"></div>
+      <div class="banner-edge-fade"></div>
+      <div class="banner-content">
+        <p class="banner-eyebrow">SkyPoint Media • Palm Beach County</p>
+        <h2 class="banner-headline">First Impressions Start Here.</h2>
+        <p class="banner-sub">Professional media that gets listings noticed.</p>
+        <a class="btn btn-light btn-lg" href="portfolio.html">View Our Portfolio</a>
+      </div>
+    </div>
 
     <!-- ABOUT -->
     <section id="about" class="py-5 bg-light">
@@ -403,20 +508,17 @@
         <div class="row g-4 align-items-center">
           <div class="col-lg-6">
             <h2 class="fw-bold mb-2">About SkyPoint</h2>
-
             <p class="text-secondary">
               SkyPoint LLC specializes in professional real estate photography and listing media
               throughout Palm Beach County and surrounding South Florida communities. Every property
               is captured with attention to lighting, composition, and detail to help listings stand
               out in a competitive market.
             </p>
-
             <p class="text-secondary">
               From clean MLS-ready interior photography to high-impact aerial imagery and short-form
               social media reels, SkyPoint delivers polished, organized media that helps agents
               market confidently and attract serious buyers.
             </p>
-
             <div class="row g-3 mt-2">
               <div class="col-sm-6">
                 <div class="p-3 border rounded-4 h-100">
@@ -427,7 +529,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-sm-6">
                 <div class="p-3 border rounded-4 h-100">
                   <div class="fw-semibold">
@@ -438,7 +539,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-sm-6">
                 <div class="p-3 border rounded-4 h-100">
                   <div class="fw-semibold"><i class="bi bi-clock me-2"></i>Fast Turnaround</div>
@@ -447,10 +547,11 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-sm-6">
                 <div class="p-3 border rounded-4 h-100">
-                  <div class="fw-semibold"><i class="bi bi-geo-alt me-2"></i>Local & Reliable</div>
+                  <div class="fw-semibold">
+                    <i class="bi bi-geo-alt me-2"></i>Local &amp; Reliable
+                  </div>
                   <div class="text-secondary small">
                     Serving residential properties across Palm Beach County and surrounding areas.
                   </div>
@@ -458,18 +559,15 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-6">
             <div class="p-4 bg-white rounded-4 border">
               <h5 class="fw-bold mb-3">Why Agents Work With SkyPoint</h5>
-
               <ul class="text-secondary mb-4">
                 <li>Consistent image quality across every listing</li>
                 <li>Clear communication and reliable scheduling</li>
                 <li>Modern media that performs on social platforms</li>
                 <li>Professional presentation that reflects your brand</li>
               </ul>
-
               <h6 class="fw-semibold mb-2">Service Area</h6>
               <p class="text-secondary mb-0">
                 Palm Beach County and select South Florida communities.
@@ -487,32 +585,28 @@
           <div class="col-lg-6">
             <h2 class="fw-bold mb-2">Contact</h2>
             <p class="text-secondary">
-              Tell me about the property, the services you need, and your timeline. I’ll reply with
+              Tell me about the property, the services you need, and your timeline. I'll reply with
               availability and a custom quote.
             </p>
-
             <div class="d-grid gap-2">
-              <a class="btn btn-dark btn-lg" href="mailto:william.bateau@outlook.com">
-                <i class="bi bi-envelope me-2"></i>Email: william.bateau@outlook.com
-              </a>
-              <a class="btn btn-outline-dark btn-lg" href="tel:+15617073082">
-                <i class="bi bi-telephone me-2"></i>Call/Text: (561) 707-3082
-              </a>
+              <a class="btn btn-dark btn-lg" href="mailto:william.bateau@outlook.com"
+                ><i class="bi bi-envelope me-2"></i>Email: william.bateau@outlook.com</a
+              >
+              <a class="btn btn-outline-dark btn-lg" href="tel:+15617073082"
+                ><i class="bi bi-telephone me-2"></i>Call/Text: (561) 707-3082</a
+              >
             </div>
           </div>
-
           <div class="col-lg-6">
             <div class="card border-0 shadow-sm rounded-4">
               <div class="card-body p-4">
                 <h5 class="fw-bold mb-3">Quick Quote Form</h5>
-
                 <form action="https://formspree.io/f/mnjbdlgn" method="POST">
                   <input
                     type="hidden"
                     name="_next"
                     value="https://skypointimages.com/thanks.html"
                   />
-
                   <div class="mb-3">
                     <label class="form-label" for="name">Name</label>
                     <input
@@ -523,7 +617,6 @@
                       required
                     />
                   </div>
-
                   <div class="mb-3">
                     <label class="form-label" for="email">Email</label>
                     <input
@@ -535,7 +628,6 @@
                       required
                     />
                   </div>
-
                   <div class="mb-3">
                     <label class="form-label" for="service">Service</label>
                     <select id="service" name="service" class="form-select" required>
@@ -548,7 +640,6 @@
                       <option>Other</option>
                     </select>
                   </div>
-
                   <div class="mb-3">
                     <label class="form-label" for="message">Message</label>
                     <textarea
@@ -560,9 +651,7 @@
                       required
                     ></textarea>
                   </div>
-
                   <input type="text" name="_gotcha" style="display: none" />
-
                   <button type="submit" class="btn btn-dark w-100">Submit</button>
                 </form>
               </div>
@@ -572,11 +661,6 @@
       </div>
     </section>
 
-    <!-- IMAGE OVERLAY -->
-    <div id="imageOverlay" class="lightbox">
-      <img id="overlayImage" src="" alt="" />
-    </div>
-
     <!-- FOOTER -->
     <footer class="py-4 border-top">
       <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
@@ -584,53 +668,64 @@
           © <span id="year"></span> SkyPoint LLC. All rights reserved.
         </div>
         <div class="d-flex gap-3">
-          <a class="text-secondary" href="#" aria-label="Instagram">
-            <i class="bi bi-instagram"></i>
-          </a>
-          <a class="text-secondary" href="#" aria-label="YouTube">
-            <i class="bi bi-youtube"></i>
-          </a>
-          <a class="text-secondary" href="#" aria-label="Facebook">
-            <i class="bi bi-facebook"></i>
-          </a>
+          <a class="text-secondary" href="#" aria-label="Instagram"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a class="text-secondary" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a class="text-secondary" href="#" aria-label="Facebook"
+            ><i class="bi bi-facebook"></i
+          ></a>
         </div>
       </div>
     </footer>
 
-    <!-- Bootstrap JS (CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      const overlay = document.getElementById('imageOverlay');
-      const overlayImage = document.getElementById('overlayImage');
-      const expandableImages = document.querySelectorAll('.portfolio-expand');
+      const nav = document.getElementById('mainNav');
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+      });
 
-      expandableImages.forEach((img) => {
-        img.addEventListener('click', function () {
-          overlayImage.src = this.src;
-          overlayImage.alt = this.alt || '';
-          overlay.classList.add('active');
-          document.body.style.overflow = 'hidden';
+      (function () {
+        const track = document.getElementById('bannerTrack');
+        const images = track.querySelectorAll('img');
+        const totalImages = images.length / 2;
+        let current = 0;
+        let offset = 0;
+
+        window.addEventListener('load', () => {
+          const gap = 12;
+
+          function getHalfWidth() {
+            return Array.from(images)
+              .slice(0, totalImages)
+              .reduce((sum, img) => {
+                return sum + img.offsetWidth + gap;
+              }, 0);
+          }
+
+          function step() {
+            const img = images[current % totalImages];
+            const stepPx = img.offsetWidth + gap;
+            offset += stepPx;
+            track.style.transition = 'transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
+            track.style.transform = `translateX(-${offset}px)`;
+            current++;
+            setTimeout(() => {
+              const halfWidth = getHalfWidth();
+              if (offset >= halfWidth) {
+                track.style.transition = 'none';
+                offset = offset - halfWidth;
+                track.style.transform = `translateX(-${offset}px)`;
+              }
+            }, 720);
+          }
+
+          setInterval(step, 2700);
         });
-      });
-
-      overlay.addEventListener('click', function () {
-        overlay.classList.remove('active');
-        overlayImage.src = '';
-        overlayImage.alt = '';
-        document.body.style.overflow = '';
-      });
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-          overlay.classList.remove('active');
-          overlayImage.src = '';
-          overlayImage.alt = '';
-          document.body.style.overflow = '';
-        }
-      });
+      })();
     </script>
   </body>
 </html>
