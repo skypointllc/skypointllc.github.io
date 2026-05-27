@@ -8,26 +8,78 @@
       name="description"
       content="Drone inspections, video documentation, and live feed services for roofs, solar, telecom, and construction in South Florida."
     />
-
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-
     <link rel="stylesheet" href="assets/styles.css" />
+    <style>
+      /* ── NAVBAR ── */
+      .navbar {
+        position: sticky !important;
+        top: 0;
+        z-index: 1030;
+        background: #111111 !important;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+      }
+      .navbar .nav-link,
+      .navbar .navbar-brand {
+        color: #fff !important;
+      }
+      .navbar .btn-outline-light {
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+      .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+      .navbar-toggler-icon {
+        filter: invert(1);
+      }
+
+      /* ── BACK TO TOP ── */
+      #backToTop {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 44px;
+        height: 44px;
+        background: #111;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 999;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+      }
+      #backToTop.visible {
+        opacity: 1;
+        pointer-events: all;
+      }
+      #backToTop:hover {
+        background: #333;
+      }
+    </style>
   </head>
 
   <body>
     <!-- NAV -->
-    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">SkyPoint LLC</a>
-
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/skypointlogowhite2.png" alt="SkyPoint Media" />
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -36,20 +88,15 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="nav">
           <ul class="navbar-nav ms-auto gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#examples">Examples</a></li>
+            <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Request</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#services">Real Estate</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="inspections.html">Inspections</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Request</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-dark ms-lg-2" href="#contact">Get a Quote</a>
+              <a class="btn btn-outline-light ms-lg-2" href="#contact">Get a Quote</a>
             </li>
           </ul>
         </div>
@@ -69,10 +116,8 @@
             </h1>
             <p class="lead text-secondary mb-4">
               FAA Part 107 compliant flights delivering structured photo, video documentation, and
-              optional real-time live walkthroughs. FAA Part 107 compliant flights delivering
-              structured photo, video documentation, and optional real-time live walkthroughs.
+              optional real-time live walkthroughs.
             </p>
-
             <div class="d-flex gap-2 flex-wrap">
               <a class="btn btn-dark btn-lg" href="#services">
                 <i class="bi bi-clipboard-check me-2"></i>Inspection Services
@@ -81,16 +126,12 @@
                 <i class="bi bi-chat-left-text me-2"></i>Request a Quote
               </a>
             </div>
-
             <div class="mt-4 d-flex gap-4 flex-wrap text-secondary small">
               <div><i class="bi bi-check2-circle me-2"></i>FAA Part 107</div>
               <div><i class="bi bi-check2-circle me-2"></i>Organized Deliverables</div>
               <div><i class="bi bi-check2-circle me-2"></i>Live Remote Access</div>
-              <div><i class="bi bi-check2-circle me-2"></i>Organized Deliverables</div>
-              <div><i class="bi bi-check2-circle me-2"></i>Live Remote Access</div>
             </div>
           </div>
-
           <div class="col-lg-5">
             <div class="p-4 bg-light rounded-4 border">
               <div class="fw-semibold mb-2">Typical Deliverables</div>
@@ -113,11 +154,8 @@
         <h2 class="fw-bold mb-1">Inspection Services</h2>
         <p class="text-secondary mb-4">
           Structured documentation, condition checks, and live remote walkthrough capability.
-          Structured documentation, condition checks, and live remote walkthrough capability.
         </p>
-
         <div class="row g-4">
-          <!-- Roof -->
           <div class="col-md-6 col-lg-4">
             <div class="card h-100 shadow-sm rounded-4">
               <div class="card-body p-4">
@@ -125,13 +163,10 @@
                 <h5 class="fw-bold">Roof Inspections</h5>
                 <p class="text-secondary small">
                   Missing shingles, flashing, penetrations, gutters, storm damage documentation.
-                  Missing shingles, flashing, penetrations, gutters, storm damage documentation.
                 </p>
               </div>
             </div>
           </div>
-
-          <!-- Solar -->
           <div class="col-md-6 col-lg-4">
             <div class="card h-100 shadow-sm rounded-4">
               <div class="card-body p-4">
@@ -143,8 +178,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Telecom -->
           <div class="col-md-6 col-lg-4">
             <div class="card h-100 shadow-sm rounded-4">
               <div class="card-body p-4">
@@ -156,22 +189,17 @@
               </div>
             </div>
           </div>
-
-          <!-- Site Documentation -->
           <div class="col-md-6 col-lg-4">
             <div class="card h-100 shadow-sm rounded-4">
               <div class="card-body p-4">
                 <i class="bi bi-geo-alt fs-3 mb-3"></i>
                 <h5 class="fw-bold">Site Documentation</h5>
                 <p class="text-secondary small">
-                  Progress timelines, photo + video documentation, before/after sets. Progress
-                  timelines, photo + video documentation, before/after sets.
+                  Progress timelines, photo + video documentation, before/after sets.
                 </p>
               </div>
             </div>
           </div>
-
-          <!-- Live Video Feed -->
           <div class="col-md-6 col-lg-4">
             <div class="card h-100 shadow-sm rounded-4">
               <div class="card-body p-4">
@@ -184,8 +212,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Time-Lapse -->
           <div class="col-md-6 col-lg-4">
             <div class="card h-100 shadow-sm rounded-4">
               <div class="card-body p-4">
@@ -199,10 +225,8 @@
             </div>
           </div>
         </div>
-
         <div class="mt-4 text-secondary small">
-          Live feed availability depends on cellular signal strength and site conditions. Live feed
-          availability depends on cellular signal strength and site conditions.
+          Live feed availability depends on cellular signal strength and site conditions.
         </div>
       </div>
     </section>
@@ -211,7 +235,6 @@
     <section id="pricing" class="py-5 bg-light">
       <div class="container">
         <h2 class="fw-bold mb-4">Inspection Pricing</h2>
-
         <div class="table-responsive shadow-sm rounded-4">
           <table class="table table-bordered align-middle mb-0">
             <thead class="table-dark">
@@ -244,7 +267,6 @@
             </tbody>
           </table>
         </div>
-
         <div class="mt-4 small text-secondary">
           <strong>Add-ons:</strong> Thermal imaging (+$75–$125), live video feed (+$125), rush
           turnaround (+$50), extended coverage (quoted).
@@ -252,18 +274,16 @@
       </div>
     </section>
 
-    <!-- SLIDESHOW -->
-    <section class="py-5 bg-light">
+    <!-- EXAMPLES -->
+    <section id="examples" class="py-5 bg-light">
       <div class="container">
-        <h2 class="fw-bold mb-4 text-center">Inspection Examples</h2>
-
+        <h2 class="fw-bold mb-4 text-center">Examples</h2>
         <div
           id="inspectionCarousel"
           class="carousel slide carousel-fade"
           data-bs-ride="carousel"
           data-bs-interval="3500"
         >
-          <!-- Indicators -->
           <div class="carousel-indicators">
             <button
               type="button"
@@ -292,7 +312,6 @@
               aria-label="Slide 4"
             ></button>
           </div>
-
           <div class="carousel-inner rounded-4 shadow-sm">
             <div class="carousel-item active">
               <img
@@ -302,7 +321,6 @@
                 style="cursor: pointer"
               />
             </div>
-
             <div class="carousel-item">
               <img
                 src="assets/img/solarbanelbadcells.png"
@@ -311,7 +329,6 @@
                 style="cursor: pointer"
               />
             </div>
-
             <div class="carousel-item">
               <img
                 src="assets/img/thermalroof.png"
@@ -320,7 +337,6 @@
                 style="cursor: pointer"
               />
             </div>
-
             <div class="carousel-item">
               <img
                 src="assets/img/tower.png"
@@ -330,8 +346,6 @@
               />
             </div>
           </div>
-
-          <!-- Controls -->
           <button
             class="carousel-control-prev"
             type="button"
@@ -365,7 +379,6 @@
               alt="Annotated roof inspection example"
             />
           </div>
-
           <div class="col-lg-6">
             <p class="text-uppercase small fw-semibold text-secondary mb-2">Sample Deliverable</p>
             <h2 class="fw-bold mb-3">Annotated Roof Report Example</h2>
@@ -374,7 +387,6 @@
               to help clients quickly understand visible roof concerns such as ponding water, debris
               buildup, drainage issues, and possible surface deterioration.
             </p>
-
             <div class="d-flex gap-2 flex-wrap">
               <a
                 class="btn btn-dark"
@@ -384,12 +396,10 @@
               >
                 <i class="bi bi-file-earmark-pdf me-2"></i>View Sample PDF
               </a>
-
               <a class="btn btn-outline-dark" href="#contact">
                 <i class="bi bi-chat-left-text me-2"></i>Request Inspection Quote
               </a>
             </div>
-
             <div class="text-secondary small mt-3">
               Sample shown for presentation purposes. Deliverables vary by project scope.
             </div>
@@ -399,17 +409,16 @@
     </section>
 
     <!-- SITE VIDEO -->
-    <section id="site-video" class="py-5 bg-light">
+    <section id="video" class="py-5 bg-light">
       <div class="container">
         <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4">
           <div>
-            <h2 class="fw-bold mb-1">Site Video</h2>
+            <h2 class="fw-bold mb-1">Video Documentation</h2>
             <p class="text-secondary mb-0">
               Ground and aerial video documentation for construction and inspection work.
             </p>
           </div>
         </div>
-
         <div class="row g-4 align-items-center">
           <div class="col-lg-8">
             <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
@@ -427,7 +436,6 @@
               </video>
             </div>
           </div>
-
           <div class="col-lg-4">
             <div class="p-4 bg-white rounded-4 border h-100">
               <h5 class="fw-bold mb-3">What this shows</h5>
@@ -444,54 +452,70 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="py-5 bg-light">
+    <section id="contact" class="py-5">
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-6">
             <h2 class="fw-bold mb-2">Request an Inspection Quote</h2>
             <p class="text-secondary">
-              Tell me the site location, type of inspection, and timeline. I’ll reply with
+              Tell me the site location, type of inspection, and timeline. I'll reply with
               availability and pricing.
             </p>
-
             <div class="d-grid gap-2">
-              <a class="btn btn-dark btn-lg" href="mailto:william.bateau@outlook.com">
-                <i class="bi bi-envelope me-2"></i>Email: william.bateau@outlook.com
+              <a class="btn btn-dark btn-lg" href="mailto:will@skypointimages.com">
+                <i class="bi bi-envelope me-2"></i>will@skypointimages.com
               </a>
               <a class="btn btn-outline-dark btn-lg" href="tel:+15617073082">
                 <i class="bi bi-telephone me-2"></i>Call/Text: (561) 707-3082
               </a>
             </div>
-
             <div class="text-secondary small mt-3">
               If you prefer, email a scope + address and I can quote quickly.
             </div>
           </div>
-
           <div class="col-lg-6">
             <div class="card border-0 shadow-sm rounded-4">
               <div class="card-body p-4">
-                <h5 class="fw-bold mb-3">Inspection Request (Quick)</h5>
-
-                <!-- Temporary: opens email app -->
-                <form action="mailto:william.bateau@outlook.com" method="GET">
+                <h5 class="fw-bold mb-3">Inspection Request</h5>
+                <form action="mailto:will@skypointimages.com" method="GET">
                   <input type="hidden" name="subject" value="Inspection Quote Request" />
-
                   <div class="mb-3">
-                    <label class="form-label">Request</label>
+                    <label class="form-label">Name</label>
+                    <input name="name" class="form-control" placeholder="Your name" required />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Email</label>
                     <input
-                      name="body"
+                      type="email"
+                      name="email"
                       class="form-control"
-                      placeholder="Name, phone, address, inspection type, timeline"
+                      placeholder="you@example.com"
                       required
                     />
                   </div>
-
-                  <button type="submit" class="btn btn-dark w-100">Send Request</button>
-
-                  <div class="text-secondary small mt-3">
-                    (This opens your email app. We can wire a real form handler next.)
+                  <div class="mb-3">
+                    <label class="form-label">Inspection Type</label>
+                    <select name="type" class="form-select" required>
+                      <option value="" selected disabled>Select a type</option>
+                      <option>Roof Inspection</option>
+                      <option>Solar Inspection</option>
+                      <option>Telecom / Tower</option>
+                      <option>Site Documentation</option>
+                      <option>Time-Lapse Documentation</option>
+                      <option>Other</option>
+                    </select>
                   </div>
+                  <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea
+                      name="body"
+                      class="form-control"
+                      rows="4"
+                      placeholder="Site address, scope, and your timeline."
+                      required
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-dark w-100">Send Request</button>
                 </form>
               </div>
             </div>
@@ -510,27 +534,25 @@
       </div>
     </footer>
 
+    <!-- BACK TO TOP -->
+    <button id="backToTop" aria-label="Back to top">
+      <i class="bi bi-chevron-up"></i>
+    </button>
+
     <!-- LIGHTBOX OVERLAY -->
     <div class="lightbox" id="lightbox" aria-hidden="true">
       <img id="lightboxImg" src="" alt="Expanded inspection image" />
     </div>
 
-    <!-- Bootstrap JS (bundle) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Page JS -->
     <script>
-      // Footer year
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
+      document.getElementById('year').textContent = new Date().getFullYear();
 
       // Lightbox
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightboxImg');
 
       function openLightbox(src, alt = '') {
-        if (!lightbox || !lightboxImg) return;
-
         lightboxImg.src = src;
         lightboxImg.alt = alt || 'Expanded inspection image';
         lightbox.style.display = 'flex';
@@ -539,8 +561,6 @@
       }
 
       function closeLightbox() {
-        if (!lightbox || !lightboxImg) return;
-
         lightbox.style.display = 'none';
         lightbox.setAttribute('aria-hidden', 'true');
         lightboxImg.src = '';
@@ -557,6 +577,15 @@
 
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeLightbox();
+      });
+
+      // Back to top
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('visible', window.scrollY > 400);
+      });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     </script>
   </body>
