@@ -3,141 +3,588 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SkyPoint Pricing</title>
-
+    <title>Pricing | SkyPoint Media</title>
+    <meta
+      name="description"
+      content="Real estate photography and aerial media pricing for South Florida agents. Simple, transparent pricing with no hidden fees."
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <style>
+      body.dark-page {
+        background: #111 !important;
+        color: #fff !important;
+      }
+      body.dark-page section {
+        background: #111 !important;
+      }
+      body.dark-page .navbar {
+        position: sticky !important;
+        top: 0;
+        z-index: 1030;
+        background: #111111 !important;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+      }
+      body.dark-page .navbar .nav-link,
+      body.dark-page .navbar .navbar-brand {
+        color: #fff !important;
+      }
+      body.dark-page .navbar .btn-dark {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+      .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+      .navbar-toggler-icon {
+        filter: invert(1);
+      }
+
+      .pricing-hero {
+        padding: 80px 0 60px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pricing-hero h1 {
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      .pricing-hero p {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.05rem;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+
+      .section-eyebrow {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+      }
+
+      .tier-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+        padding: 1.75rem;
+        height: 100%;
+        transition:
+          border-color 0.2s ease,
+          transform 0.2s ease;
+        position: relative;
+      }
+      .tier-card:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-3px);
+      }
+      .tier-card.featured {
+        border-color: #fff;
+        background: rgba(255, 255, 255, 0.09);
+      }
+      .tier-card .badge-popular {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        color: #111;
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 3px 14px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+      }
+      .tier-price {
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 0.25rem;
+        color: #fff;
+      }
+      .tier-photos {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 1.25rem;
+      }
+      .tier-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .tier-card ul li {
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.6);
+        padding: 5px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .tier-card ul li:last-child {
+        border-bottom: none;
+      }
+      .tier-card ul li i {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.8rem;
+      }
+
+      .addon-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 6px;
+      }
+      .addon-table tr td {
+        background: rgba(255, 255, 255, 0.04);
+        padding: 14px 18px;
+        font-size: 0.92rem;
+        color: rgba(255, 255, 255, 0.8);
+        border: none;
+      }
+      .addon-table tr td:first-child {
+        border-radius: 8px 0 0 8px;
+        font-weight: 500;
+        color: #fff;
+      }
+      .addon-table tr td:last-child {
+        border-radius: 0 8px 8px 0;
+        text-align: right;
+        font-weight: 700;
+        color: #fff;
+      }
+      .addon-table tr td:nth-child(2) {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.85rem;
+      }
+
+      .bundle-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        height: 100%;
+        transition: border-color 0.2s ease;
+      }
+      .bundle-card:hover {
+        border-color: rgba(255, 255, 255, 0.25);
+      }
+      .bundle-card.featured {
+        border-color: rgba(255, 255, 255, 0.35);
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .bundle-name {
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+        color: #fff;
+      }
+      .bundle-includes {
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.45);
+        margin-bottom: 1rem;
+      }
+      .bundle-price {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+        color: #fff;
+      }
+      .bundle-note {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .example-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        height: 100%;
+      }
+      .example-card h6 {
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: rgba(255, 255, 255, 0.4);
+        margin-bottom: 0.5rem;
+      }
+      .example-card .scenario {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #fff;
+      }
+      .example-card .line-item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.6);
+        padding: 5px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .example-card .line-item:last-of-type {
+        border-bottom: none;
+      }
+      .example-card .total {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #fff;
+        margin-top: 0.75rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .cta-section {
+        background: rgba(255, 255, 255, 0.04) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 80px 0;
+        text-align: center;
+      }
+      .cta-section h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: #fff;
+      }
+      .cta-section p {
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 2rem;
+      }
+
+      footer {
+        background: #0a0a0a !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+      }
+      footer .text-secondary {
+        color: rgba(255, 255, 255, 0.35) !important;
+      }
+      footer a.text-secondary {
+        color: rgba(255, 255, 255, 0.35) !important;
+        transition: color 0.2s;
+      }
+      footer a.text-secondary:hover {
+        color: #fff !important;
+      }
+
+      .section-divider {
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        margin: 0;
+      }
+
+      h2 {
+        color: #fff;
+      }
+    </style>
   </head>
 
-  <body class="bg-light">
-    <div class="container py-5">
-      <div class="text-center mb-5">
-        <h1 class="fw-bold">Real Estate Media Pricing</h1>
-        <p class="text-secondary">
-          Simple pricing. Custom quotes based on property size, location, and services.
+  <body class="dark-page">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/skypointlogowhite2.png" alt="SkyPoint Media" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav ms-auto gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="index.html#pricing">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="inspections.html">Inspections</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+            <li class="nav-item">
+              <a class="btn btn-dark ms-lg-2" href="index.html#contact">Get a Quote</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="pricing-hero">
+      <div class="container">
+        <h1>Real Estate Media Pricing</h1>
+        <p>
+          Transparent pricing, no hidden fees. Custom quotes available for larger properties or
+          unique scope.
         </p>
-      </div>
-
-      <!-- PACKAGES -->
-      <div class="row g-4 mb-5">
-        <!-- PHOTO -->
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm rounded-4">
-            <div class="card-body p-4">
-              <h5 class="fw-bold">Photography</h5>
-              <p class="text-secondary mb-3">
-                Clean, MLS-ready images that highlight the property.
-              </p>
-
-              <div class="fs-4 fw-bold mb-3">Starting at $175</div>
-
-              <ul class="text-secondary small ps-3">
-                <li>Interior + exterior coverage</li>
-                <li>Professional editing</li>
-                <li>MLS-ready delivery</li>
-                <li>24-hour turnaround (typical)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- DRONE -->
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm rounded-4">
-            <div class="card-body p-4">
-              <h5 class="fw-bold">Drone Media</h5>
-              <p class="text-secondary mb-3">
-                Aerial photos and video to showcase location and layout.
-              </p>
-
-              <div class="fs-4 fw-bold mb-3">Starting at $125</div>
-
-              <ul class="text-secondary small ps-3">
-                <li>Aerial photography</li>
-                <li>Neighborhood context</li>
-                <li>Backyard / waterfront views</li>
-                <li>FAA compliant</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- VIDEO -->
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm rounded-4">
-            <div class="card-body p-4">
-              <h5 class="fw-bold">Video & Reels</h5>
-              <p class="text-secondary mb-3">
-                Short-form content designed for social media marketing.
-              </p>
-
-              <div class="fs-4 fw-bold mb-3">Starting at $200</div>
-
-              <ul class="text-secondary small ps-3">
-                <li>Vertical video reels</li>
-                <li>Smooth walkthrough footage</li>
-                <li>Social media optimized</li>
-                <li>Ready-to-post delivery</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- BUNDLES -->
-      <div class="mb-5">
-        <h2 class="fw-bold mb-3 text-center">Popular Packages</h2>
-
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm rounded-4">
-              <div class="card-body p-4 text-center">
-                <h5 class="fw-bold">Standard Listing</h5>
-                <p class="text-secondary mb-3">Photography + Drone</p>
-                <div class="fs-4 fw-bold mb-2">Starting at $275</div>
-                <div class="small text-secondary">Most popular for single-family homes</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm rounded-4 border border-dark">
-              <div class="card-body p-4 text-center">
-                <h5 class="fw-bold">Marketing Package</h5>
-                <p class="text-secondary mb-3">Photography + Drone + Reel</p>
-                <div class="fs-4 fw-bold mb-2">Starting at $425</div>
-                <div class="small text-secondary">Best for agents focused on exposure</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm rounded-4">
-              <div class="card-body p-4 text-center">
-                <h5 class="fw-bold">Premium Listing</h5>
-                <p class="text-secondary mb-3">Full media package</p>
-                <div class="fs-4 fw-bold mb-2">Starting at $500</div>
-                <div class="small text-secondary">Larger homes and high-end listings</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- NOTES -->
-      <div class="text-center mb-5">
-        <p class="text-secondary">
-          Final pricing depends on property size, location, and specific service needs. Travel fees
-          and custom requests may apply.
-        </p>
-      </div>
-
-      <!-- CTA -->
-      <div class="text-center">
-        <a href="index.html#contact" class="btn btn-dark btn-lg"> Get a Custom Quote </a>
       </div>
     </div>
+
+    <!-- PHOTOGRAPHY TIERS -->
+    <section class="py-5">
+      <div class="container">
+        <div class="mb-4">
+          <p class="section-eyebrow">Photography</p>
+          <h2 class="fw-bold mb-1">Choose Your Package</h2>
+          <p style="color: rgba(255, 255, 255, 0.45); font-size: 0.95rem">
+            All packages include interior + exterior coverage, professional HDR editing, and
+            MLS-ready delivery.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3">
+            <div class="tier-card">
+              <div class="tier-price">$169</div>
+              <div class="tier-photos">20 Photos</div>
+              <ul>
+                <li><i class="bi bi-check2"></i>Interior + exterior</li>
+                <li><i class="bi bi-check2"></i>HDR editing</li>
+                <li><i class="bi bi-check2"></i>MLS-ready delivery</li>
+                <li><i class="bi bi-check2"></i>Next-day turnaround</li>
+                <li><i class="bi bi-check2"></i>Great for condos & small homes</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="tier-card featured">
+              <div class="badge-popular">Most Popular</div>
+              <div class="tier-price">$199</div>
+              <div class="tier-photos">30 Photos</div>
+              <ul>
+                <li><i class="bi bi-check2"></i>Interior + exterior</li>
+                <li><i class="bi bi-check2"></i>HDR editing</li>
+                <li><i class="bi bi-check2"></i>MLS-ready delivery</li>
+                <li><i class="bi bi-check2"></i>Next-day turnaround</li>
+                <li><i class="bi bi-check2"></i>Ideal for single-family homes</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="tier-card">
+              <div class="tier-price">$249</div>
+              <div class="tier-photos">40 Photos</div>
+              <ul>
+                <li><i class="bi bi-check2"></i>Interior + exterior</li>
+                <li><i class="bi bi-check2"></i>HDR editing + detail shots</li>
+                <li><i class="bi bi-check2"></i>MLS-ready delivery</li>
+                <li><i class="bi bi-check2"></i>Next-day turnaround</li>
+                <li><i class="bi bi-check2"></i>Great for larger homes</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="tier-card">
+              <div class="tier-price">$299</div>
+              <div class="tier-photos">50+ Photos</div>
+              <ul>
+                <li><i class="bi bi-check2"></i>Interior + exterior</li>
+                <li><i class="bi bi-check2"></i>HDR editing + full detail coverage</li>
+                <li><i class="bi bi-check2"></i>MLS-ready delivery</li>
+                <li><i class="bi bi-check2"></i>Next-day turnaround</li>
+                <li><i class="bi bi-check2"></i>Luxury & high-end listings</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="mt-3" style="font-size: 0.82rem; color: rgba(255, 255, 255, 0.35)">
+          Need more coverage? Large estates and commercial properties are quoted individually.
+        </p>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ADD-ONS -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <p class="section-eyebrow">Upgrades</p>
+            <h2 class="fw-bold mb-2">Add-Ons</h2>
+            <p style="color: rgba(255, 255, 255, 0.45); font-size: 0.92rem">
+              Stack any of these onto your photography package to build a complete listing media
+              kit.
+            </p>
+          </div>
+          <div class="col-lg-7">
+            <table class="addon-table">
+              <tr>
+                <td>Drone Photos</td>
+                <td>8–12 aerials, FAA Part 107 certified</td>
+                <td>$75</td>
+              </tr>
+              <tr>
+                <td>Vertical Reel</td>
+                <td>15–45 sec, Instagram / TikTok ready</td>
+                <td>$200</td>
+              </tr>
+              <tr>
+                <td>360° Virtual Tour</td>
+                <td>Immersive walkthrough, MLS compatible</td>
+                <td>$200</td>
+              </tr>
+              <tr>
+                <td>2D Floor Plan</td>
+                <td>Basic schematic layout</td>
+                <td>$125</td>
+              </tr>
+              <tr>
+                <td>Twilight Edit</td>
+                <td>Virtual twilight conversion per image</td>
+                <td>$25 / photo</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- BUNDLES -->
+    <section class="py-5">
+      <div class="container">
+        <p class="section-eyebrow">Save More</p>
+        <h2 class="fw-bold mb-2">Popular Bundles</h2>
+        <p class="mb-4" style="color: rgba(255, 255, 255, 0.45); font-size: 0.92rem">
+          Bundle pricing applies on top of your chosen photo package.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="bundle-card">
+              <div class="bundle-name">Core Listing</div>
+              <div class="bundle-includes">Photos + Drone</div>
+              <div class="bundle-price">Base + $75</div>
+              <div class="bundle-note">
+                Most popular for single-family homes. Adds aerial context and curb appeal shots.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bundle-card featured">
+              <div class="bundle-name">Marketing Package ⭐</div>
+              <div class="bundle-includes">Photos + Drone + Reel</div>
+              <div class="bundle-price">Base + $250</div>
+              <div class="bundle-note">
+                Best for agents focused on social media exposure and maximum listing reach.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bundle-card">
+              <div class="bundle-name">Premium Listing</div>
+              <div class="bundle-includes">Photos + Drone + Reel + Floor Plan</div>
+              <div class="bundle-price">Base + $325</div>
+              <div class="bundle-note">
+                Complete media package for luxury homes and high-end listing presentations.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- EXAMPLE QUOTES -->
+    <section class="py-5">
+      <div class="container">
+        <p class="section-eyebrow">Real Examples</p>
+        <h2 class="fw-bold mb-2">What Will My Shoot Cost?</h2>
+        <p class="mb-4" style="color: rgba(255, 255, 255, 0.45); font-size: 0.92rem">
+          Here are a few common scenarios to help you estimate.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="example-card">
+              <h6>Example 1</h6>
+              <div class="scenario">Small condo, photos only</div>
+              <div class="line-item"><span>20 photos</span><span>$169</span></div>
+              <div class="total"><span>Total</span><span>$169</span></div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="example-card">
+              <h6>Example 2</h6>
+              <div class="scenario">Single-family home + drone</div>
+              <div class="line-item"><span>30 photos</span><span>$199</span></div>
+              <div class="line-item"><span>Drone add-on</span><span>$75</span></div>
+              <div class="total"><span>Total</span><span>$274</span></div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="example-card">
+              <h6>Example 3</h6>
+              <div class="scenario">Marketing package, 30 photos</div>
+              <div class="line-item"><span>30 photos</span><span>$199</span></div>
+              <div class="line-item"><span>Marketing bundle</span><span>$250</span></div>
+              <div class="total"><span>Total</span><span>$449</span></div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="example-card">
+              <h6>Example 4</h6>
+              <div class="scenario">Premium package, 40 photos</div>
+              <div class="line-item"><span>40 photos</span><span>$249</span></div>
+              <div class="line-item"><span>Premium bundle</span><span>$325</span></div>
+              <div class="total"><span>Total</span><span>$574</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="mt-3" style="font-size: 0.82rem; color: rgba(255, 255, 255, 0.35)">
+          Travel fees may apply outside Palm Beach County. Rush delivery available for $50 when
+          schedule allows.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <div class="container">
+        <h2>Ready to Book?</h2>
+        <p>
+          Tell me about the property and I'll get back to you fast with availability and a custom
+          quote.
+        </p>
+        <a href="index.html#contact" class="btn btn-light btn-lg px-5">Get a Quote</a>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="py-4 border-top">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <div class="text-secondary small">
+          &copy; <span id="year"></span> SkyPoint LLC. All rights reserved.
+        </div>
+        <div class="d-flex gap-3">
+          <a class="text-secondary" href="#" aria-label="Instagram"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a class="text-secondary" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a class="text-secondary" href="#" aria-label="Facebook"
+            ><i class="bi bi-facebook"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

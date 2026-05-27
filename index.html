@@ -61,9 +61,9 @@
         overflow: hidden;
         padding-top: 3rem;
         padding-bottom: 3rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.35);
       }
 
-      /* Blurred zoomed video behind pricing */
       .pricing-bg-video {
         position: absolute;
         top: 50%;
@@ -73,19 +73,17 @@
         transform: translate(-50%, -50%) scale(1.4);
         object-fit: cover;
         z-index: 0;
-        filter: blur(18px) brightness(0.4);
+        filter: blur(18px) brightness(0.55);
         pointer-events: none;
       }
 
-      /* Dark overlay on top of blurred video */
       .pricing-overlay {
         position: absolute;
         inset: 0;
-        background: rgba(8, 10, 15, 0.72);
+        background: rgba(8, 10, 15, 0.52);
         z-index: 1;
       }
 
-      /* All pricing content above the video */
       .pricing-content {
         position: relative;
         z-index: 2;
@@ -253,6 +251,35 @@
         max-width: 500px;
         margin-bottom: 1.75rem;
       }
+
+      /* ── FOOTER ── */
+      footer {
+        background: #111;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+      }
+      footer .text-secondary {
+        color: rgba(255, 255, 255, 0.4) !important;
+      }
+      footer a.text-secondary {
+        color: rgba(255, 255, 255, 0.4) !important;
+        transition: color 0.2s ease;
+      }
+      footer a.text-secondary:hover {
+        color: #fff !important;
+      }
+      .contact-slide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        opacity: 0;
+        transition: opacity 1.2s ease-in-out;
+      }
+      .contact-slide.active {
+        opacity: 1;
+      }
     </style>
   </head>
 
@@ -289,10 +316,10 @@
       </div>
     </nav>
 
-    <!-- HERO VIDEO — original, untouched -->
+    <!-- HERO VIDEO -->
     <header class="hero-video-section">
       <video autoplay muted loop playsinline class="hero-video">
-        <source src="assets/video/Hero_Video_Full.mp4" type="video/mp4" />
+        <source src="assets/video/homeherovid.mp4" type="video/mp4" />
       </video>
       <div class="hero-overlay"></div>
       <div class="hero-content">
@@ -309,67 +336,153 @@
       <a href="#pricing" class="hero-scroll"><i class="bi bi-chevron-down"></i></a>
     </header>
 
-    <!-- PRICING SECTION — separate blurred video behind it -->
+    <!-- PRICING SECTION -->
     <section id="pricing">
-      <!-- Blurred zoomed background video -->
       <video autoplay muted loop playsinline class="pricing-bg-video">
-        <source src="assets/video/Hero_Video_Full.mp4" type="video/mp4" />
+        <source src="assets/video/pricebgvideo.mp4" type="video/mp4" />
       </video>
-
-      <!-- Dark overlay -->
       <div class="pricing-overlay"></div>
-
-      <!-- Content -->
       <div class="pricing-content">
         <div class="container">
-          <div class="text-center mb-3">
+          <!-- HEADER -->
+          <div class="text-center mb-4">
             <p class="pricing-section-title mb-1">Transparent Pricing</p>
             <h2 class="fw-bold mb-1">Simple. No Hidden Fees.</h2>
-            <p class="mb-0" style="color: rgba(255, 255, 255, 0.55); font-size: 0.95rem">
-              Competitive rates for South Florida agents. Custom quotes available for larger
-              properties.
+            <p
+              class="mb-2"
+              style="color: rgba(255, 255, 255, 0.75); font-size: 1.05rem; font-weight: 500"
+            >
+              We price by
+              <span style="color: #fff; text-decoration: underline; text-underline-offset: 4px"
+                >number of photos</span
+              >
+              — not square footage.
+            </p>
+            <p class="mb-0" style="color: rgba(255, 255, 255, 0.5); font-size: 0.92rem">
+              Any size home. You choose how many photos you need, and that's your price.
             </p>
           </div>
 
-          <!-- INDIVIDUAL SERVICES -->
-          <p class="pricing-section-title mb-2 mt-3">Individual Services</p>
-          <div class="row g-3 mb-3">
-            <div class="col-md-6 col-lg-3">
+          <!-- CALLOUT PILL -->
+          <div class="text-center mb-4">
+            <div
+              class="d-inline-block px-4 py-2 rounded-pill"
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.25);
+                color: #fff;
+                font-size: 0.88rem;
+                letter-spacing: 0.04em;
+              "
+            >
+              <i class="bi bi-images me-2"></i>Pick your photo count &mdash; works for any size
+              property
+            </div>
+          </div>
+
+          <!-- PHOTOGRAPHY TIERS -->
+          <p class="pricing-section-title mb-2">Photography — Choose Your Photo Count</p>
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6 col-lg-3">
               <div class="pricing-card">
                 <div class="card-body">
                   <div class="icon-circle mb-3"><i class="bi bi-camera"></i></div>
-                  <h5 class="fw-bold mb-1">Photography</h5>
-                  <p class="text-secondary small mb-3">
-                    Clean, MLS-ready images for every listing.
-                  </p>
-                  <div class="pricing-price mb-3">Starting at $160</div>
+                  <div class="pricing-price mb-1">$169</div>
+                  <h5 class="fw-bold mb-1">20 Photos</h5>
+                  <p class="text-secondary small mb-3">Condos, townhomes &amp; smaller spaces</p>
                   <ul class="text-secondary small ps-3 mb-0 text-start">
                     <li>Interior + exterior coverage</li>
                     <li>Professional HDR editing</li>
                     <li>MLS-ready delivery</li>
-                    <li>Next-day turnaround (typical)</li>
+                    <li>Next-day turnaround</li>
                   </ul>
                 </div>
               </div>
             </div>
 
+            <div class="col-sm-6 col-lg-3">
+              <div class="pricing-card featured" style="position: relative">
+                <div
+                  style="
+                    position: absolute;
+                    top: -12px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: #fff;
+                    color: #111;
+                    font-size: 0.7rem;
+                    font-weight: 700;
+                    padding: 3px 14px;
+                    border-radius: 20px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    white-space: nowrap;
+                  "
+                >
+                  Most Popular
+                </div>
+                <div class="card-body">
+                  <div class="icon-circle mb-3"><i class="bi bi-camera"></i></div>
+                  <div class="pricing-price mb-1">$199</div>
+                  <h5 class="fw-bold mb-1">30 Photos</h5>
+                  <p class="text-secondary small mb-3">
+                    Single-family homes &amp; mid-size listings
+                  </p>
+                  <ul class="text-secondary small ps-3 mb-0 text-start">
+                    <li>Interior + exterior coverage</li>
+                    <li>Professional HDR editing</li>
+                    <li>MLS-ready delivery</li>
+                    <li>Next-day turnaround</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+              <div class="pricing-card">
+                <div class="card-body">
+                  <div class="icon-circle mb-3"><i class="bi bi-camera"></i></div>
+                  <div class="pricing-price mb-1">$249</div>
+                  <h5 class="fw-bold mb-1">40 Photos</h5>
+                  <p class="text-secondary small mb-3">Larger homes with more rooms to cover</p>
+                  <ul class="text-secondary small ps-3 mb-0 text-start">
+                    <li>Interior + exterior coverage</li>
+                    <li>HDR editing + detail shots</li>
+                    <li>MLS-ready delivery</li>
+                    <li>Next-day turnaround</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+              <div class="pricing-card">
+                <div class="card-body">
+                  <div class="icon-circle mb-3"><i class="bi bi-camera"></i></div>
+                  <div class="pricing-price mb-1">$299</div>
+                  <h5 class="fw-bold mb-1">50+ Photos</h5>
+                  <p class="text-secondary small mb-3">Luxury estates &amp; high-end listings</p>
+                  <ul class="text-secondary small ps-3 mb-0 text-start">
+                    <li>Interior + exterior coverage</li>
+                    <li>HDR editing + full detail coverage</li>
+                    <li>MLS-ready delivery</li>
+                    <li>Next-day turnaround</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ADD-ONS -->
+          <p class="pricing-section-title mb-2">Add-Ons</p>
+          <div class="row g-3 mb-4">
             <div class="col-md-6 col-lg-3">
               <div class="pricing-card">
                 <div class="card-body">
                   <div class="icon-circle mb-3"><i class="bi bi-airplane-engines"></i></div>
-                  <h5 class="fw-bold mb-1">Drone Media</h5>
-                  <p class="text-secondary small mb-3">
-                    Aerials that show lot, location, and curb appeal.
-                  </p>
-                  <div class="pricing-price mb-3">
-                    $75 <span class="fs-6 fw-normal text-secondary">add-on</span>
-                  </div>
-                  <ul class="text-secondary small ps-3 mb-0 text-start">
-                    <li>8–12 aerial photos</li>
-                    <li>Front elevation + neighborhood</li>
-                    <li>Backyard / pool / waterfront</li>
-                    <li>FAA Part 107 certified</li>
-                  </ul>
+                  <h5 class="fw-bold mb-1">Drone Photos</h5>
+                  <p class="text-secondary small mb-2">8–12 aerials, FAA Part 107 certified</p>
+                  <div class="pricing-price">$75</div>
                 </div>
               </div>
             </div>
@@ -378,17 +491,9 @@
               <div class="pricing-card">
                 <div class="card-body">
                   <div class="icon-circle mb-3"><i class="bi bi-phone"></i></div>
-                  <h5 class="fw-bold mb-1">Video & Reels</h5>
-                  <p class="text-secondary small mb-3">
-                    Short-form vertical video for social media.
-                  </p>
-                  <div class="pricing-price mb-3">Starting at $200</div>
-                  <ul class="text-secondary small ps-3 mb-0 text-start">
-                    <li>15–45 second reels</li>
-                    <li>Instagram / TikTok ready</li>
-                    <li>Smooth transitions + pacing</li>
-                    <li>Ready-to-post delivery</li>
-                  </ul>
+                  <h5 class="fw-bold mb-1">Vertical Reel</h5>
+                  <p class="text-secondary small mb-2">15–45 sec, Instagram / TikTok ready</p>
+                  <div class="pricing-price">$200</div>
                 </div>
               </div>
             </div>
@@ -397,17 +502,20 @@
               <div class="pricing-card">
                 <div class="card-body">
                   <div class="icon-circle mb-3"><i class="bi bi-badge-3d"></i></div>
-                  <h5 class="fw-bold mb-1">360° Tour + Floor Plan</h5>
-                  <p class="text-secondary small mb-3">
-                    Immersive add-ons that boost buyer confidence.
-                  </p>
-                  <div class="pricing-price mb-3">From $125</div>
-                  <ul class="text-secondary small ps-3 mb-0 text-start">
-                    <li>360° virtual tour: $200</li>
-                    <li>2D floor plan: $125</li>
-                    <li>Great for out-of-town buyers</li>
-                    <li>Ideal for larger homes</li>
-                  </ul>
+                  <h5 class="fw-bold mb-1">360° Virtual Tour</h5>
+                  <p class="text-secondary small mb-2">Immersive walkthrough, MLS compatible</p>
+                  <div class="pricing-price">$200</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="pricing-card">
+                <div class="card-body">
+                  <div class="icon-circle mb-3"><i class="bi bi-rulers"></i></div>
+                  <h5 class="fw-bold mb-1">2D Floor Plan</h5>
+                  <p class="text-secondary small mb-2">Basic schematic layout</p>
+                  <div class="pricing-price">$125</div>
                 </div>
               </div>
             </div>
@@ -420,7 +528,7 @@
               <div class="pricing-card">
                 <div class="card-body">
                   <h5 class="fw-bold mb-1">Core Listing</h5>
-                  <p class="text-secondary small mb-2">Photography + Drone</p>
+                  <p class="text-secondary small mb-2">Photos + Drone</p>
                   <div class="pricing-price mb-1">Base + $75</div>
                   <div class="small">Most popular for single-family homes</div>
                 </div>
@@ -432,7 +540,7 @@
                 <div class="card-body">
                   <div class="pricing-section-title mb-1">Most Popular</div>
                   <h5 class="fw-bold mb-1">Marketing Package</h5>
-                  <p class="text-secondary small mb-2">Photography + Drone + Reel</p>
+                  <p class="text-secondary small mb-2">Photos + Drone + Reel</p>
                   <div class="pricing-price mb-1">Base + $250</div>
                   <div class="small">Best for agents focused on social exposure</div>
                 </div>
@@ -453,7 +561,8 @@
 
           <div class="text-center pb-2">
             <p class="mb-3" style="color: rgba(255, 255, 255, 0.45); font-size: 0.88rem">
-              Pricing varies by property size. Travel fees may apply outside Palm Beach County.
+              Travel fees may apply outside Palm Beach County. Rush delivery available for $50 when
+              schedule allows.
             </p>
             <a href="client-pricing.html" class="btn btn-sp-outline me-2">View Full Pricing</a>
             <a href="#contact" class="btn btn-sp">Get a Custom Quote</a>
@@ -502,26 +611,88 @@
       </div>
     </div>
 
-    <!-- ABOUT -->
+    <!-- ABOUT / OWNER -->
     <section id="about" class="py-5 bg-light">
       <div class="container">
-        <div class="row g-4 align-items-center">
-          <div class="col-lg-6">
-            <h2 class="fw-bold mb-2">About SkyPoint</h2>
+        <div class="row g-4 align-items-start">
+          <!-- Photo Card -->
+          <div class="col-lg-3 col-md-4">
+            <div
+              class="text-center p-4 rounded-4"
+              style="background: #1a1a1a; border: 0.5px solid rgba(255, 255, 255, 0.1)"
+            >
+              <img
+                src="assets/img/mypic.jpg"
+                alt="Will Bateau — Owner, SkyPoint LLC"
+                class="rounded-3 mb-3"
+                style="width: 100%; max-width: 180px; height: 210px; object-fit: cover"
+              />
+              <p class="fw-semibold mb-0" style="color: #fff">Will Bateau</p>
+              <p class="small mb-3" style="color: rgba(255, 255, 255, 0.5)">
+                Owner &amp; Lead Photographer
+              </p>
+              <div class="d-flex flex-wrap gap-2 justify-content-center mb-3">
+                <span
+                  class="badge rounded-pill"
+                  style="
+                    background: rgba(255, 255, 255, 0.08);
+                    border: 0.5px solid rgba(255, 255, 255, 0.15);
+                    color: rgba(255, 255, 255, 0.7);
+                    font-weight: 400;
+                  "
+                  >FAA Part 107</span
+                >
+                <span
+                  class="badge rounded-pill"
+                  style="
+                    background: rgba(255, 255, 255, 0.08);
+                    border: 0.5px solid rgba(255, 255, 255, 0.15);
+                    color: rgba(255, 255, 255, 0.7);
+                    font-weight: 400;
+                  "
+                  >Palm Beach Co.</span
+                >
+              </div>
+              <div
+                class="d-flex align-items-center justify-content-center gap-2 rounded-3 py-2 px-3"
+                style="
+                  background: rgba(185, 151, 90, 0.15);
+                  border: 0.5px solid rgba(185, 151, 90, 0.45);
+                  color: #c9aa6a;
+                  font-size: 0.82rem;
+                  font-weight: 500;
+                "
+              >
+                <i class="bi bi-shield-shaded"></i>
+                Veteran-Owned Business
+              </div>
+            </div>
+          </div>
+
+          <!-- Bio + About Content -->
+          <div class="col-lg-9 col-md-8">
+            <p
+              class="text-uppercase text-secondary small fw-semibold mb-1"
+              style="letter-spacing: 0.12em"
+            >
+              About SkyPoint
+            </p>
+            <h2 class="fw-bold mb-3">Local Expertise.<br />Professional Results.</h2>
             <p class="text-secondary">
-              SkyPoint LLC specializes in professional real estate photography and listing media
-              throughout Palm Beach County and surrounding South Florida communities. Every property
-              is captured with attention to lighting, composition, and detail to help listings stand
-              out in a competitive market.
+              I started SkyPoint LLC to bring a higher standard of visual media to real estate
+              agents across Palm Beach County. Every shoot is handled personally — from scheduling
+              to final delivery — so you always know what to expect and can list with confidence.
             </p>
             <p class="text-secondary">
               From clean MLS-ready interior photography to high-impact aerial imagery and short-form
               social media reels, SkyPoint delivers polished, organized media that helps agents
               market confidently and attract serious buyers.
             </p>
-            <div class="row g-3 mt-2">
+
+            <!-- Feature Boxes -->
+            <div class="row g-3 mt-1 mb-3">
               <div class="col-sm-6">
-                <div class="p-3 border rounded-4 h-100">
+                <div class="p-3 border rounded-4 h-100" style="background: #f8f9fa">
                   <div class="fw-semibold"><i class="bi bi-camera2 me-2"></i>MLS-Ready Quality</div>
                   <div class="text-secondary small">
                     Straight verticals, natural color balance, and clean edits optimized for MLS and
@@ -530,7 +701,7 @@
                 </div>
               </div>
               <div class="col-sm-6">
-                <div class="p-3 border rounded-4 h-100">
+                <div class="p-3 border rounded-4 h-100" style="background: #f8f9fa">
                   <div class="fw-semibold">
                     <i class="bi bi-airplane me-2"></i>Licensed Drone Operator
                   </div>
@@ -540,7 +711,7 @@
                 </div>
               </div>
               <div class="col-sm-6">
-                <div class="p-3 border rounded-4 h-100">
+                <div class="p-3 border rounded-4 h-100" style="background: #f8f9fa">
                   <div class="fw-semibold"><i class="bi bi-clock me-2"></i>Fast Turnaround</div>
                   <div class="text-secondary small">
                     Organized delivery links with typical next-day turnaround for most listings.
@@ -548,7 +719,7 @@
                 </div>
               </div>
               <div class="col-sm-6">
-                <div class="p-3 border rounded-4 h-100">
+                <div class="p-3 border rounded-4 h-100" style="background: #f8f9fa">
                   <div class="fw-semibold">
                     <i class="bi bi-geo-alt me-2"></i>Local &amp; Reliable
                   </div>
@@ -558,20 +729,27 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-6">
+
+            <!-- Why Agents + Service Area -->
             <div class="p-4 bg-white rounded-4 border">
-              <h5 class="fw-bold mb-3">Why Agents Work With SkyPoint</h5>
-              <ul class="text-secondary mb-4">
-                <li>Consistent image quality across every listing</li>
-                <li>Clear communication and reliable scheduling</li>
-                <li>Modern media that performs on social platforms</li>
-                <li>Professional presentation that reflects your brand</li>
-              </ul>
-              <h6 class="fw-semibold mb-2">Service Area</h6>
-              <p class="text-secondary mb-0">
-                Palm Beach County and select South Florida communities.
-              </p>
+              <div class="row g-3">
+                <div class="col-md-7">
+                  <h5 class="fw-bold mb-3">Why Agents Work With SkyPoint</h5>
+                  <ul class="text-secondary mb-0">
+                    <li>Consistent image quality across every listing</li>
+                    <li>Clear communication and reliable scheduling</li>
+                    <li>Modern media that performs on social platforms</li>
+                    <li>Professional presentation that reflects your brand</li>
+                  </ul>
+                </div>
+                <div class="col-md-5 border-start">
+                  <h6 class="fw-semibold mb-2 ps-3">Service Area</h6>
+                  <p class="text-secondary mb-0 ps-3">
+                    Palm Beach County and select South Florida communities. Travel fees may apply
+                    outside Palm Beach County.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -579,28 +757,59 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="py-5">
+    <section id="contact" class="py-5 bg-dark">
       <div class="container">
         <div class="row g-4">
-          <div class="col-lg-6">
-            <h2 class="fw-bold mb-2">Contact</h2>
-            <p class="text-secondary">
-              Tell me about the property, the services you need, and your timeline. I'll reply with
-              availability and a custom quote.
-            </p>
-            <div class="d-grid gap-2">
-              <a class="btn btn-dark btn-lg" href="mailto:william.bateau@outlook.com"
-                ><i class="bi bi-envelope me-2"></i>Email: william.bateau@outlook.com</a
+          <div class="col-lg-6 d-flex flex-column gap-3">
+            <div class="d-flex flex-column gap-3 h-100">
+              <div>
+                <h2 class="fw-bold mb-2 text-white">Book a Shoot</h2>
+                <p class="mb-0" style="color: #ccc">
+                  Reply within a few hours. Custom quotes, no pressure.
+                </p>
+              </div>
+              <ul class="list-unstyled mb-0" style="color: #ccc">
+                <li class="mb-2">
+                  <i class="bi bi-check2-circle me-2 text-white"></i>MLS-ready photography
+                </li>
+                <li class="mb-2">
+                  <i class="bi bi-check2-circle me-2 text-white"></i>FAA Part 107 drones
+                </li>
+                <li class="mb-2">
+                  <i class="bi bi-check2-circle me-2 text-white"></i>Next-day delivery (typical)
+                </li>
+                <li class="mb-2">
+                  <i class="bi bi-check2-circle me-2 text-white"></i>Social reels included in
+                  bundles
+                </li>
+                <li class="mb-2">
+                  <i class="bi bi-check2-circle me-2 text-white"></i>Serving Palm Beach County
+                </li>
+              </ul>
+              <div class="d-grid gap-2">
+                <a class="btn btn-light btn-lg" href="mailto:will@skypointimages.com">
+                  <i class="bi bi-envelope me-2"></i>will@skypointimages.com
+                </a>
+                <a class="btn btn-outline-light btn-lg" href="tel:+15617073082">
+                  <i class="bi bi-telephone me-2"></i>Call/Text: (561) 707-3082
+                </a>
+              </div>
+              <div
+                class="rounded-3 overflow-hidden mt-auto"
+                style="height: 420px; position: relative"
               >
-              <a class="btn btn-outline-dark btn-lg" href="tel:+15617073082"
-                ><i class="bi bi-telephone me-2"></i>Call/Text: (561) 707-3082</a
-              >
+                <img src="assets/img/heroshot.jpg" class="contact-slide active" alt="" />
+                <img src="assets/img/drone_redarrow2.png" class="contact-slide" alt="" />
+                <img src="assets/img/twilighthouse.png" class="contact-slide" alt="" />
+                <img src="assets/img/pool1.jpg" class="contact-slide" alt="" />
+              </div>
             </div>
           </div>
+
           <div class="col-lg-6">
-            <div class="card border-0 shadow-sm rounded-4">
+            <div class="card border-0 rounded-4 h-100" style="background-color: #1a1a1a">
               <div class="card-body p-4">
-                <h5 class="fw-bold mb-3">Quick Quote Form</h5>
+                <h5 class="fw-bold mb-3 text-white">Quick Quote Form</h5>
                 <form action="https://formspree.io/f/mnjbdlgn" method="POST">
                   <input
                     type="hidden"
@@ -608,29 +817,37 @@
                     value="https://skypointimages.com/thanks.html"
                   />
                   <div class="mb-3">
-                    <label class="form-label" for="name">Name</label>
+                    <label class="form-label text-white" for="name">Name</label>
                     <input
                       id="name"
                       name="name"
                       class="form-control"
                       placeholder="Your name"
+                      style="background: #2a2a2a; border-color: #444; color: #fff"
                       required
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label" for="email">Email</label>
+                    <label class="form-label text-white" for="email">Email</label>
                     <input
                       id="email"
                       type="email"
                       name="email"
                       class="form-control"
                       placeholder="you@example.com"
+                      style="background: #2a2a2a; border-color: #444; color: #fff"
                       required
                     />
                   </div>
                   <div class="mb-3">
-                    <label class="form-label" for="service">Service</label>
-                    <select id="service" name="service" class="form-select" required>
+                    <label class="form-label text-white" for="service">Service</label>
+                    <select
+                      id="service"
+                      name="service"
+                      class="form-select"
+                      style="background: #2a2a2a; border-color: #444; color: #fff"
+                      required
+                    >
                       <option value="" selected disabled>Select a service</option>
                       <option>Real Estate Photography</option>
                       <option>Drone Photos</option>
@@ -641,18 +858,19 @@
                     </select>
                   </div>
                   <div class="mb-3">
-                    <label class="form-label" for="message">Message</label>
+                    <label class="form-label text-white" for="message">Message</label>
                     <textarea
                       id="message"
                       name="message"
                       class="form-control"
                       rows="4"
                       placeholder="Property address (or area), size, and your timeline."
+                      style="background: #2a2a2a; border-color: #444; color: #fff"
                       required
                     ></textarea>
                   </div>
                   <input type="text" name="_gotcha" style="display: none" />
-                  <button type="submit" class="btn btn-dark w-100">Submit</button>
+                  <button type="submit" class="btn btn-light w-100">Submit</button>
                 </form>
               </div>
             </div>
@@ -665,7 +883,7 @@
     <footer class="py-4 border-top">
       <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
         <div class="text-secondary small">
-          © <span id="year"></span> SkyPoint LLC. All rights reserved.
+          &copy; <span id="year"></span> SkyPoint LLC. All rights reserved.
         </div>
         <div class="d-flex gap-3">
           <a class="text-secondary" href="#" aria-label="Instagram"
@@ -725,6 +943,16 @@
 
           setInterval(step, 2700);
         });
+      })();
+
+      (function () {
+        const slides = document.querySelectorAll('.contact-slide');
+        let current = 0;
+        setInterval(() => {
+          slides[current].classList.remove('active');
+          current = (current + 1) % slides.length;
+          slides[current].classList.add('active');
+        }, 3500);
       })();
     </script>
   </body>
