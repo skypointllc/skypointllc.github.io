@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SkyPoint Media — 5-Year Business Plan</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0f1a; }
+  button { font-family: inherit; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const plan = {
+  revenueTargets: [
+    { year: "Year 1", target: 32000, label: "$32K", focus: "Foundation" },
+    { year: "Year 2", target: 65000, label: "$65K", focus: "Scaling" },
+    { year: "Year 3", target: 110000, label: "$110K", focus: "Pivot" },
+    { year: "Year 4", target: 160000, label: "$160K", focus: "Dominate" },
+    { year: "Year 5", target: 220000, label: "$220K+", focus: "Regional" },
+  ],
+  years: [
+    {
+      id: 1, label: "Year 1", theme: "Foundation", color: "#4FC3F7",
+      tagline: "Build cash flow. Build reputation. Start charging for everything.",
+      revenue: "$32K target",
+      mix: [
+        { service: "Real Estate Media", pct: 55, detail: "Primary income. Train cousins to shoot — you deliver and edit." },
+        { service: "Portraits", pct: 15, detail: "Start charging NOW. $150-$250/session. LinkedIn, Instagram, personal branding." },
+        { service: "Corporate / Speaking Events", pct: 15, detail: "You've done two already. $500-$1,500/event. Chambers, corporate trainers, speakers." },
+        { service: "Drone Inspections", pct: 10, detail: "Selective. Only when inquiry comes in. Don't chase it yet." },
+        { service: "Thermal / Specialty", pct: 5, detail: "On-request only." },
+      ],
+      actions: [
+        "Stop doing portraits for free — set a $150 minimum immediately",
+        "Create a simple portrait pricing sheet (individual, couple, family)",
+        "Onboard and train cousins on RE shoots by Month 2",
+        "Target 8-10 RE shoots/month at $250-$350 avg — cousins shooting, you delivering and editing",
+        "Build agent outreach system — 1 new agent per week",
+        "Apply for DBE (Disadvantaged Business Enterprise) certification — Florida DOT",
+        "Apply for MBE (Minority Business Enterprise) certification — nmsdc.org (Black-owned)",
+        "Apply for VOSB (Veteran-Owned Small Business) certification — veterans.certify.sba.gov",
+        "Apply for SDVOSB (Service-Disabled Veteran-Owned Small Business) — same SBA portal as VOSB",
+        "Update SAM.gov Business Types once certifications are approved",
+        "Build SkyPoint portfolio site with RE, drone, portrait, event galleries",
+        "Join Gold Coast Builders Association (GCBA) for networking — gcbaflorida.com",
+      ],
+      gear: ["Phantom 4 Pro — RE stills + events", "Mavic Air 2 — wide aerials", "Mavic 3 Thermal — inspections only when needed"],
+    },
+    {
+      id: 2, label: "Year 2", theme: "Scaling", color: "#81C784",
+      tagline: "Cousins handle RE. You scale inspections, events, and portraits.",
+      revenue: "$65K target",
+      mix: [
+        { service: "Real Estate Media", pct: 30, detail: "Cousins run it. You QC and manage client relationships." },
+        { service: "RGB Roof Inspections", pct: 25, detail: "Target roofers, HOAs, insurance adjusters in PBC." },
+        { service: "Construction Progress", pct: 20, detail: "Land 2-3 builder accounts. Monthly recurring." },
+        { service: "Corporate Events", pct: 10, detail: "Build recurring event client base. Aim for 2-3 per month." },
+        { service: "Portraits", pct: 10, detail: "Raise pricing to $250-$400. Build referral pipeline." },
+        { service: "Thermal / Specialty", pct: 5, detail: "Solar, commercial flat roof moisture — by request." },
+      ],
+      actions: [
+        "Cold outreach to 5 roofing companies/month in PBC",
+        "Pitch 3 local general contractors for progress docs",
+        "Activate DBE certification — update SAM.gov Business Types",
+        "Create branded inspection report PDF template",
+        "Build recurring client contracts (monthly retainers for construction)",
+        "Start shooting as second shooter at 2-3 weddings to test the market",
+        "Start mapping / orthomosaic skill development (DroneDeploy or Pix4D)",
+      ],
+      gear: ["Phantom 4 Pro — roof inspection workhorse", "Mavic 3 Thermal — solar + commercial flat roofs"],
+    },
+    {
+      id: 3, label: "Year 3", theme: "Pivot", color: "#FFB74D",
+      tagline: "Construction is the main business. Make a wedding decision this year.",
+      revenue: "$110K target",
+      mix: [
+        { service: "Construction Progress", pct: 40, detail: "5-8 active builder accounts. Weekly/monthly deliverables." },
+        { service: "RGB Roof Inspections", pct: 20, detail: "Established roofer + adjuster pipeline." },
+        { service: "Mapping / Orthomosaic", pct: 15, detail: "Developers, excavation, land clearing clients." },
+        { service: "Weddings (Optional)", pct: 10, detail: "If construction isn't filling the calendar. $3,500-$6,000/wedding." },
+        { service: "Corporate Events + Portraits", pct: 10, detail: "Steady recurring income stream." },
+        { service: "Thermal + RE", pct: 5, detail: "Passive / on-request." },
+      ],
+      actions: [
+        "Pursue government / municipal contracts via DBE status",
+        "Target Treasure Coast + Martin County expansion",
+        "Offer orthomosaic mapping to 3 developers as pilot",
+        "Decision point: commit to weddings or double down on construction",
+        "If weddings: build portfolio from Year 2 second shooter work",
+        "If construction: consider adding a second Part 107 operator",
+        "Build SkyPoint case study library (before/after construction docs)",
+      ],
+      gear: ["Evaluate DJI Matrice or mapping drone if volume justifies", "Phantom 4 Pro still solid for inspections"],
+    },
+    {
+      id: 4, label: "Year 4", theme: "Dominate", color: "#F06292",
+      tagline: "Palm Beach County is yours. Two strong lanes running simultaneously.",
+      revenue: "$160K target",
+      mix: [
+        { service: "Construction Progress", pct: 45, detail: "Flagship service. Multi-county footprint." },
+        { service: "Mapping / Orthomosaic", pct: 20, detail: "Higher-ticket. Become the go-to in South FL." },
+        { service: "Weddings / Events", pct: 20, detail: "If active: 15-20 weddings/year at $4K-$8K each is serious money." },
+        { service: "Inspections (RGB + Thermal)", pct: 10, detail: "Established pipeline running efficiently." },
+        { service: "Portraits + Other", pct: 5, detail: "Ongoing referral-based income." },
+      ],
+      actions: [
+        "Hire or contract second drone operator",
+        "Broaden into Broward County market",
+        "Apply for larger government / DOT contracts (DBE advantage)",
+        "Develop SkyPoint pricing tiers (basic, standard, premium)",
+        "Build referral program with builders, roofers, and wedding planners",
+        "Explore telecom tower inspection certifications",
+        "Invest in branding refresh if needed",
+      ],
+      gear: ["Dedicated mapping drone by this phase", "Mavic 3 Thermal continues for specialty", "Consider Sony mirrorless upgrade if wedding lane is active"],
+    },
+    {
+      id: 5, label: "Year 5", theme: "Regional", color: "#CE93D8",
+      tagline: "SkyPoint is a brand. Not just a guy with a drone.",
+      revenue: "$220K+ target",
+      mix: [
+        { service: "Construction Progress", pct: 45, detail: "Multi-county, multi-operator." },
+        { service: "Mapping / Orthomosaic", pct: 20, detail: "Enterprise and government accounts." },
+        { service: "Weddings / Events", pct: 20, detail: "Premium positioning. 20+ weddings/year or specialty corporate events." },
+        { service: "Inspections (RGB + Thermal)", pct: 10, detail: "Systematic, scalable pipeline." },
+        { service: "Portraits + RE", pct: 5, detail: "Passive. Referral-driven." },
+      ],
+      actions: [
+        "Operate in Palm Beach, Martin, St. Lucie, Broward counties",
+        "2-3 operators under SkyPoint brand",
+        "Recurring monthly revenue from 10+ construction accounts",
+        "Telecom tower inspection as specialty revenue line",
+        "Explore SBA loan for equipment / expansion if needed",
+        "Build toward acquiring smaller local drone ops if market allows",
+        "Wedding brand potentially operates under SkyPoint or separate sub-brand",
+      ],
+      gear: ["Full fleet managed across operators", "Thermal + RGB + mapping all active", "Dedicated wedding/event kit if that lane is running"],
+    },
+  ],
+};
+
+const BAR_MAX = 220000;
+
+function App() {
+  const [activeYear, setActiveYear] = React.useState(0);
+  const year = plan.years[activeYear];
+
+  return (
+    <div style={{ fontFamily: "Georgia, serif", background: "#0a0f1a", color: "#e8eaf0", minHeight: "100vh", paddingBottom: 60 }}>
+      {/* Header */}
+      <div style={{ background: "linear-gradient(135deg, #0d1b2e 0%, #0a0f1a 100%)", borderBottom: "1px solid #1e2d45", padding: "32px 24px 24px", textAlign: "center" }}>
+        <div style={{ fontSize: 11, letterSpacing: "0.25em", color: "#4FC3F7", textTransform: "uppercase", marginBottom: 8 }}>SkyPoint Media — Palm Beach County, FL</div>
+        <h1 style={{ fontSize: 26, fontWeight: 700, margin: "0 0 6px", color: "#ffffff" }}>5-Year Business Plan</h1>
+        <div style={{ fontSize: 13, color: "#7a8fa6" }}>Aerial Documentation + Construction + Creative Media</div>
+      </div>
+
+      {/* Revenue Bars */}
+      <div style={{ padding: "28px 20px 8px" }}>
+        <div style={{ fontSize: 11, letterSpacing: "0.15em", color: "#4a6080", textTransform: "uppercase", marginBottom: 14 }}>Revenue Trajectory</div>
+        {plan.revenueTargets.map((r, i) => (
+          <div key={i} onClick={() => setActiveYear(i)} style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
+            <div style={{ width: 54, fontSize: 12, color: activeYear === i ? plan.years[i].color : "#4a6080", fontWeight: activeYear === i ? 700 : 400 }}>{r.year}</div>
+            <div style={{ flex: 1, background: "#111827", borderRadius: 4, height: 28, position: "relative", overflow: "hidden" }}>
+              <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: `${(r.target / BAR_MAX) * 100}%`, background: activeYear === i ? `linear-gradient(90deg, ${plan.years[i].color}88, ${plan.years[i].color})` : "#1e2d45", borderRadius: 4 }} />
+              <div style={{ position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)", fontSize: 12, fontWeight: 700, color: activeYear === i ? "#fff" : "#3a5070" }}>{r.label}</div>
+            </div>
+            <div style={{ width: 60, fontSize: 11, color: "#3a5070", textAlign: "right" }}>{r.focus}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Tabs */}
+      <div style={{ display: "flex", gap: 6, padding: "16px 20px 0", flexWrap: "wrap" }}>
+        {plan.years.map((y, i) => (
+          <button key={i} onClick={() => setActiveYear(i)} style={{ padding: "8px 14px", borderRadius: 6, border: `1px solid ${activeYear === i ? y.color : "#1e2d45"}`, background: activeYear === i ? `${y.color}22` : "transparent", color: activeYear === i ? y.color : "#4a6080", cursor: "pointer", fontSize: 13, fontWeight: activeYear === i ? 700 : 400 }}>
+            {y.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Year Detail */}
+      <div style={{ padding: "20px" }}>
+        <div style={{ background: "#0d1b2e", border: `1px solid ${year.color}44`, borderRadius: 12, padding: "20px", marginBottom: 16 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
+            <div>
+              <span style={{ fontSize: 11, letterSpacing: "0.2em", color: year.color, textTransform: "uppercase" }}>{year.theme}</span>
+              <h2 style={{ margin: "4px 0 0", fontSize: 22, color: "#fff", fontWeight: 700 }}>{year.label}</h2>
+            </div>
+            <div style={{ background: `${year.color}22`, border: `1px solid ${year.color}44`, borderRadius: 8, padding: "6px 12px", fontSize: 14, fontWeight: 700, color: year.color }}>{year.revenue}</div>
+          </div>
+          <div style={{ fontSize: 14, color: "#7a8fa6", fontStyle: "italic" }}>{year.tagline}</div>
+        </div>
+
+        {/* Mix */}
+        <div style={{ marginBottom: 16 }}>
+          <div style={{ fontSize: 11, letterSpacing: "0.15em", color: "#4a6080", textTransform: "uppercase", marginBottom: 12 }}>Revenue Mix</div>
+          {year.mix.map((m, i) => (
+            <div key={i} style={{ marginBottom: 12 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                <span style={{ fontSize: 13, color: "#c0cfe0", fontWeight: 600 }}>{m.service}</span>
+                <span style={{ fontSize: 13, color: year.color, fontWeight: 700 }}>{m.pct}%</span>
+              </div>
+              <div style={{ background: "#111827", borderRadius: 3, height: 5, marginBottom: 4 }}>
+                <div style={{ width: `${m.pct}%`, height: "100%", background: year.color, borderRadius: 3, opacity: 0.7 }} />
+              </div>
+              <div style={{ fontSize: 12, color: "#4a6080" }}>{m.detail}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Actions */}
+        <div style={{ marginBottom: 16 }}>
+          <div style={{ fontSize: 11, letterSpacing: "0.15em", color: "#4a6080", textTransform: "uppercase", marginBottom: 12 }}>Priority Actions</div>
+          {year.actions.map((a, i) => (
+            <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start", background: "#0d1b2e", border: "1px solid #1e2d45", borderRadius: 8, padding: "10px 14px", marginBottom: 8 }}>
+              <div style={{ width: 20, height: 20, borderRadius: "50%", border: `2px solid ${year.color}66`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, color: year.color, fontWeight: 700, flexShrink: 0, marginTop: 1 }}>{i + 1}</div>
+              <div style={{ fontSize: 13, color: "#c0cfe0", lineHeight: 1.5 }}>{a}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Gear */}
+        <div style={{ background: "#0d1b2e", border: "1px solid #1e2d45", borderRadius: 10, padding: "16px", marginBottom: 14 }}>
+          <div style={{ fontSize: 11, letterSpacing: "0.15em", color: "#4a6080", textTransform: "uppercase", marginBottom: 10 }}>Gear Notes</div>
+          {year.gear.map((g, i) => (
+            <div key={i} style={{ fontSize: 12, color: "#7a8fa6", marginBottom: 6, paddingLeft: 12, borderLeft: `2px solid ${year.color}44` }}>{g}</div>
+          ))}
+        </div>
+
+        {activeYear >= 1 && (
+          <div style={{ padding: "14px", background: "#100a1a", borderRadius: 8, border: "1px solid #CE93D844", marginBottom: 14 }}>
+            <div style={{ fontSize: 11, letterSpacing: "0.15em", color: "#CE93D8", textTransform: "uppercase", marginBottom: 6 }}>Wedding Lane Note</div>
+            <div style={{ fontSize: 12, color: "#7a8fa6", lineHeight: 1.6 }}>
+              PBC wedding market is premium. A 3-person photo + video + drone team can pull $4K-$8K per wedding.
+              Start as a second shooter in Year 2 to build portfolio with zero client risk.
+              Year 3 is the decision point — commit to weddings or double down on construction.
+            </div>
+          </div>
+        )}
+
+        <div style={{ padding: "14px", background: "#0d1b2e", borderRadius: 8, border: "1px solid #1e2d45", fontSize: 12, color: "#4a6080", lineHeight: 1.6, textAlign: "center" }}>
+          FAA Part 107 Certified · Palm Beach County, FL · DBE Certification Pending<br/>
+          DJI Mavic 3 Thermal · Mavic Air 2 · Phantom 4 Pro
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
