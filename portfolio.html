@@ -6,8 +6,11 @@
     <title>Portfolio | SkyPoint LLC</title>
     <meta
       name="description"
-      content="Real estate photography and aerial media portfolio — SkyPoint LLC, Palm Beach County."
+      content="Real estate photography and aerial media portfolio for SkyPoint LLC in Palm Beach County."
     />
+    <link rel="preload" as="image" href="assets/img/portfolio-thumbs/1.webp" />
+    <link rel="preload" as="image" href="assets/img/portfolio-thumbs/2.webp" />
+    <link rel="preload" as="image" href="assets/img/portfolio-thumbs/3.webp" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -81,22 +84,35 @@
         margin: 0 auto;
       }
       .portfolio-grid .grid-item {
+        display: block;
+        width: 100%;
         break-inside: avoid;
-        margin-bottom: 12px;
+        margin: 0 0 12px;
+        padding: 0;
         overflow: hidden;
+        border: 0;
         border-radius: 8px;
+        background: rgba(255, 255, 255, 0.06);
         cursor: pointer;
+        content-visibility: auto;
+        contain-intrinsic-size: 320px 240px;
       }
       .portfolio-grid .grid-item img {
         width: 100%;
         display: block;
-        transition: transform 0.4s ease;
+        transition:
+          opacity 0.25s ease,
+          transform 0.4s ease;
       }
-      .portfolio-grid .grid-item:hover img {
+      .portfolio-grid .grid-item:hover img,
+      .portfolio-grid .grid-item:focus-visible img {
         transform: scale(1.03);
       }
+      .portfolio-grid .grid-item:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 3px;
+      }
 
-      /* Lightbox */
       .lightbox {
         display: none;
         position: fixed;
@@ -105,6 +121,7 @@
         z-index: 9999;
         align-items: center;
         justify-content: center;
+        padding: 24px;
       }
       .lightbox.active {
         display: flex;
@@ -115,18 +132,26 @@
         object-fit: contain;
         border-radius: 8px;
       }
+      .lightbox-close,
+      .lightbox-prev,
+      .lightbox-next {
+        border: 0;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        line-height: 1;
+        opacity: 0.72;
+      }
+      .lightbox-close:hover,
+      .lightbox-prev:hover,
+      .lightbox-next:hover {
+        opacity: 1;
+      }
       .lightbox-close {
         position: absolute;
         top: 1.25rem;
         right: 1.5rem;
         font-size: 2rem;
-        color: #fff;
-        cursor: pointer;
-        line-height: 1;
-        opacity: 0.7;
-      }
-      .lightbox-close:hover {
-        opacity: 1;
       }
       .lightbox-prev,
       .lightbox-next {
@@ -134,15 +159,8 @@
         top: 50%;
         transform: translateY(-50%);
         font-size: 2.5rem;
-        color: #fff;
-        cursor: pointer;
-        opacity: 0.6;
         padding: 0 1rem;
         user-select: none;
-      }
-      .lightbox-prev:hover,
-      .lightbox-next:hover {
-        opacity: 1;
       }
       .lightbox-prev {
         left: 0.5rem;
@@ -168,7 +186,6 @@
     </style>
   </head>
   <body>
-    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg" id="mainNav">
       <div class="container">
         <a class="navbar-brand" href="index.html">
@@ -179,6 +196,9 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#nav"
+          aria-controls="nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -197,144 +217,31 @@
       </div>
     </nav>
 
-    <!-- HERO -->
-    <div class="portfolio-hero">
-      <h1>Portfolio</h1>
-      <p>Real estate photography and aerial media — Palm Beach County</p>
-    </div>
+    <main>
+      <div class="portfolio-hero">
+        <h1>Portfolio</h1>
+        <p>Real estate photography and aerial media - Palm Beach County</p>
+      </div>
 
-    <!-- GRID -->
-    <div class="portfolio-grid" id="portfolioGrid">
-      <div class="grid-item"><img src="assets/img/1.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/2.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/3.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/heroshot.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/fronthouse.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/kitchen1.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/kitchen2.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/livingroom1.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/livingroom2.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/bedroom1.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/bedroom2.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/bedroom3.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/bathroom1.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/bath1.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/bath2.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/pool1.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/patio1.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/patio2.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/twilighthouse.png" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/roof1.JPG" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/roof2.JPG" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/90droneshot.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/droneshot.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/annotated_1.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/drone_redarrow2.png" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/drone_red_arrow.png" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/drone_red_arrow2.png" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/drone_bonudrylines.png" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/drone_propertylines.png" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8412.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8422.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8447.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8471.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8481.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8486.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8496.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8504.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8509.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8524.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8529.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8531.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8541.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8556.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8561.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8569.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8571(2).jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8576(2).jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8581.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8586.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8596.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8606.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8621.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8626.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8631.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8639.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8654.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8659.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8664.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8671.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8676.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8681.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8691.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8706.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8716.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8726.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8736.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8751.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8756.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8761.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8771.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8776.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8781.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8786.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8793.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8796.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8808.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8821.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8831.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8836.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8847.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8852.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8867.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8877.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8882.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8892.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8899.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/8O6A8904.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0345.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0351.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0354.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0355.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0358.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0364.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0369.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0370.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0381.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0382.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0385.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0388.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0392.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0393.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0394.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0398.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0400.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0404.jpg" alt="" /></div>
-      <div class="grid-item"><img src="assets/img/DJI_0410.jpg" alt="" /></div>
-    </div>
+      <div class="portfolio-grid" id="portfolioGrid" aria-label="SkyPoint portfolio gallery"></div>
+    </main>
 
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox">
-      <span class="lightbox-close" id="lightboxClose">&times;</span>
-      <span class="lightbox-prev" id="lightboxPrev">&#8249;</span>
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Portfolio image viewer">
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image viewer">&times;</button>
+      <button class="lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous image">&#8249;</button>
       <img id="lightboxImg" src="" alt="" />
-      <span class="lightbox-next" id="lightboxNext">&#8250;</span>
+      <button class="lightbox-next" id="lightboxNext" type="button" aria-label="Next image">&#8250;</button>
     </div>
 
-    <!-- FOOTER -->
     <footer class="py-4 border-top">
       <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
         <div class="text-secondary small">
           &copy; <span id="year"></span> SkyPoint LLC. All rights reserved.
         </div>
         <div class="d-flex gap-3">
-          <a class="text-secondary" href="#" aria-label="Instagram"
-            ><i class="bi bi-instagram"></i
-          ></a>
+          <a class="text-secondary" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
           <a class="text-secondary" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-          <a class="text-secondary" href="#" aria-label="Facebook"
-            ><i class="bi bi-facebook"></i
-          ></a>
+          <a class="text-secondary" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
         </div>
       </div>
     </footer>
@@ -348,17 +255,575 @@
         nav.classList.toggle('scrolled', window.scrollY > 60);
       });
 
-      // Lightbox
+      const portfolioImages = [
+        {
+                "full": "assets/img/1.jpg",
+                "thumb": "assets/img/portfolio-thumbs/1.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 1"
+        },
+        {
+                "full": "assets/img/2.jpg",
+                "thumb": "assets/img/portfolio-thumbs/2.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 2"
+        },
+        {
+                "full": "assets/img/3.jpg",
+                "thumb": "assets/img/portfolio-thumbs/3.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 3"
+        },
+        {
+                "full": "assets/img/heroshot.jpg",
+                "thumb": "assets/img/portfolio-thumbs/heroshot.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 4"
+        },
+        {
+                "full": "assets/img/fronthouse.jpg",
+                "thumb": "assets/img/portfolio-thumbs/fronthouse.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 5"
+        },
+        {
+                "full": "assets/img/kitchen1.jpg",
+                "thumb": "assets/img/portfolio-thumbs/kitchen1.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 6"
+        },
+        {
+                "full": "assets/img/kitchen2.jpg",
+                "thumb": "assets/img/portfolio-thumbs/kitchen2.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 7"
+        },
+        {
+                "full": "assets/img/livingroom1.jpg",
+                "thumb": "assets/img/portfolio-thumbs/livingroom1.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 8"
+        },
+        {
+                "full": "assets/img/livingroom2.jpg",
+                "thumb": "assets/img/portfolio-thumbs/livingroom2.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 9"
+        },
+        {
+                "full": "assets/img/bedroom1.jpg",
+                "thumb": "assets/img/portfolio-thumbs/bedroom1.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 10"
+        },
+        {
+                "full": "assets/img/bedroom2.jpg",
+                "thumb": "assets/img/portfolio-thumbs/bedroom2.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 11"
+        },
+        {
+                "full": "assets/img/bedroom3.jpg",
+                "thumb": "assets/img/portfolio-thumbs/bedroom3.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 12"
+        },
+        {
+                "full": "assets/img/bathroom1.jpg",
+                "thumb": "assets/img/portfolio-thumbs/bathroom1.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 13"
+        },
+        {
+                "full": "assets/img/bath1.jpg",
+                "thumb": "assets/img/portfolio-thumbs/bath1.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 14"
+        },
+        {
+                "full": "assets/img/bath2.jpg",
+                "thumb": "assets/img/portfolio-thumbs/bath2.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 15"
+        },
+        {
+                "full": "assets/img/pool1.jpg",
+                "thumb": "assets/img/portfolio-thumbs/pool1.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 16"
+        },
+        {
+                "full": "assets/img/patio1.jpg",
+                "thumb": "assets/img/portfolio-thumbs/patio1.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 17"
+        },
+        {
+                "full": "assets/img/patio2.jpg",
+                "thumb": "assets/img/portfolio-thumbs/patio2.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 18"
+        },
+        {
+                "full": "assets/img/twilighthouse.png",
+                "thumb": "assets/img/portfolio-thumbs/twilighthouse.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 19"
+        },
+        {
+                "full": "assets/img/roof1.JPG",
+                "thumb": "assets/img/portfolio-thumbs/roof1.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 20"
+        },
+        {
+                "full": "assets/img/roof2.JPG",
+                "thumb": "assets/img/portfolio-thumbs/roof2.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 21"
+        },
+        {
+                "full": "assets/img/90droneshot.jpg",
+                "thumb": "assets/img/portfolio-thumbs/90droneshot.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 22"
+        },
+        {
+                "full": "assets/img/droneshot.jpg",
+                "thumb": "assets/img/portfolio-thumbs/droneshot.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 23"
+        },
+        {
+                "full": "assets/img/annotated_1.jpg",
+                "thumb": "assets/img/portfolio-thumbs/annotated-1.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 24"
+        },
+        {
+                "full": "assets/img/drone_redarrow2.png",
+                "thumb": "assets/img/portfolio-thumbs/drone-redarrow2.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 25"
+        },
+        {
+                "full": "assets/img/drone_red_arrow.png",
+                "thumb": "assets/img/portfolio-thumbs/drone-red-arrow.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 26"
+        },
+        {
+                "full": "assets/img/drone_red_arrow2.png",
+                "thumb": "assets/img/portfolio-thumbs/drone-red-arrow2.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 27"
+        },
+        {
+                "full": "assets/img/drone_bonudrylines.png",
+                "thumb": "assets/img/portfolio-thumbs/drone-bonudrylines.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 28"
+        },
+        {
+                "full": "assets/img/drone_property lines.png",
+                "thumb": "assets/img/portfolio-thumbs/drone-property-lines.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 29"
+        },
+        {
+                "full": "assets/img/8O6A8412.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8412.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 30"
+        },
+        {
+                "full": "assets/img/8O6A8422.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8422.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 31"
+        },
+        {
+                "full": "assets/img/8O6A8447.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8447.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 32"
+        },
+        {
+                "full": "assets/img/8O6A8471.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8471.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 33"
+        },
+        {
+                "full": "assets/img/8O6A8481.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8481.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 34"
+        },
+        {
+                "full": "assets/img/8O6A8486.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8486.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 35"
+        },
+        {
+                "full": "assets/img/8O6A8496.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8496.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 36"
+        },
+        {
+                "full": "assets/img/8O6A8504.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8504.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 37"
+        },
+        {
+                "full": "assets/img/8O6A8509.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8509.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 38"
+        },
+        {
+                "full": "assets/img/8O6A8524.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8524.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 39"
+        },
+        {
+                "full": "assets/img/8O6A8529.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8529.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 40"
+        },
+        {
+                "full": "assets/img/8O6A8531.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8531.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 41"
+        },
+        {
+                "full": "assets/img/8O6A8541.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8541.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 42"
+        },
+        {
+                "full": "assets/img/8O6A8556.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8556.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 43"
+        },
+        {
+                "full": "assets/img/8O6A8561.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8561.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 44"
+        },
+        {
+                "full": "assets/img/8O6A8569.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8569.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 45"
+        },
+        {
+                "full": "assets/img/8O6A8571(2).jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8571-2.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 46"
+        },
+        {
+                "full": "assets/img/8O6A8576(2).jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8576-2.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 47"
+        },
+        {
+                "full": "assets/img/8O6A8581.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8581.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 48"
+        },
+        {
+                "full": "assets/img/8O6A8586.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8586.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 49"
+        },
+        {
+                "full": "assets/img/8O6A8596.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8596.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 50"
+        },
+        {
+                "full": "assets/img/8O6A8606.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8606.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 51"
+        },
+        {
+                "full": "assets/img/8O6A8621.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8621.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 52"
+        },
+        {
+                "full": "assets/img/8O6A8626.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8626.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 53"
+        },
+        {
+                "full": "assets/img/8O6A8631.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8631.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 54"
+        },
+        {
+                "full": "assets/img/8O6A8639.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8639.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 55"
+        },
+        {
+                "full": "assets/img/8O6A8654.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8654.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 56"
+        },
+        {
+                "full": "assets/img/8O6A8659.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8659.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 57"
+        },
+        {
+                "full": "assets/img/8O6A8664.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8664.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 58"
+        },
+        {
+                "full": "assets/img/8O6A8671.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8671.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 59"
+        },
+        {
+                "full": "assets/img/8O6A8676.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8676.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 60"
+        },
+        {
+                "full": "assets/img/8O6A8681.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8681.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 61"
+        },
+        {
+                "full": "assets/img/8O6A8691.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8691.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 62"
+        },
+        {
+                "full": "assets/img/8O6A8706.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8706.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 63"
+        },
+        {
+                "full": "assets/img/8O6A8716.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8716.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 64"
+        },
+        {
+                "full": "assets/img/8O6A8726.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8726.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 65"
+        },
+        {
+                "full": "assets/img/8O6A8736.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8736.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 66"
+        },
+        {
+                "full": "assets/img/8O6A8751.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8751.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 67"
+        },
+        {
+                "full": "assets/img/8O6A8756.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8756.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 68"
+        },
+        {
+                "full": "assets/img/8O6A8761.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8761.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 69"
+        },
+        {
+                "full": "assets/img/8O6A8771.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8771.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 70"
+        },
+        {
+                "full": "assets/img/8O6A8776.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8776.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 71"
+        },
+        {
+                "full": "assets/img/8O6A8781.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8781.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 72"
+        },
+        {
+                "full": "assets/img/8O6A8786.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8786.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 73"
+        },
+        {
+                "full": "assets/img/8O6A8793.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8793.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 74"
+        },
+        {
+                "full": "assets/img/8O6A8796.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8796.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 75"
+        },
+        {
+                "full": "assets/img/8O6A8808.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8808.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 76"
+        },
+        {
+                "full": "assets/img/8O6A8821.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8821.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 77"
+        },
+        {
+                "full": "assets/img/8O6A8831.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8831.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 78"
+        },
+        {
+                "full": "assets/img/8O6A8836.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8836.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 79"
+        },
+        {
+                "full": "assets/img/8O6A8847.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8847.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 80"
+        },
+        {
+                "full": "assets/img/8O6A8852.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8852.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 81"
+        },
+        {
+                "full": "assets/img/8O6A8867.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8867.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 82"
+        },
+        {
+                "full": "assets/img/8O6A8877.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8877.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 83"
+        },
+        {
+                "full": "assets/img/8O6A8882.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8882.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 84"
+        },
+        {
+                "full": "assets/img/8O6A8892.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8892.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 85"
+        },
+        {
+                "full": "assets/img/8O6A8899.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8899.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 86"
+        },
+        {
+                "full": "assets/img/8O6A8904.jpg",
+                "thumb": "assets/img/portfolio-thumbs/8o6a8904.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 87"
+        },
+        {
+                "full": "assets/img/DJI_0345.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0345.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 88"
+        },
+        {
+                "full": "assets/img/DJI_0351.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0351.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 89"
+        },
+        {
+                "full": "assets/img/DJI_0354.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0354.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 90"
+        },
+        {
+                "full": "assets/img/DJI_0355.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0355.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 91"
+        },
+        {
+                "full": "assets/img/DJI_0358.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0358.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 92"
+        },
+        {
+                "full": "assets/img/DJI_0364.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0364.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 93"
+        },
+        {
+                "full": "assets/img/DJI_0369.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0369.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 94"
+        },
+        {
+                "full": "assets/img/DJI_0370.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0370.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 95"
+        },
+        {
+                "full": "assets/img/DJI_0381.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0381.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 96"
+        },
+        {
+                "full": "assets/img/DJI_0382.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0382.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 97"
+        },
+        {
+                "full": "assets/img/DJI_0385.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0385.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 98"
+        },
+        {
+                "full": "assets/img/DJI_0388.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0388.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 99"
+        },
+        {
+                "full": "assets/img/DJI_0392.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0392.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 100"
+        },
+        {
+                "full": "assets/img/DJI_0393.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0393.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 101"
+        },
+        {
+                "full": "assets/img/DJI_0394.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0394.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 102"
+        },
+        {
+                "full": "assets/img/DJI_0398.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0398.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 103"
+        },
+        {
+                "full": "assets/img/DJI_0400.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0400.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 104"
+        },
+        {
+                "full": "assets/img/DJI_0404.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0404.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 105"
+        },
+        {
+                "full": "assets/img/DJI_0410.jpg",
+                "thumb": "assets/img/portfolio-thumbs/dji-0410.webp",
+                "alt": "SkyPoint real estate and aerial media portfolio image 106"
+        }
+];
+
+      const grid = document.getElementById('portfolioGrid');
+
+      portfolioImages.forEach((image, index) => {
+        const item = document.createElement('button');
+        item.className = 'grid-item';
+        item.type = 'button';
+        item.setAttribute('aria-label', 'Open portfolio image ' + (index + 1));
+
+        const img = document.createElement('img');
+        img.src = image.thumb;
+        img.dataset.full = image.full;
+        img.alt = image.alt;
+        img.decoding = 'async';
+        img.loading = index < 8 ? 'eager' : 'lazy';
+        img.fetchPriority = index < 4 ? 'high' : 'low';
+
+        item.appendChild(img);
+        grid.appendChild(item);
+      });
+
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightboxImg');
       const items = Array.from(document.querySelectorAll('.grid-item img'));
       let currentIndex = 0;
 
+      function showLightboxImage(index) {
+        currentIndex = (index + items.length) % items.length;
+        lightboxImg.src = items[currentIndex].dataset.full;
+        lightboxImg.alt = items[currentIndex].alt;
+      }
+
       function openLightbox(index) {
-        currentIndex = index;
-        lightboxImg.src = items[index].src;
+        showLightboxImage(index);
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
+        document.getElementById('lightboxClose').focus();
       }
 
       function closeLightbox() {
@@ -367,31 +832,23 @@
         document.body.style.overflow = '';
       }
 
-      items.forEach((img, i) => {
-        img.parentElement.addEventListener('click', () => openLightbox(i));
+      items.forEach((img, index) => {
+        img.parentElement.addEventListener('click', () => openLightbox(index));
       });
 
       document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+      document.getElementById('lightboxPrev').addEventListener('click', () => showLightboxImage(currentIndex - 1));
+      document.getElementById('lightboxNext').addEventListener('click', () => showLightboxImage(currentIndex + 1));
 
-      document.getElementById('lightboxPrev').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-        lightboxImg.src = items[currentIndex].src;
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeLightbox();
       });
 
-      document.getElementById('lightboxNext').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % items.length;
-        lightboxImg.src = items[currentIndex].src;
-      });
-
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox || e.target === lightboxImg) closeLightbox();
-      });
-
-      document.addEventListener('keydown', (e) => {
+      document.addEventListener('keydown', (event) => {
         if (!lightbox.classList.contains('active')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
-        if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowLeft') showLightboxImage(currentIndex - 1);
+        if (event.key === 'ArrowRight') showLightboxImage(currentIndex + 1);
       });
     </script>
   </body>

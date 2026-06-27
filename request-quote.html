@@ -147,14 +147,14 @@
               <h1 class="fw-bold display-5 mb-3">Request a Quote</h1>
               <p class="lead mb-0">
                 Tell me about the property, the media package you need, and your preferred timing.
-                I will review the details and follow up with availability and a quote.
+                Your request is sent through the site, and I will follow up with availability and a quote.
               </p>
             </div>
             <div class="col-lg-4">
               <div class="summary-card p-4">
                 <h2 class="h5 fw-bold mb-3">What happens next</h2>
                 <ul class="ps-3 mb-0">
-                  <li>Your request goes to will@skypointimages.com.</li>
+                  <li>The site sends your request directly to SkyPoint.</li>
                   <li>I review the property details and scope.</li>
                   <li>You get availability, pricing, and next steps.</li>
                 </ul>
@@ -173,6 +173,7 @@
               method="POST"
             >
               <input type="hidden" name="_subject" value="New SkyPoint Quote Request" />
+              <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_next" value="https://skypointimages.com/thanks.html" />
               <input type="text" name="_gotcha" style="display: none" tabindex="-1" autocomplete="off" />
 
@@ -323,7 +324,7 @@
                     <p class="quote-note mb-0">
                       For urgent requests, call or text <strong class="text-white">(561) 707-3082</strong>.
                     </p>
-                    <button class="btn btn-light btn-lg px-5" type="submit">Send Request</button>
+                    <button class="btn btn-light btn-lg px-5" type="submit">Submit Quote Request</button>
                   </div>
                 </div>
               </div>
