@@ -131,6 +131,7 @@
         max-height: 90vh;
         object-fit: contain;
         border-radius: 8px;
+        cursor: zoom-out;
       }
       .lightbox-close,
       .lightbox-prev,
@@ -781,7 +782,7 @@
       document.getElementById('lightboxNext').addEventListener('click', () => showLightboxImage(currentIndex + 1));
 
       lightbox.addEventListener('click', (event) => {
-        if (event.target === lightbox) closeLightbox();
+        if (event.target === lightbox || event.target === lightboxImg) closeLightbox();
       });
 
       document.addEventListener('keydown', (event) => {
