@@ -1,0 +1,5 @@
+# Keep original video files local; do not publish them to GitHub.
+*
+!.gitignore
+!README.md
+
