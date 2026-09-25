@@ -77,26 +77,11 @@
               <a class="action" href="sms:+15617073082">Text me</a>
               <a class="action" href="mailto:will@skypointimages.com">Email me</a>
             </div>
-            <div class="primary-actions desktop-actions" aria-label="Copy William’s contact details">
-              <button
-                class="action action-primary copy-action"
-                type="button"
-                data-copy="(561) 707-3082"
-                data-message="Phone number copied"
-              >
-                Copy phone
-              </button>
-              <button
-                class="action copy-action"
-                type="button"
-                data-copy="will@skypointimages.com"
-                data-message="Email address copied"
-              >
-                Copy email
-              </button>
-              <a class="action" href="william-bateau.vcf" download>Download contact</a>
+            <div class="primary-actions desktop-actions" aria-label="Explore SkyPoint Media">
+              <a class="action action-primary" href="#start-project">Start a project</a>
+              <a class="action" href="#services">Explore services</a>
+              <a class="action" href="mailto:will@skypointimages.com">Email William</a>
             </div>
-            <p class="copy-status" aria-live="polite"></p>
             <a class="save-contact" href="william-bateau.vcf" download>
               <span aria-hidden="true">＋</span> Add William to contacts
             </a>
@@ -170,32 +155,73 @@
         </div>
       </section>
 
-      <section class="contact-band" aria-labelledby="contact-title">
-        <p class="eyebrow">One conversation starts it.</p>
-        <h2 id="contact-title">Tell me what you’re planning.</h2>
-        <p>I’ll help you choose the right coverage and the clearest next step.</p>
-        <div class="contact-links mobile-actions">
-          <a href="tel:+15617073082">(561) 707-3082</a>
-          <a href="mailto:will@skypointimages.com">will@skypointimages.com</a>
+      <section class="project-section" id="start-project" aria-labelledby="contact-title">
+        <div class="project-intro">
+          <p class="eyebrow">Let’s make something memorable.</p>
+          <h2 id="contact-title">Tell me what you’re planning.</h2>
+          <p>
+            Share a few details and I’ll help you choose the right coverage and the clearest
+            next step.
+          </p>
+
+          <aside class="contact-card" aria-label="William Bateau Jr. contact information">
+            <p class="contact-kicker">Prefer to talk directly?</p>
+            <h3>William Bateau Jr.</h3>
+            <p>SkyPoint Media · South Florida</p>
+            <div class="contact-details">
+              <a href="tel:+15617073082">(561) 707-3082</a>
+              <a href="mailto:will@skypointimages.com">will@skypointimages.com</a>
+            </div>
+            <a class="contact-save" href="william-bateau.vcf" download>Save William’s contact</a>
+          </aside>
         </div>
-        <div class="contact-links desktop-actions">
-          <button
-            class="copy-action"
-            type="button"
-            data-copy="(561) 707-3082"
-            data-message="Phone number copied"
-          >
-            Copy (561) 707-3082
+
+        <form class="project-form" action="https://formspree.io/f/mnjbdlgn" method="post">
+          <input type="hidden" name="_subject" value="New SkyPoint Media project inquiry" />
+          <input type="hidden" name="_next" value="https://skypointimages.com/contact-thanks.html" />
+          <label class="honeypot" aria-hidden="true">
+            Leave this field empty
+            <input name="_gotcha" tabindex="-1" autocomplete="off" />
+          </label>
+
+          <div class="form-row">
+            <label>
+              <span>Your name</span>
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>
+              <span>Email or phone</span>
+              <input type="text" name="contact" required />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              <span>What can I help with?</span>
+              <select name="service" required>
+                <option value="" selected disabled>Choose a service</option>
+                <option>Real estate media</option>
+                <option>Professional headshots</option>
+                <option>Event photography</option>
+                <option>I’m not sure yet</option>
+              </select>
+            </label>
+            <label>
+              <span>Preferred date <em>optional</em></span>
+              <input type="date" name="preferred_date" />
+            </label>
+          </div>
+
+          <label>
+            <span>Tell me about the project</span>
+            <textarea name="project_details" rows="5" placeholder="Location, goals, timing, and anything else I should know." required></textarea>
+          </label>
+
+          <button class="submit-button" type="submit">
+            Send project details <span aria-hidden="true">↗</span>
           </button>
-          <button
-            class="copy-action"
-            type="button"
-            data-copy="will@skypointimages.com"
-            data-message="Email address copied"
-          >
-            Copy will@skypointimages.com
-          </button>
-        </div>
+          <p class="form-note">No pressure. Just a quick conversation about what you need.</p>
+        </form>
       </section>
     </main>
 
