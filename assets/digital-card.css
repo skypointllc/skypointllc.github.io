@@ -101,7 +101,7 @@ img { max-width: 100%; }
   height: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: 54% center;
+  object-position: 50% center;
   filter: saturate(0.94) contrast(1.03);
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.45);
 }
@@ -114,8 +114,10 @@ img { max-width: 100%; }
 }
 .available {
   position: absolute;
-  right: -1rem;
+  left: 50%;
+  right: auto;
   bottom: 1rem;
+  transform: translateX(-50%);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -125,6 +127,7 @@ img { max-width: 100%; }
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 .available > span { width: 0.5rem; height: 0.5rem; background: #7dd7a7; border-radius: 50%; }
 .eyebrow {
@@ -151,6 +154,7 @@ h1 {
   line-height: 1.65;
 }
 .primary-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 2rem; }
+.desktop-actions { display: none; }
 .action {
   min-width: 7.2rem;
   padding: 0.9rem 1.2rem;
@@ -159,6 +163,9 @@ h1 {
   text-decoration: none;
   font-size: 0.88rem;
   transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 }
 .action:hover { transform: translateY(-2px); background: #fff; color: var(--ink); }
 .action-primary { background: var(--blue); border-color: var(--blue); color: var(--ink); font-weight: 600; }
@@ -171,6 +178,7 @@ h1 {
   text-underline-offset: 0.3rem;
   font-size: 0.85rem;
 }
+.copy-status { min-height: 1.2rem; margin: 0.7rem 0 -0.7rem; color: var(--blue-bright); font-size: 0.78rem; }
 .scroll-cue {
   position: absolute;
   right: clamp(1rem, 5vw, 5rem);
@@ -246,8 +254,17 @@ h2 { margin: 0; font-size: clamp(2.35rem, 4.8vw, 4.5rem); line-height: 1.02; let
 .contact-band h2 { max-width: 820px; margin: auto; }
 .contact-band > p:not(.eyebrow) { margin: 1.4rem auto 0; max-width: 35rem; color: var(--muted); line-height: 1.7; }
 .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
-.contact-links a { padding: 0.9rem 1.2rem; border: 1px solid var(--line); text-decoration: none; }
-.contact-links a:hover { background: var(--blue); border-color: var(--blue); color: var(--ink); }
+.contact-links.desktop-actions { display: none; }
+.contact-links a, .contact-links button {
+  padding: 0.9rem 1.2rem;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.contact-links a:hover, .contact-links button:hover { background: var(--blue); border-color: var(--blue); color: var(--ink); }
 footer {
   display: flex;
   justify-content: space-between;
@@ -269,6 +286,11 @@ a:focus-visible { outline: 3px solid var(--blue-bright); outline-offset: 4px; }
   .service-card:nth-child(1) > img { object-position: center 55%; }
   .service-card:nth-child(2) > img { object-position: center 23%; }
 }
+@media (min-width: 761px) {
+  .mobile-actions { display: none; }
+  .desktop-actions { display: flex; }
+  .contact-links.desktop-actions { display: flex; }
+}
 @media (max-width: 620px) {
   .topbar { padding-top: 1rem; }
   .top-save { font-size: 0.62rem; padding: 0.65rem 0.8rem; }
@@ -279,13 +301,14 @@ a:focus-visible { outline: 3px solid var(--blue-bright); outline-offset: 4px; }
   }
   .hero-inner { grid-template-columns: 1fr; gap: 2.2rem; }
   .portrait-wrap { width: min(64vw, 270px); margin: 0 auto; aspect-ratio: 1 / 1; }
-  .portrait { aspect-ratio: 1 / 1; border-radius: 50%; object-position: 52% 23%; }
+  .portrait { aspect-ratio: 1 / 1; border-radius: 50%; object-position: 50% 35%; }
   .portrait-wrap::before { inset: -0.5rem; border-radius: 50%; }
-  .available { right: -1.5rem; bottom: 0; }
+  .available { left: 50%; right: auto; bottom: -0.7rem; transform: translateX(-50%); }
   .intro { text-align: center; }
   h1 { font-size: clamp(2.8rem, 13vw, 4.25rem); }
   .lead { margin-inline: auto; }
-  .primary-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.45rem; }
+  .primary-actions { grid-template-columns: repeat(3, 1fr); gap: 0.45rem; }
+  .mobile-actions.primary-actions { display: grid; }
   .action { min-width: 0; padding-inline: 0.4rem; }
   .save-contact { justify-content: center; }
   .scroll-cue { left: 50%; right: auto; transform: translateX(-50%); white-space: nowrap; }

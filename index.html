@@ -72,11 +72,31 @@
               together.
             </p>
 
-            <div class="primary-actions" aria-label="Contact William">
+            <div class="primary-actions mobile-actions" aria-label="Contact William">
               <a class="action action-primary" href="tel:+15617073082">Call me</a>
               <a class="action" href="sms:+15617073082">Text me</a>
               <a class="action" href="mailto:will@skypointimages.com">Email me</a>
             </div>
+            <div class="primary-actions desktop-actions" aria-label="Copy William’s contact details">
+              <button
+                class="action action-primary copy-action"
+                type="button"
+                data-copy="(561) 707-3082"
+                data-message="Phone number copied"
+              >
+                Copy phone
+              </button>
+              <button
+                class="action copy-action"
+                type="button"
+                data-copy="will@skypointimages.com"
+                data-message="Email address copied"
+              >
+                Copy email
+              </button>
+              <a class="action" href="william-bateau.vcf" download>Download contact</a>
+            </div>
+            <p class="copy-status" aria-live="polite"></p>
             <a class="save-contact" href="william-bateau.vcf" download>
               <span aria-hidden="true">＋</span> Add William to contacts
             </a>
@@ -154,9 +174,27 @@
         <p class="eyebrow">One conversation starts it.</p>
         <h2 id="contact-title">Tell me what you’re planning.</h2>
         <p>I’ll help you choose the right coverage and the clearest next step.</p>
-        <div class="contact-links">
+        <div class="contact-links mobile-actions">
           <a href="tel:+15617073082">(561) 707-3082</a>
           <a href="mailto:will@skypointimages.com">will@skypointimages.com</a>
+        </div>
+        <div class="contact-links desktop-actions">
+          <button
+            class="copy-action"
+            type="button"
+            data-copy="(561) 707-3082"
+            data-message="Phone number copied"
+          >
+            Copy (561) 707-3082
+          </button>
+          <button
+            class="copy-action"
+            type="button"
+            data-copy="will@skypointimages.com"
+            data-message="Email address copied"
+          >
+            Copy will@skypointimages.com
+          </button>
         </div>
       </section>
     </main>
