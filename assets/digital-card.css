@@ -105,13 +105,6 @@ img { max-width: 100%; }
   filter: saturate(0.94) contrast(1.03);
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.45);
 }
-.portrait-wrap::before {
-  content: "";
-  position: absolute;
-  inset: -0.65rem 0.65rem 0.65rem -0.65rem;
-  border: 1px solid rgba(171, 197, 223, 0.42);
-  z-index: -1;
-}
 .available {
   position: absolute;
   left: 50%;
@@ -350,7 +343,6 @@ a:focus-visible { outline: 3px solid var(--blue-bright); outline-offset: 4px; }
   .hero-inner { grid-template-columns: 1fr; gap: 2.2rem; }
   .portrait-wrap { width: min(64vw, 270px); margin: 0 auto; aspect-ratio: 1 / 1; }
   .portrait { aspect-ratio: 1 / 1; border-radius: 50%; object-position: 50% 35%; }
-  .portrait-wrap::before { inset: -0.5rem; border-radius: 50%; }
   .available { left: 50%; right: auto; bottom: -0.7rem; transform: translateX(-50%); }
   .intro { text-align: center; }
   h1 { font-size: clamp(2.8rem, 13vw, 4.25rem); }
