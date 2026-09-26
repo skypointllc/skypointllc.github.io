@@ -215,6 +215,7 @@ h2 { margin: 0; font-size: clamp(2.35rem, 4.8vw, 4.5rem); line-height: 1.02; let
 .service-card > img { z-index: -3; object-fit: cover; transition: transform 450ms ease, filter 450ms ease; }
 .service-card:nth-child(1) > img { object-position: 54% center; }
 .service-card:nth-child(2) > img { object-position: center 24%; }
+.event-card > img { object-position: center 58%; }
 .service-shade {
   z-index: -2;
   background: linear-gradient(0deg, rgba(5, 12, 18, 0.96) 0%, rgba(5, 12, 18, 0.56) 52%, rgba(5, 12, 18, 0.18) 100%);
@@ -311,7 +312,8 @@ footer a { text-underline-offset: 0.25rem; }
 
 .thanks-page { min-height: 100svh; display: grid; place-items: center; padding: 1rem; background: radial-gradient(circle at 70% 20%, #263f55 0, var(--ink) 45%); }
 .thanks-card { width: min(680px, 100%); padding: clamp(2rem, 7vw, 5rem); border: 1px solid var(--line); background: rgba(9, 17, 24, 0.72); text-align: center; }
-.thanks-card > img { width: min(230px, 65%); height: auto; margin-bottom: 3rem; }
+.thanks-logo { display: inline-block; width: min(230px, 65%); margin-bottom: 3rem; }
+.thanks-logo img { display: block; width: 100%; height: auto; }
 .thanks-card h1 { font-size: clamp(3.5rem, 10vw, 6.5rem); }
 .thanks-card > p:not(.eyebrow, .urgent) { max-width: 30rem; margin: 1.5rem auto 0; color: var(--muted); line-height: 1.7; }
 .thanks-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.7rem; margin-top: 2rem; }
