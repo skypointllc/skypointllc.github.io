@@ -1,0 +1,7 @@
+# Keep full-size photo sources local. Optimized site images live in ../web/.
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+
